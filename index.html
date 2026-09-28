@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saptam Infrastructure — Engineering Excellence. Delivered.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: 'var(--brand-orange)',
+                            orangeHover: 'var(--brand-orange-hover)',
+                            gold: '#C59B3F',
+                            bg: 'var(--bg-main)',
+                            card: 'var(--bg-card)',
+                            textMain: 'var(--text-main)',
+                            textMuted: 'var(--text-muted)',
+                            border: 'var(--border-color)',
+                            strip: 'var(--strip-bg)'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Oswald', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-main: #FFFFFF;
+            --bg-card: #FFFFFF;
+            --text-main: #111827;
+            --text-muted: #4B5563;
+            --border-color: #E5E7EB;
+            --brand-orange: #D96B27;
+            --brand-orange-hover: #B8551C;
+            --strip-bg: #F4EFEA;
+            --header-bg: #FFFFFF;
+            --hero-overlay: rgba(13, 14, 17, 0.75);
+            --feature-bg: #0D0E11;
+            --footer-bg: #0D0E11;
+        }
+
+        .dark {
+            --bg-main: #0D1117;
+            --bg-card: #161B22;
+            --text-main: #F0F6FC;
+            --text-muted: #8B949E;
+            --border-color: #30363D;
+            --brand-orange: #F97316;
+            --brand-orange-hover: #EA580C;
+            --strip-bg: #1C2128;
+            --header-bg: #161B22;
+            --hero-overlay: rgba(13, 17, 23, 0.88);
+            --feature-bg: #161B22;
+            --footer-bg: #010409;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .font-heading {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.03em;
+        }
+
+        /* Custom theme-aware scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-main);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--brand-orange);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden selection:bg-brand-orange selection:text-white">
+
+    <header class="sticky top-0 z-50 transition-colors duration-300 border-b border-brand-border bg-[var(--header-bg)] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Company Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 flex-shrink-0">
+                    <svg viewBox="0 0 100 100" class="w-full h-full text-brand-gold fill-current">
+                        <path d="M50,5 C25,5 5,25 5,50 C5,75 25,95 50,95 C75,95 95,75 95,50 C95,25 75,5 50,5 Z M50,12 C71,12 88,29 88,50 C88,71 71,88 50,88 C29,88 12,71 12,50 C12,29 29,12 50,12 Z" opacity="0.2"/>
+                        <path d="M50,15 C35,25 25,40 25,60 C35,50 45,45 55,45 C65,45 75,50 85,60 C75,35 65,20 50,15 Z" fill="#C59B3F"/>
+                        <circle cx="50" cy="32" r="6" fill="#D96B27"/>
+                        <path d="M30,65 L70,65 L50,85 Z" fill="#C59B3F"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-heading text-2xl font-bold tracking-wider text-[#C59B3F] leading-none">SAPTAM</span>
+                    <span class="text-[9px] tracking-[0.25em] text-brand-textMuted font-semibold uppercase mt-1">INFRASTRUCTURE</span>
+                    <span class="text-[7px] tracking-[0.18em] text-brand-textMuted/70 font-medium uppercase">FROM VISION TO REALITY</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="font-heading text-brand-orange text-lg font-semibold tracking-wide border-b-2 border-brand-orange pb-0.5">HOME</a>
+                <a href="#about" class="font-heading text-brand-textMain hover:text-brand-orange text-lg font-semibold tracking-wide transition-colors">ABOUT</a>
+                <a href="#services" class="font-heading text-brand-textMain hover:text-brand-orange text-lg font-semibold tracking-wide transition-colors">SERVICES</a>
+                <a href="#projects" class="font-heading text-brand-textMain hover:text-brand-orange text-lg font-semibold tracking-wide transition-colors">PROJECTS</a>
+                <a href="#contact" class="font-heading text-brand-textMain hover:text-brand-orange text-lg font-semibold tracking-wide transition-colors">CONTACT</a>
+            </nav>
+
+            <!-- Actions: Light/Dark Theme Switcher & Get a Quote CTA -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                
+                <!-- Theme Switcher Button -->
+                <button id="themeToggleBtn" aria-label="Toggle Light and Dark Mode" class="p-2.5 rounded-full border border-brand-border text-brand-textMain hover:bg-brand-border/30 transition-all focus:outline-none">
+                    <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
+                </button>
+
+                <!-- Get a Quote Button -->
+                <button onclick="openModal()" class="bg-brand-orange hover:bg-brand-orangeHover text-white font-heading text-base sm:text-lg font-semibold tracking-wider px-4 sm:px-6 py-2.5 transition-all shadow-md">
+                    GET A QUOTE
+                </button>
+
+                <!-- Mobile Navigation Toggle -->
+                <button id="mobileMenuBtn" class="md:hidden text-brand-textMain p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-brand-border bg-[var(--header-bg)] px-6 py-4 space-y-3">
+            <a href="#home" class="block font-heading text-brand-orange text-lg font-bold">HOME</a>
+            <a href="#about" class="block font-heading text-brand-textMain text-lg hover:text-brand-orange">ABOUT</a>
+            <a href="#services" class="block font-heading text-brand-textMain text-lg hover:text-brand-orange">SERVICES</a>
+            <a href="#projects" class="block font-heading text-brand-textMain text-lg hover:text-brand-orange">PROJECTS</a>
+            <a href="#contact" class="block font-heading text-brand-textMain text-lg hover:text-brand-orange">CONTACT</a>
+        </div>
+    </header>
+
+    <section id="home" class="relative min-h-[600px] lg:min-h-[680px] text-white flex items-center overflow-hidden bg-black">
+        <!-- Background Aerial Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b2?auto=format&fit=crop&w=2000&q=80" alt="Saptam EPCC Industrial Facility" class="w-full h-full object-cover object-center filter brightness-90">
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Hero Text Content -->
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-3 py-1 text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                        <span>EPCC SPECIALISTS — ISO 9001:2015</span>
+                    </div>
+
+                    <h1 class="font-heading text-5xl sm:text-7xl lg:text-8xl font-bold uppercase tracking-tight leading-none text-white">
+                        ENGINEERING<br/>
+                        EXCELLENCE.<br/>
+                        <span class="text-brand-orange">DELIVERED.</span>
+                    </h1>
+
+                    <div class="w-20 h-1 bg-brand-orange my-4"></div>
+
+                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
+                        ISO 9001:2015 certified EPCC specialists — Engineering, Procurement, Construction & Commissioning for Chemical, Pharmaceutical, Power, and Infrastructure industries.
+                    </p>
+
+                    <div class="pt-4 flex flex-wrap gap-4 items-center">
+                        <a href="#services" class="bg-brand-orange hover:bg-brand-orangeHover text-white font-heading text-lg font-semibold px-7 py-3.5 flex items-center gap-3 transition-all shadow-lg">
+                            OUR SERVICES <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#contact" class="border border-white/60 hover:border-white hover:bg-white/10 text-white font-heading text-lg font-semibold px-7 py-3.5 transition-all">
+                            CONTACT US
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Badges -->
+                <div class="lg:col-span-4 flex flex-col justify-center space-y-3.5 mt-8 lg:mt-0">
+                    <div class="bg-black/50 backdrop-blur-md border border-white/15 p-4 flex items-center space-x-3">
+                        <div class="text-brand-orange text-lg">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <span class="font-heading text-white text-sm sm:text-base font-semibold tracking-wider uppercase">ISO 9001:2015 CERTIFIED</span>
+                    </div>
+
+                    <div class="bg-black/50 backdrop-blur-md border border-white/15 p-4 flex items-center space-x-3">
+                        <div class="text-brand-orange text-lg">
+                            <i class="fa-solid fa-helmet-safety"></i>
+                        </div>
+                        <span class="font-heading text-white text-sm sm:text-base font-semibold tracking-wider uppercase">EPCC SPECIALISTS</span>
+                    </div>
+
+                    <div class="bg-black/50 backdrop-blur-md border border-white/15 p-4 flex items-center space-x-3">
+                        <div class="text-brand-orange text-lg">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <span class="font-heading text-white text-sm sm:text-base font-semibold tracking-wider uppercase">GUJARAT, INDIA</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-[var(--feature-bg)] border-t border-b border-brand-border text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-800">
+                
+                <!-- Column 1 -->
+                <div class="pt-6 md:pt-0 md:px-6 first:px-0 space-y-2">
+                    <div class="w-12 h-1 bg-brand-orange mb-3"></div>
+                    <h3 class="font-heading text-2xl font-bold tracking-wide uppercase text-white">TURNKEY SOLUTIONS</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Single-point accountability from concept to commissioning — eliminating coordination gaps across disciplines.
+                    </p>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="pt-6 md:pt-0 md:px-6 space-y-2">
+                    <div class="w-12 h-1 bg-brand-orange mb-3"></div>
+                    <h3 class="font-heading text-2xl font-bold tracking-wide uppercase text-white">ISO CERTIFIED QUALITY</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        ISO 9001:2015 certified processes ensuring consistent quality control, documentation, and delivery standards.
+                    </p>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="pt-6 md:pt-0 md:px-6 space-y-2">
+                    <div class="w-12 h-1 bg-brand-orange mb-3"></div>
+                    <h3 class="font-heading text-2xl font-bold tracking-wide uppercase text-white">ON-TIME DELIVERY</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Streamlined project management with cost-effective systems that keep projects on schedule and within budget.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-brand-bg transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-left mb-12">
+                <span class="text-brand-orange font-heading text-base font-bold tracking-widest uppercase block mb-1">WHAT WE DO</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-brand-textMain tracking-tight uppercase">
+                    END-TO-END EPCC CAPABILITIES
+                </h2>
+                <p class="text-brand-textMuted text-base sm:text-lg mt-3 max-w-3xl">
+                    Turnkey engineering solutions across the full project lifecycle — from design and procurement to construction and commissioning.
+                </p>
+            </div>
+
+            <!-- 8 Card Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-brand-border">
+                
+                <!-- Card 1 -->
+                <div class="p-8 border-b md:border-r border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
+                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
+                        CIVIL WORK
+                    </h3>
+                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
+                        Industrial buildings, clean rooms, R&D labs, equipment foundations, warehouses & workshops.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 border-b lg:border-r border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
+                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
+                        INFRASTRUCTURE
+                    </h3>
+                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
+                        Pre-fab structures, pipe racks, platforms, ladders, and structural steel systems.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 border-b md:border-r border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
+                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
+                        PIPING WORKS
+                    </h3>
+                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
+                        IBR & NIBR piping spools, jacketed piping, fire lines, and lined piping systems.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="p-8 border-b border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
+                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
+                        CHEMICAL PROCESS EQUIPMENT
+                    </h3>
+                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
+                        Agitator reactors, distillation columns, scrubbers, pressure vessels, heat exchangers, and piping skids.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="p-8 border-b md:border-r lg:border-b-0 border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
+                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
+                        ELECTRICAL WORK
+                    </h3>
+                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
+                        Substation design, HV/LV systems, 11KV–66KV transmission & distribution, SLD, cable schedules.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="p-8 border-b lg:border-b-0 lg:border-r border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
+                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
+                        INDUSTRIAL WASTE WATER
+                    </h3>
+                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
+                        Multiple Effect Evaporators (MEE), Effluent Treatment Plants (ETP), and water management systems.
+                    </p>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="p-8 border-b md:border-b-0 md:border-r border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
+                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
+                        REFRIGERATION & COOLING
+                    </h3>
+                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
+                        Chilling plants, HVAC systems, and Air Handling Units (AHU) for industrial applications.
+                    </p>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="p-8 bg-brand-card hover:bg-brand-border/10 transition-colors group">
+                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
+                        INSTRUMENTATION
+                    </h3>
+                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
+                        Instrumentation control, system architecture, PLC & SCADA programming, fire alarm systems.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#contact" class="inline-flex items-center gap-2 font-heading text-brand-orange hover:text-brand-orangeHover text-lg font-bold tracking-wider uppercase transition-colors">
+                    VIEW ALL SERVICES <i class="fa-solid fa-chevron-right text-sm"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="bg-[var(--strip-bg)] py-10 border-t border-b border-brand-border transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-between gap-6 md:gap-8">
+                
+                <div class="font-heading text-brand-textMain text-lg md:text-xl font-bold uppercase tracking-wider pr-6 border-r-0 md:border-r-2 border-brand-border">
+                    INDUSTRIES WE SERVE
+                </div>
+
+                <div class="flex-1 flex flex-wrap items-center justify-around gap-6 text-brand-textMain font-heading text-xl md:text-2xl font-bold tracking-wider uppercase">
+                    <span class="hover:text-brand-orange transition-colors cursor-default">CHEMICALS</span>
+                    <span class="text-brand-border hidden sm:inline">|</span>
+                    <span class="hover:text-brand-orange transition-colors cursor-default">PHARMACEUTICALS</span>
+                    <span class="text-brand-border hidden sm:inline">|</span>
+                    <span class="hover:text-brand-orange transition-colors cursor-default">POWER</span>
+                    <span class="text-brand-border hidden sm:inline">|</span>
+                    <span class="hover:text-brand-orange transition-colors cursor-default">INFRASTRUCTURE</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-brand-bg transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-brand-card border border-brand-border shadow-xl p-8 sm:p-12 lg:p-16 relative overflow-hidden transition-colors duration-300">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-8 space-y-6">
+                        <div class="w-12 h-1 bg-brand-orange"></div>
+                        <h2 class="font-heading text-4xl sm:text-5xl font-bold text-brand-textMain tracking-tight uppercase">
+                            READY TO START YOUR<br/>PROJECT?
+                        </h2>
+                        <p class="text-brand-textMuted text-base sm:text-lg max-w-xl">
+                            Discuss your engineering requirements with our EPCC specialists. We deliver precision-engineered solutions on time and within budget.
+                        </p>
+
+                        <div class="space-y-3 pt-2 text-brand-textMain font-medium text-sm sm:text-base">
+                            <a href="mailto:info@saptamindia.com" class="flex items-center gap-3 hover:text-brand-orange transition-colors">
+                                <i class="fa-regular fa-envelope text-brand-orange text-lg"></i>
+                                <span>info@saptamindia.com</span>
+                            </a>
+                            <a href="tel:+919537533569" class="flex items-center gap-3 hover:text-brand-orange transition-colors">
+                                <i class="fa-solid fa-phone text-brand-orange text-lg"></i>
+                                <span>+91-9537533569</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-4 flex justify-start lg:justify-end">
+                        <button onclick="openModal()" class="bg-brand-orange hover:bg-brand-orangeHover text-white font-heading text-xl font-bold uppercase px-8 py-4 flex items-center gap-3 transition-all shadow-lg transform hover:-translate-y-0.5">
+                            GET IN TOUCH <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-[var(--footer-bg)] text-gray-300 pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-gray-800">
+                
+                <div class="md:col-span-5 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 flex-shrink-0">
+                            <svg viewBox="0 0 100 100" class="w-full h-full text-brand-gold fill-current">
+                                <path d="M50,15 C35,25 25,40 25,60 C35,50 45,45 55,45 C65,45 75,50 85,60 C75,35 65,20 50,15 Z" fill="#C59B3F"/>
+                                <circle cx="50" cy="32" r="6" fill="#D96B27"/>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-heading text-2xl font-bold tracking-wider text-white leading-none">SAPTAM</span>
+                            <span class="text-[9px] tracking-[0.2em] text-gray-400 font-semibold uppercase mt-0.5">INFRASTRUCTURE</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-md">
+                        ISO 9001:2015 certified EPCC company delivering turnkey engineering solutions for Chemical, Pharmaceutical, Power, and Infrastructure industries.
+                    </p>
+
+                    <div class="inline-flex items-center gap-2 border border-white/20 px-4 py-2 text-xs font-heading tracking-wider uppercase text-gray-300">
+                        <i class="fa-solid fa-shield-halved text-brand-orange"></i> ISO 9001:2015 CERTIFIED
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-4">
+                    <h4 class="font-heading text-lg font-bold uppercase tracking-wider text-white">QUICK LINKS</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#home" class="hover:text-brand-orange transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-brand-orange transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-brand-orange transition-colors">Services</a></li>
+                        <li><a href="#projects" class="hover:text-brand-orange transition-colors">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-brand-orange transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="font-heading text-lg font-bold uppercase tracking-wider text-white">CONTACT US</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-brand-orange text-base mt-1"></i>
+                            <span>Block no 723/P, Behind Gurukrupa Farm, Savli Manjusar Road, Manjusar, Vadodara, Gujarat 391775</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-regular fa-envelope text-brand-orange text-base"></i>
+                            <a href="mailto:info@saptamindia.com" class="hover:text-white transition-colors">info@saptamindia.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-orange text-base"></i>
+                            <a href="tel:+919537533569" class="hover:text-white transition-colors">+91-9537533569</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>© 2026 Saptam Infrastructure. All rights reserved.</p>
+                <p class="uppercase tracking-wider">EPCC — Engineering, Procurement, Construction & Commissioning</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="quoteModal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center hidden p-4">
+        <div class="bg-brand-card border border-brand-border max-w-lg w-full p-8 shadow-2xl relative border-t-4 border-t-brand-orange transition-colors duration-300">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-brand-textMuted hover:text-brand-textMain text-xl p-2 focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 class="font-heading text-3xl font-bold uppercase text-brand-textMain mb-2">REQUEST A QUOTE</h3>
+            <p class="text-brand-textMuted text-sm mb-6">Fill out the details below and our EPCC engineering team will get back to you shortly.</p>
+
+            <form id="quoteForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-brand-textMain mb-1">Full Name *</label>
+                    <input type="text" required class="w-full bg-brand-bg border border-brand-border text-brand-textMain p-3 text-sm focus:border-brand-orange focus:outline-none" placeholder="John Doe">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-brand-textMain mb-1">Email Address *</label>
+                    <input type="email" required class="w-full bg-brand-bg border border-brand-border text-brand-textMain p-3 text-sm focus:border-brand-orange focus:outline-none" placeholder="john@company.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-brand-textMain mb-1">Phone Number *</label>
+                    <input type="tel" required class="w-full bg-brand-bg border border-brand-border text-brand-textMain p-3 text-sm focus:border-brand-orange focus:outline-none" placeholder="+91 9876543210">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-brand-textMain mb-1">Select Industry</label>
+                    <select class="w-full bg-brand-bg border border-brand-border text-brand-textMain p-3 text-sm focus:border-brand-orange focus:outline-none">
+                        <option>Chemicals</option>
+                        <option>Pharmaceuticals</option>
+                        <option>Power</option>
+                        <option>Infrastructure</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-brand-textMain mb-1">Project Requirements</label>
+                    <textarea rows="3" class="w-full bg-brand-bg border border-brand-border text-brand-textMain p-3 text-sm focus:border-brand-orange focus:outline-none" placeholder="Brief details about scope, requirements, timeline..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-heading text-lg font-bold uppercase py-3 transition-colors mt-2">
+                    SUBMIT INQUIRY
+                </button>
+            </form>
+
+            <div id="successMsg" class="hidden text-center py-8 space-y-3">
+                <div class="text-emerald-500 text-5xl">
+                    <i class="fa-regular fa-circle-check"></i>
+                </div>
+                <h4 class="font-heading text-2xl font-bold uppercase text-brand-textMain">INQUIRY RECEIVED</h4>
+                <p class="text-brand-textMuted text-sm">Thank you for reaching out. Our technical team will get in touch with you within 24 business hours.</p>
+                <button onclick="closeModal()" class="mt-4 bg-brand-orange text-white font-heading px-6 py-2 uppercase text-sm">CLOSE</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Light & Dark Theme Controller
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        // Load saved theme or default to light
+        const savedTheme = localStorage.getItem('saptam_theme') || 'light';
+        if (savedTheme === 'dark') {
+            htmlElement.classList.add('dark');
+            themeIcon.className = 'fa-solid fa-sun text-yellow-400 text-lg';
+        } else {
+            htmlElement.classList.remove('dark');
+            themeIcon.className = 'fa-solid fa-moon text-lg';
+        }
+
+        // Toggle action
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                themeIcon.className = 'fa-solid fa-moon text-lg';
+                localStorage.setItem('saptam_theme', 'light');
+            } else {
+                htmlElement.classList.add('dark');
+                themeIcon.className = 'fa-solid fa-sun text-yellow-400 text-lg';
+                localStorage.setItem('saptam_theme', 'dark');
+            }
+        });
+
+        // Mobile Menu Drawer Handler
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Get A Quote Modal Handler
+        const modal = document.getElementById('quoteModal');
+        const quoteForm = document.getElementById('quoteForm');
+        const successMsg = document.getElementById('successMsg');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            setTimeout(() => {
+                quoteForm.classList.remove('hidden');
+                successMsg.classList.add('hidden');
+                quoteForm.reset();
+            }, 300);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            quoteForm.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
