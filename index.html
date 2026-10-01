@@ -1,622 +1,1505 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saptam Infrastructure — Engineering Excellence. Delivered.</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saptam Infrastructure — Engineering Excellence. Delivered.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #d97706;
+      --primary-hover: #b45309;
+      --bg-dark: #0f1115;
+      --bg-card-dark: #181b20;
+      --bg-light: #ffffff;
+      --bg-card-light: #f8fafc;
+      --text-dark: #f3f4f6;
+      --text-light: #1e293b;
+      --muted-dark: #9ca3af;
+      --muted-light: #64748b;
+      --border-dark: #27272a;
+      --border-light: #e2e8f0;
+      --accent-bg-dark: #1c1917;
+      --accent-bg-light: #f5f5f4;
+    }
 
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            orange: 'var(--brand-orange)',
-                            orangeHover: 'var(--brand-orange-hover)',
-                            gold: '#C59B3F',
-                            bg: 'var(--bg-main)',
-                            card: 'var(--bg-card)',
-                            textMain: 'var(--text-main)',
-                            textMuted: 'var(--text-muted)',
-                            border: 'var(--border-color)',
-                            strip: 'var(--strip-bg)'
-                        }
-                    },
-                    fontFamily: {
-                        heading: ['Oswald', 'sans-serif'],
-                        sans: ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    [data-theme="dark"] {
+      --bg-main: var(--bg-dark);
+      --bg-card: var(--bg-card-dark);
+      --text-main: var(--text-dark);
+      --text-muted: var(--muted-dark);
+      --border: var(--border-dark);
+      --nav-bg: rgba(15, 17, 21, 0.95);
+      --accent-card: #1c1917;
+    }
 
-    <style>
-        :root {
-            --bg-main: #FFFFFF;
-            --bg-card: #FFFFFF;
-            --text-main: #111827;
-            --text-muted: #4B5563;
-            --border-color: #E5E7EB;
-            --brand-orange: #D96B27;
-            --brand-orange-hover: #B8551C;
-            --strip-bg: #F4EFEA;
-            --header-bg: #FFFFFF;
-            --hero-overlay: rgba(13, 14, 17, 0.75);
-            --feature-bg: #0D0E11;
-            --footer-bg: #0D0E11;
-        }
+    [data-theme="light"] {
+      --bg-main: var(--bg-light);
+      --bg-card: var(--bg-card-light);
+      --text-main: var(--text-light);
+      --text-muted: var(--muted-light);
+      --border: var(--border-light);
+      --nav-bg: rgba(255, 255, 255, 0.95);
+      --accent-card: #f5f5f4;
+    }
 
-        .dark {
-            --bg-main: #0D1117;
-            --bg-card: #161B22;
-            --text-main: #F0F6FC;
-            --text-muted: #8B949E;
-            --border-color: #30363D;
-            --brand-orange: #F97316;
-            --brand-orange-hover: #EA580C;
-            --strip-bg: #1C2128;
-            --header-bg: #161B22;
-            --hero-overlay: rgba(13, 17, 23, 0.88);
-            --feature-bg: #161B22;
-            --footer-bg: #010409;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+    }
 
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        .font-heading {
-            font-family: 'Oswald', sans-serif;
-            letter-spacing: 0.03em;
-        }
+    h1, h2, h3, h4, .brand-text, .nav-link, .btn {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
-        /* Custom theme-aware scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-main);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--brand-orange);
-            border-radius: 4px;
-        }
-    </style>
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      background: var(--primary);
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .brand-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .brand-subtitle {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    .nav-link.active, .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 0.5rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Container & Sections */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .page-tab {
+      display: none;
+    }
+
+    .page-tab.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 80vh;
+      background: linear-gradient(rgba(15, 17, 21, 0.75), rgba(15, 17, 21, 0.85)), url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      padding: 4rem 0;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .badge-sub {
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .hero-title {
+      font-size: 3.8rem;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #d1d5db;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Stats Strip */
+    .stats-strip {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Page Headers */
+    .page-header {
+      padding: 4rem 0 2rem;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+
+    .page-title {
+      font-size: 3rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Content Cards Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      border-radius: 6px;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Philosophy / Checkmark list */
+    .quote-box {
+      border-left: 4px solid var(--primary);
+      padding-left: 1.5rem;
+      font-style: italic;
+      font-size: 1.3rem;
+      margin: 2rem 0;
+      color: var(--text-main);
+    }
+
+    .check-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .check-icon {
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    /* Call to Action Banner */
+    .cta-banner {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 3rem;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 4rem 0;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      display: none;
+      place-items: center;
+    }
+
+    .modal-overlay.active {
+      display: grid;
+    }
+
+    .modal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      width: 100%;
+      max-width: 500px;
+      padding: 2.5rem;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--bg-main);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      border-radius: 4px;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .navbar { flex-direction: column; gap: 1rem; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 2.8rem; }
+    }
+
+    :root {
+      --primary: #D96B27;
+      --primary-hover: #B8551C;
+      --bg-dark: #0D0E11;
+      --bg-card-dark: #161B22;
+      --bg-light: #FFFFFF;
+      --bg-card-light: #FFFFFF;
+      --text-dark: #F0F6FC;
+      --text-light: #111827;
+      --muted-dark: #8B949E;
+      --muted-light: #4B5563;
+      --border-dark: #30363D;
+      --border-light: #E5E7EB;
+      --accent-bg-dark: #1C2128;
+      --accent-bg-light: #F4EFEA;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    * { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, .brand-text, .brand-title, .nav-link, .btn,
+    .badge-sub, .stat-number, .stat-label {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.03em;
+    }
+    body { line-height: 1.6; }
+
+    .navbar {
+      min-height: 80px;
+      padding: 0 max(24px, calc((100vw - 1280px) / 2));
+      gap: 24px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 8px rgba(13, 14, 17, 0.08);
+    }
+    .brand-logo {
+      background: transparent;
+      border-radius: 0;
+      width: 44px;
+      height: 44px;
+      color: #C59B3F;
+      font-size: 0;
+      position: relative;
+    }
+    .brand-logo::before {
+      content: 'S';
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #C59B3F;
+      border-radius: 50%;
+      font: 700 28px 'Oswald', sans-serif;
+    }
+    .brand-title { color: #C59B3F; }
+    .brand-subtitle { letter-spacing: 2px; }
+    .nav-menu { gap: 2rem; }
+    .nav-link { font-size: 1.1rem; }
+    .btn { border-radius: 0; transition: background-color .2s, color .2s, border-color .2s; }
+    .btn-primary { background: var(--primary); }
+
+    .hero {
+      min-height: 680px;
+      background-image: linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.75) 58%, rgba(0,0,0,.25)), url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b2?auto=format&fit=crop&w=2000&q=80');
+    }
+    .hero-title { font-size: clamp(3.4rem, 7vw, 6rem); }
+    .badge-sub { color: var(--primary); }
+    .stats-strip { background: var(--accent-card); padding: 2.5rem 0; }
+    .stat-number { font-size: 2.1rem; }
+    .stat-label { color: var(--text-muted); }
+
+    .page-header {
+      position: relative;
+      min-height: 330px;
+      margin: 0 0 4rem;
+      padding: 5rem 0 4rem;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      border: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.62)), url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b2?auto=format&fit=crop&w=2000&q=80') center 48% / cover no-repeat;
+    }
+    .page-header .container { width: 100%; }
+    .page-header p { max-width: 780px; color: #D1D5DB !important; font-size: 1.05rem; }
+    .page-title { font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.05; }
+    .container { max-width: 1280px; }
+    .page-tab > .container { padding-bottom: 1rem; }
+    .grid-2 { gap: 4rem; }
+    .grid-4 { gap: 0; border: 1px solid var(--border); }
+    .card { border-radius: 0; padding: 1.75rem; }
+    .grid-4 .card { border: 0; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .grid-4 .card h3 { color: var(--text-main); }
+    .grid-4 .card:hover { border-top: 2px solid var(--primary); padding-top: calc(1.75rem - 1px); }
+
+    .about-story {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 5rem !important;
+    }
+    .about-copy p { margin-bottom: 1.2rem; color: var(--text-muted); }
+    .about-copy h2, .about-philosophy h2 { font-size: 2.6rem !important; }
+    .about-image { position: relative; min-height: 360px; overflow: hidden; background: #0D0E11; }
+    .about-image img { width: 100%; height: 100%; min-height: 360px; object-fit: cover; display: block; }
+    .about-image-caption {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 1.1rem 1.25rem;
+      background: linear-gradient(transparent, rgba(0,0,0,.88));
+      color: #fff;
+      font: 600 1rem 'Oswald', sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .about-philosophy {
+      margin: 0 -24px 4rem;
+      padding: 4rem max(24px, calc((100vw - 1280px) / 2));
+      background: var(--accent-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .quote-box { border-color: var(--primary); font-size: 1.25rem; }
+    .check-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .check-item { color: var(--text-muted); }
+    .check-icon { color: var(--primary); }
+
+    .cta-banner {
+      border-radius: 0;
+      border: 0;
+      border-left: 5px solid var(--primary);
+      background: var(--accent-card);
+      margin: 4rem 0;
+    }
+    footer { background: var(--bg-dark); color: #D1D5DB; border-color: #30363D; }
+    footer h3, footer h4 { color: #fff; }
+    .footer-bottom { border-color: #30363D; }
+    .modal-card { border-radius: 0; border-top: 4px solid var(--primary); }
+
+    @media (max-width: 900px) {
+      .navbar { padding: 12px 20px; flex-wrap: wrap; }
+      .nav-menu { gap: 1.25rem; }
+      .nav-actions { gap: .5rem; }
+      .about-story { gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .navbar { flex-direction: row; }
+      .nav-menu { order: 3; width: 100%; justify-content: space-between; gap: .75rem; overflow-x: auto; }
+      .nav-link { font-size: .95rem; white-space: nowrap; }
+      .nav-actions .theme-toggle { padding: .45rem .6rem; }
+      .nav-actions .btn { padding: .65rem .8rem; font-size: .78rem; }
+      .hero { min-height: 600px; }
+      .page-header { min-height: 300px; padding: 4rem 0 3rem; }
+      .about-story { grid-template-columns: 1fr; }
+      .about-image, .about-image img { min-height: 280px; max-height: 380px; }
+      .about-philosophy { margin-right: -24px; margin-left: -24px; }
+      .check-list { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 520px) {
+      .navbar { padding: 12px 16px; gap: 12px; }
+      .brand-logo { width: 36px; height: 36px; }
+      .brand-title { font-size: 1.25rem; }
+      .brand-subtitle { font-size: .58rem; }
+      .nav-actions { margin-left: auto; }
+      .nav-actions .theme-toggle { font-size: 0; gap: 0; }
+      .nav-actions .theme-toggle span:first-child { font-size: .9rem; }
+      .nav-actions .btn { font-size: .68rem; padding: .6rem .55rem; }
+      .grid-4 { grid-template-columns: 1fr; }
+      .grid-4 .card { border-right: 0; }
+      .hero-title { font-size: 2.8rem; }
+      .cta-banner { padding: 2rem 1.5rem; }
+      .modal-card { padding: 2rem 1.25rem; }
+    }
+
+    /* Home page sections carried over from index.html */
+    .home-hero { position: relative; min-height: 680px; display: flex; align-items: center; overflow: hidden; background: #000; color: #fff; }
+    .home-hero-background { position: absolute; inset: 0; }
+    .home-hero-background img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(.9); }
+    .home-hero-background::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #000, rgba(0, 0, 0, .85) 58%, transparent); }
+    .home-hero-inner { position: relative; z-index: 1; width: 100%; max-width: 1280px; margin: 0 auto; padding: 6rem 1.5rem; }
+    .home-hero-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; align-items: center; }
+    .home-hero-copy { grid-column: span 8; }
+    .home-hero-copy > * + * { margin-top: 1.5rem; }
+    .home-badge { display: inline-flex; padding: .25rem .75rem; border: 1px solid rgba(217, 107, 39, .4); background: rgba(217, 107, 39, .2); color: var(--primary); font-size: .875rem; font-weight: 600; text-transform: uppercase; }
+    .home-hero-title { color: #fff; font-size: 3rem; font-weight: 700; line-height: .98; }
+    .home-hero-title span { color: var(--primary); }
+    .home-hero-rule { width: 5rem; height: .25rem; margin-top: 1rem; background: var(--primary); }
+    .home-hero-description { max-width: 42rem; color: #d1d5db; font-size: 1.125rem; line-height: 1.7; }
+    .home-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; padding-top: .5rem; }
+    .home-action { display: inline-flex; align-items: center; gap: .75rem; padding: .875rem 1.75rem; color: #fff; font-family: 'Oswald', sans-serif; font-size: 1.125rem; font-weight: 600; text-decoration: none; transition: background-color .2s, border-color .2s; }
+    .home-action-primary { background: var(--primary); box-shadow: 0 8px 20px rgba(0, 0, 0, .25); }
+    .home-action-primary:hover { background: var(--primary-hover); }
+    .home-action-outline { border: 1px solid rgba(255, 255, 255, .6); }
+    .home-action-outline:hover { border-color: #fff; background: rgba(255, 255, 255, .1); }
+    .home-hero-badges { grid-column: span 4; display: flex; flex-direction: column; gap: .875rem; margin-top: 2rem; }
+    .home-hero-badge { display: flex; align-items: center; gap: .75rem; padding: 1rem; border: 1px solid rgba(255, 255, 255, .15); background: rgba(0, 0, 0, .5); backdrop-filter: blur(12px); }
+    .home-hero-badge i { color: var(--primary); font-size: 1.125rem; }
+    .home-hero-badge span { color: #fff; font-family: 'Oswald', sans-serif; font-size: .95rem; font-weight: 600; }
+    .home-values { padding: 3rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: #0d0e11; color: #fff; }
+    .home-values-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .home-value { padding: 0 1.5rem; }
+    .home-value:first-child { padding-left: 0; }
+    .home-value-rule { width: 3rem; height: .25rem; margin-bottom: .75rem; background: var(--primary); }
+    .home-value h2 { margin-bottom: .5rem; color: #fff; font-size: 1.5rem; }
+    .home-value p { color: #9ca3af; font-size: .875rem; line-height: 1.65; }
+    .home-services { padding: 1rem 0 2.5rem; background: #fff; }
+    .home-services-heading { margin-bottom: 3rem; }
+    .home-services-heading .badge-sub { margin-bottom: .55rem; font-size: .68rem; letter-spacing: .1em; }
+    .home-services-title { color: #111827; font-size: 2.5rem; line-height: 1.1; }
+    .home-services-intro { max-width: 33rem; margin-top: .9rem; color: #64748b; font-size: .86rem; line-height: 1.6; }
+    .home-services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .home-service { min-width: 0; min-height: 145px; padding: 1.35rem 1.4rem; border: 0; background: transparent; }
+    .home-service:nth-child(n+5) { border-top: 1px solid #d6d6d6; }
+    .home-service h3 { color: #111; font-size: .78rem; line-height: 1.4; }
+    .home-service p { margin-top: .45rem; color: #64748b; font-size: .68rem; line-height: 1.55; }
+    .home-services-link { display: flex; justify-content: center; margin-top: 1.1rem; }
+    .home-services-link button { display: inline-flex; align-items: center; gap: .5rem; border: 0; background: transparent; color: #f36b0a; font-family: 'Oswald', sans-serif; font-size: .7rem; font-weight: 600; cursor: pointer; }
+    .home-services-link button:hover { color: var(--primary-hover); }
+    .home-industries { padding: 1.55rem 0; border-top: 1px solid #ded8d2; border-bottom: 1px solid #ded8d2; background: #F4EFEA; }
+    .home-industries-row { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; }
+    .home-industries-title { flex: 0 0 auto; padding-right: 1.35rem; border-right: 1px solid #d8d1cb; color: #64748b; font-family: 'Oswald', sans-serif; font-size: .65rem; font-weight: 500; letter-spacing: .08em; }
+    .home-industry-list { display: flex; flex: 1; align-items: center; justify-content: space-around; }
+    .home-industry { padding: 0 1.15rem; color: #111827; font-family: 'Oswald', sans-serif; font-size: .84rem; font-weight: 700; white-space: nowrap; }
+    .home-industry-divider { width: 1px; height: 20px; flex: 0 0 1px; overflow: hidden; background: #d8d1cb; color: transparent; font-size: 0; }
+    .home-contact-prompt { padding: 4.75rem 0; background: #fff; }
+    .home-contact-panel { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: center; padding: 2.8rem; border: 1px solid #d6d6d6; background: #fff; }
+    .home-contact-rule { width: 2rem; height: 2px; margin-bottom: 1.25rem; background: #f36b0a; }
+    .home-contact-title { color: #111827; font-size: 2rem; line-height: 1.15; }
+    .home-contact-description { max-width: 430px; margin-top: .85rem; color: #64748b; font-size: .85rem; line-height: 1.65; }
+    .home-contact-details { display: grid; gap: .55rem; margin-top: 1.5rem; }
+    .home-contact-details a { display: flex; align-items: center; gap: .65rem; color: #111827; font-size: .75rem; text-decoration: none; }
+    .home-contact-details i { color: #f36b0a; }
+    .home-contact-details a:hover { color: #f36b0a; }
+    .home-contact-cta { justify-self: end; min-width: 145px; justify-content: center; padding: .9rem 1.15rem; font-size: .76rem; }
+    #tab-home .home-hero-background img { filter: brightness(.72); }
+    #tab-home .home-hero-background::after { background: linear-gradient(90deg, rgba(5, 8, 13, .9) 0%, rgba(5, 8, 13, .74) 54%, rgba(5, 8, 13, .43) 100%); }
+    #tab-home .home-hero-title { line-height: .95; }
+    #tab-home .home-badge { padding: .2rem 0; border: 0; background: transparent; font-size: .72rem; letter-spacing: .1em; }
+    #tab-home .home-hero-description { max-width: 430px; font-size: 1rem; line-height: 1.55; }
+    #tab-home .home-hero-actions { gap: .85rem; padding-top: .35rem; }
+    #tab-home .home-hero-actions .home-action { min-height: 41px; justify-content: center; padding: .65rem 1.35rem; font-size: .75rem; }
+    #tab-home .home-hero-badges { align-items: flex-end; gap: .75rem; }
+    #tab-home .home-hero-badge { width: 183px; min-height: 40px; padding: .55rem .8rem; gap: .6rem; }
+    #tab-home .home-hero-badge i { font-size: .8rem; }
+    #tab-home .home-hero-badge span { font-size: .7rem; }
+    @media (min-width: 640px) { .home-hero-title { font-size: 4.5rem; } }
+    @media (min-width: 1024px) {
+      .home-hero-title { font-size: 6rem; }
+      .home-hero-badges { margin-top: 0; }
+      .home-services-title { font-size: 3rem; }
+    }
+    @media (max-width: 900px) {
+      .home-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .home-service:nth-child(n+5) { border-top: 0; }
+      .home-service:nth-child(n+3) { border-top: 1px solid #d6d6d6; }
+    }
+    @media (max-width: 768px) {
+      .home-hero { min-height: 600px; }
+      .home-hero-copy, .home-hero-badges { grid-column: 1 / -1; }
+      .home-hero-badges { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 0; }
+      .home-hero-badge { align-items: flex-start; flex-direction: column; }
+      .home-values-grid { grid-template-columns: 1fr; }
+      .home-value, .home-value:first-child { padding: 1.5rem 0; }
+      .home-value + .home-value { border-top: 1px solid #30363d; }
+      .home-contact-panel { grid-template-columns: 1fr; padding: 3rem; }
+      .home-contact-cta { justify-self: start; }
+    }
+    @media (max-width: 520px) {
+      .home-hero-inner { padding: 4rem 1.25rem; }
+      .home-hero-title { font-size: 2.75rem; }
+      .home-hero-badges { grid-template-columns: 1fr; }
+      .home-hero-badge { flex-direction: row; align-items: center; }
+      .home-services-title { font-size: 2rem; }
+      .home-services-grid { grid-template-columns: 1fr; }
+      .home-service { min-height: 0; padding: 1.25rem 1rem; }
+      .home-service:nth-child(n+2) { border-top: 1px solid #d6d6d6; }
+      .home-industries-row { align-items: flex-start; flex-direction: column; gap: .9rem; }
+      .home-industries-title { padding: 0 0 .6rem; border-right: 0; border-bottom: 1px solid #d8d1cb; }
+      .home-industry-list { width: 100%; justify-content: space-between; gap: .25rem; }
+      .home-industry { padding: 0 .2rem; font-size: .78rem; }
+      .home-industry-divider { height: 16px; }
+      .home-contact-panel { padding: 2rem 1.5rem; }
+      .home-contact-title { font-size: 1.75rem; }
+      .home-contact-cta { justify-self: start; }
+    }
+
+    #tab-contact .office-section { max-width: 900px; padding-top: 1.25rem; padding-bottom: 3rem; }
+    #tab-contact .office-title { margin-bottom: 1.25rem; color: var(--text-main); font-size: 1.5rem; }
+    #tab-contact .office-details { display: grid; gap: 1.5rem; }
+    #tab-contact .office-item { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 1rem; align-items: start; }
+    #tab-contact .office-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 4px; background: #fbf1e9; color: #f36b0a; font-size: 1.05rem; }
+    #tab-contact .office-label { margin-bottom: .2rem; color: var(--text-muted); font-size: .75rem; font-weight: 600; letter-spacing: .12em; line-height: 1.4; text-transform: uppercase; }
+    #tab-contact .office-value { color: var(--text-main); font-size: .95rem; line-height: 1.55; }
+    #tab-contact .office-value a { color: inherit; text-decoration: none; }
+    #tab-contact .office-value a:hover { color: var(--primary); }
+    #tab-contact .office-map { position: relative; height: 360px; margin-top: 2rem; overflow: hidden; border: 1px solid var(--border); border-radius: 5px; background: var(--bg-card); }
+    #tab-contact .office-map iframe { width: 100%; height: 100%; border: 0; }
+    #tab-contact .office-map-link { position: absolute; top: 8px; left: 8px; display: inline-flex; align-items: center; gap: .35rem; padding: .5rem .75rem; border: 1px solid #d9e2ec; border-radius: 3px; background: #fff; color: #1769c2; font-size: .875rem; font-weight: 600; text-decoration: none; box-shadow: 0 1px 4px rgba(0, 0, 0, .15); }
+    #tab-contact .office-map-link:hover { background: #f4f8fc; }
+    #tab-contact .contact-form-section { max-width: 900px; padding-top: 0; padding-bottom: 3rem; }
+    #tab-contact .contact-form-title { margin-bottom: .2rem; color: var(--text-main); font-size: 1.4rem; }
+    #tab-contact .contact-form-intro { margin-bottom: 1.5rem; color: var(--text-muted); font-size: .875rem; }
+    #tab-contact .contact-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.1rem; }
+    #tab-contact .contact-form-field label { display: block; margin-bottom: .4rem; color: var(--text-main); font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    #tab-contact .contact-form-field label span { color: var(--primary); }
+    #tab-contact .contact-form-field .form-control { min-height: 42px; padding: .65rem .8rem; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: .8rem; }
+    #tab-contact .contact-form-field select.form-control { color: var(--text-main); }
+    #tab-contact .contact-form-field textarea.form-control { min-height: 112px; resize: vertical; }
+    #tab-contact .contact-form-field-full { grid-column: 1 / -1; }
+    #tab-contact .contact-form-submit { margin-top: 1rem; }
+    #tab-contact .contact-form-submit .btn { min-width: 150px; justify-content: center; }
+    #tab-services .page-header { min-height: 330px; margin: 0; padding: 3rem 0; border-left: 5px solid var(--primary); background: #0a0a0a; }
+    #tab-services .page-header .container { padding-top: 0; padding-bottom: 0; }
+    #tab-services .services-eyebrow { margin-bottom: .65rem; }
+    #tab-services .services-page-title { color: #fff; font-size: clamp(2.5rem, 5vw, 3.1rem); line-height: 1.15; }
+    #tab-services .services-page-description { max-width: 710px; margin-top: .55rem; color: #d1d5db !important; font-size: 1.125rem; line-height: 1.5; }
+    #tab-services .services-deliver { background: var(--accent-card); }
+    #tab-services .services-deliver-inner { display: grid; grid-template-columns: minmax(240px, .7fr) minmax(0, 1.3fr); gap: 2rem; align-items: center; padding-top: 2.5rem; padding-bottom: 2.5rem; }
+    #tab-services .services-deliver-title { color: var(--text-main); font-size: 1.8rem; }
+    #tab-services .services-deliver-copy { color: var(--text-muted); font-size: 1.05rem; line-height: 1.65; }
+    #tab-services .service-detail-grid { max-width: 960px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem; margin: 0 auto; padding: 5.5rem 1.5rem 1rem; }
+    #tab-services .service-detail-card { min-width: 0; padding: 1.6rem; border: 1px solid #d6d6d6; border-radius: 4px; background: #f5f5f5; color: #1e293b; }
+    #tab-services .service-detail-card:first-child { border-left: 5px solid var(--primary); }
+    #tab-services .service-detail-heading { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.1rem; }
+    #tab-services .service-detail-icon { width: 38px; height: 38px; flex: 0 0 38px; display: grid; place-items: center; border-radius: 3px; background: #f8ebe1; color: #f36b0a; font-size: 1.15rem; }
+    #tab-services .service-detail-number { display: block; color: #475569; font-size: .65rem; line-height: 1.2; }
+    #tab-services .service-detail-title { color: #111827; font-size: 1.1rem; line-height: 1.3; }
+    #tab-services .service-detail-description { margin-bottom: 1rem; color: #475569; font-size: .78rem; line-height: 1.55; }
+    #tab-services .service-capabilities-title { margin-bottom: .55rem; color: #111827; font-size: .65rem; font-weight: 700; letter-spacing: .09em; }
+    #tab-services .service-capabilities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem .8rem; list-style: none; }
+    #tab-services .service-capabilities li { display: flex; align-items: flex-start; gap: .45rem; color: #64748b; font-size: .72rem; line-height: 1.4; }
+    #tab-services .service-capabilities i { margin-top: .1rem; color: #f36b0a; font-size: .75rem; }
+    #tab-services .services-cards { padding-top: 3rem; }
+    #tab-services .industries-section { padding: 3.5rem 0 4.75rem; background: #F4EFEA; }
+    #tab-services .industries-title { margin-bottom: 2rem; color: #111827; text-align: center; font-size: 1.8rem; }
+    #tab-services .industries-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+    #tab-services .industry-card { min-width: 0; padding: 1.25rem; border: 1px solid #d6d6d6; border-radius: 4px; background: #f5f5f5; }
+    #tab-services .industry-rule { width: 1.5rem; height: 3px; margin-bottom: .8rem; background: #f36b0a; }
+    #tab-services .industry-card h3 { margin-bottom: .4rem; color: #111827; font-size: 1rem; line-height: 1.35; }
+    #tab-services .industry-card p { color: #64748b; font-size: .75rem; line-height: 1.55; }
+    #tab-services .services-cta { padding: 4.5rem 1.5rem; background: #0a0a0a; color: #fff; text-align: center; }
+    #tab-services .services-cta h2 { color: #fff; font-size: 1.8rem; }
+    #tab-services .services-cta p { max-width: 620px; margin: .75rem auto 1.25rem; color: #d1d5db; }
+    @media (max-width: 520px) {
+      #tab-contact .office-section { padding-top: 1rem; }
+      #tab-contact .office-map { height: 300px; margin-top: 1.5rem; }
+      #tab-contact .contact-form-grid { grid-template-columns: 1fr; }
+      #tab-contact .contact-form-field-full { grid-column: auto; }
+    }
+    @media (max-width: 768px) {
+      #tab-services .page-header { min-height: 330px; padding: 3rem 0; }
+      #tab-services .services-deliver-inner { grid-template-columns: 1fr; gap: .75rem; padding-top: 2rem; padding-bottom: 2rem; }
+      #tab-services .service-detail-grid { padding-top: 3rem; }
+      #tab-services .services-cards { padding-top: 2rem; }
+      #tab-services .industries-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 620px) {
+      #tab-services .service-detail-grid { grid-template-columns: 1fr; gap: 1rem; padding: 2rem 1.5rem .5rem; }
+      #tab-services .service-detail-card { padding: 1.25rem; }
+      #tab-services .service-capabilities { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 380px) {
+      #tab-services .service-capabilities { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      #tab-services .industries-section { padding: 2.5rem 0 3rem; }
+      #tab-services .industries-grid { grid-template-columns: 1fr; }
+      #tab-services .industries-title { font-size: 1.6rem; }
+      #tab-services .services-cta { padding: 3rem 1.25rem; }
+    }
+    .site-footer { margin-top: 0; padding: 2.75rem 0 1rem; border-top: 0; background: #090909; color: #d1d5db; }
+    .site-footer .footer-grid { display: grid; grid-template-columns: 1.35fr 1.2fr 1.3fr; gap: 3rem; margin-bottom: 2.75rem; }
+    .site-footer .footer-brand-mark { width: 30px; height: 34px; margin-bottom: 1.1rem; color: #c59b3f; }
+    .site-footer .footer-brand-copy { max-width: 330px; margin-bottom: 1.1rem; color: #c3c6ca; font-size: .76rem; line-height: 1.55; }
+    .site-footer .footer-certification { display: inline-flex; align-items: center; gap: .5rem; padding: .4rem .65rem; border: 1px solid #414141; color: #d1d5db; font-size: .62rem; font-weight: 600; letter-spacing: .04em; }
+    .site-footer .footer-certification i, .site-footer .footer-contact-icon { color: #f36b0a; }
+    .site-footer .footer-column-title { margin: .1rem 0 1rem; color: #9ca3af; font-size: .62rem; }
+    .site-footer .footer-link-list { display: grid; gap: .3rem; list-style: none; }
+    .site-footer .footer-link-list a { color: #d1d5db; font-size: .76rem; text-decoration: none; }
+    .site-footer .footer-link-list a:hover, .site-footer .footer-contact a:hover { color: #f36b0a; }
+    .site-footer .footer-contact-list { display: grid; gap: .75rem; list-style: none; }
+    .site-footer .footer-contact-list li { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: .5rem; align-items: start; color: #d1d5db; font-size: .72rem; line-height: 1.55; }
+    .site-footer .footer-contact-icon { margin-top: .15rem; }
+    .site-footer .footer-contact a { color: inherit; text-decoration: none; }
+    .site-footer .footer-bottom { border-color: #292929; padding-top: .85rem; color: #777; font-size: .62rem; }
+    #tab-about .page-header {
+      min-height: 322px;
+      margin: 0;
+      padding: 3.5rem 0;
+      border-left: 5px solid var(--primary);
+      background: linear-gradient(90deg, rgba(6, 10, 16, .9), rgba(6, 10, 16, .68)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=85') center 48% / cover no-repeat;
+    }
+    #tab-about .page-header .container { padding-top: 0; padding-bottom: 0; }
+    #tab-about .about-eyebrow { margin-bottom: .65rem; }
+    #tab-about .about-page-title { color: #fff; font-size: clamp(2.5rem, 5vw, 3.25rem); line-height: 1.1; }
+    #tab-about .about-page-description { max-width: 570px; margin-top: .65rem; color: #e5e7eb !important; font-size: .98rem; line-height: 1.55; }
+    #tab-about .about-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #090909; color: #fff; }
+    #tab-about .about-stat { min-height: 122px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .35rem; border-right: 1px solid #252525; text-align: center; }
+    #tab-about .about-stat:last-child { border-right: 0; }
+    #tab-about .about-stat-number { color: #f36b0a; font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; line-height: 1.1; }
+    #tab-about .about-stat-label { color: #9ca3af; font-family: 'Oswald', sans-serif; font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; }
+    #tab-about .about-story-content { padding-top: 3rem; }
+    #tab-about .about-story { grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); gap: 3rem; align-items: start; margin-bottom: 4rem !important; }
+    #tab-about .about-copy .badge-sub { margin-bottom: .85rem; font-size: .68rem; letter-spacing: .12em; }
+    #tab-about .about-copy h2 { margin-bottom: 1.6rem !important; font-size: 2.2rem !important; line-height: 1.15; }
+    #tab-about .about-story-rule { width: 2rem; height: 1px; margin: 0 0 1.5rem; background: var(--primary); }
+    #tab-about .about-copy p { margin-bottom: 1rem; color: var(--text-muted); font-size: .86rem; line-height: 1.62; }
+    #tab-about .about-image { min-height: 0; margin: 0; overflow: visible; background: transparent; }
+    #tab-about .about-image::after { content: ''; position: absolute; z-index: 0; left: -12px; bottom: -12px; width: 76px; height: 76px; border-bottom: 3px solid var(--primary); border-left: 3px solid var(--primary); pointer-events: none; }
+    #tab-about .about-image img { position: relative; z-index: 1; width: 100%; height: auto; min-height: 0; aspect-ratio: 4 / 3; object-fit: cover; }
+    #tab-about .about-policy { margin: 0 -24px 4rem; padding: 4rem max(24px, calc((100vw - 1280px) / 2)) 5rem; background: #F4EFEA; }
+    #tab-about .about-policy-heading { margin-bottom: 2.8rem; }
+    #tab-about .about-policy-eyebrow { margin-bottom: .7rem; font-size: .68rem; letter-spacing: .12em; }
+    #tab-about .about-policy-title { margin-bottom: .8rem; color: #111827; font-size: 2.2rem; line-height: 1.15; }
+    #tab-about .about-policy-intro { max-width: 560px; color: #64748b; font-size: .86rem; line-height: 1.6; }
+    #tab-about .about-policy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem 1.25rem; }
+    #tab-about .about-policy-card { min-width: 0; padding: 1.5rem 1.6rem; border-left: 1px solid var(--primary); background: #fff; }
+    #tab-about .about-policy-card h3 { margin-bottom: .65rem; color: #111827; font-size: .82rem; line-height: 1.35; }
+    #tab-about .about-policy-card p { color: #64748b; font-size: .76rem; line-height: 1.6; }
+    #tab-about .about-philosophy-section { margin: 0 0 4rem; }
+    #tab-about .about-philosophy-eyebrow { margin-bottom: .7rem; font-size: .68rem; letter-spacing: .12em; }
+    #tab-about .about-philosophy-title { margin-bottom: 2rem !important; color: #111827; font-size: 2.2rem !important; line-height: 1.15; }
+    #tab-about .about-philosophy-section .quote-box { max-width: 760px; margin: 2.2rem 0 2.8rem; padding: .75rem 1.6rem; border-left: 3px solid var(--primary); color: #111827; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-style: italic; font-weight: 700; line-height: 1.65; }
+    #tab-about .about-philosophy-section .check-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.35rem 1.6rem; margin-top: 0; }
+    #tab-about .about-philosophy-section .check-item { gap: .7rem; color: #64748b; }
+    #tab-about .about-philosophy-section .check-icon { flex: 0 0 auto; color: #f36b0a; font-size: .9rem; }
+    #tab-about .about-philosophy-section .check-item p { color: #64748b; font-size: .76rem; line-height: 1.6; }
+    #tab-about .about-partner-cta { margin: 4rem -24px 0; padding: 4rem max(24px, calc((100vw - 1280px) / 2)); border: 0; background: #090909; color: #fff; }
+    #tab-about .about-partner-copy { max-width: 560px; }
+    #tab-about .about-partner-rule { width: 2rem; height: 2px; margin-bottom: 1.25rem; background: #f36b0a; }
+    #tab-about .about-partner-cta h2 { color: #fff; font-size: 1.8rem !important; line-height: 1.2; }
+    #tab-about .about-partner-cta p { margin-top: .65rem !important; color: #cbd5e1 !important; font-size: .82rem; line-height: 1.55; }
+    #tab-about .about-partner-cta > .btn { flex: 0 0 auto; min-width: 145px; justify-content: center; padding: .85rem 1.1rem; font-size: .75rem; }
+    @media (max-width: 768px) {
+      .site-footer .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+      .site-footer .footer-brand-column { grid-column: 1 / -1; }
+      #tab-about .page-header { min-height: 322px; padding: 3rem 0; }
+      #tab-about .about-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #tab-about .about-stat:nth-child(2) { border-right: 0; }
+      #tab-about .about-stat:nth-child(-n+2) { border-bottom: 1px solid #252525; }
+      #tab-about .about-story { grid-template-columns: 1fr; gap: 2rem; }
+      #tab-about .about-image { max-width: 560px; width: calc(100% - 12px); margin: 0 12px 12px 0; }
+      #tab-about .about-policy { margin-right: -24px; margin-left: -24px; padding-top: 3rem; padding-bottom: 3.5rem; }
+      #tab-about .about-philosophy-section .check-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #tab-about .about-partner-cta { gap: 1.5rem; padding-top: 3rem; padding-bottom: 3rem; }
+    }
+    @media (max-width: 520px) {
+      #tab-about .about-policy-grid { grid-template-columns: 1fr; }
+      #tab-about .about-policy-title { font-size: 1.9rem; }
+      #tab-about .about-policy-card { padding: 1.25rem; }
+      #tab-about .about-philosophy-section .check-list { grid-template-columns: 1fr; }
+      #tab-about .about-philosophy-section .quote-box { padding-left: 1rem; font-size: 1rem; }
+      #tab-about .about-partner-cta { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 520px) {
+      .site-footer .footer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+      .site-footer .footer-brand-column { grid-column: auto; }
+      .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; gap: .5rem; }
+    }
+  </style>
 </head>
-<body class="font-sans antialiased overflow-x-hidden selection:bg-brand-orange selection:text-white">
+<body data-theme="light">
 
-    <header class="sticky top-0 z-50 transition-colors duration-300 border-b border-brand-border bg-[var(--header-bg)] shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Company Logo -->
-            <a href="#home" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 flex-shrink-0">
-                    <svg viewBox="0 0 100 100" class="w-full h-full text-brand-gold fill-current">
-                        <path d="M50,5 C25,5 5,25 5,50 C5,75 25,95 50,95 C75,95 95,75 95,50 C95,25 75,5 50,5 Z M50,12 C71,12 88,29 88,50 C88,71 71,88 50,88 C29,88 12,71 12,50 C12,29 29,12 50,12 Z" opacity="0.2"/>
-                        <path d="M50,15 C35,25 25,40 25,60 C35,50 45,45 55,45 C65,45 75,50 85,60 C75,35 65,20 50,15 Z" fill="#C59B3F"/>
-                        <circle cx="50" cy="32" r="6" fill="#D96B27"/>
-                        <path d="M30,65 L70,65 L50,85 Z" fill="#C59B3F"/>
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-heading text-2xl font-bold tracking-wider text-[#C59B3F] leading-none">SAPTAM</span>
-                    <span class="text-[9px] tracking-[0.25em] text-brand-textMuted font-semibold uppercase mt-1">INFRASTRUCTURE</span>
-                    <span class="text-[7px] tracking-[0.18em] text-brand-textMuted/70 font-medium uppercase">FROM VISION TO REALITY</span>
-                </div>
-            </a>
+  <!-- Header Navigation -->
+  <nav class="navbar">
+    <a class="brand" onclick="switchTab('home')">
+      <div class="brand-logo">SI</div>
+      <div class="brand-info">
+        <span class="brand-title">SAPTAM</span>
+        <span class="brand-subtitle">INFRASTRUCTURE</span>
+      </div>
+    </a>
 
-            <!-- Desktop Links -->
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="font-heading text-brand-orange text-lg font-semibold tracking-wide border-b-2 border-brand-orange pb-0.5">HOME</a>
-                <a href="#about" class="font-heading text-brand-textMain hover:text-brand-orange text-lg font-semibold tracking-wide transition-colors">ABOUT</a>
-                <a href="#services" class="font-heading text-brand-textMain hover:text-brand-orange text-lg font-semibold tracking-wide transition-colors">SERVICES</a>
-                <!--<a href="#projects" class="font-heading text-brand-textMain hover:text-brand-orange text-lg font-semibold tracking-wide transition-colors">PROJECTS</a>-->
-                <a href="#contact" class="font-heading text-brand-textMain hover:text-brand-orange text-lg font-semibold tracking-wide transition-colors">CONTACT</a>
-            </nav>
+    <ul class="nav-menu">
+      <li><a class="nav-link active" onclick="switchTab('home')" id="nav-home">HOME</a></li>
+      <li><a class="nav-link" onclick="switchTab('about')" id="nav-about">ABOUT US</a></li>
+      <li><a class="nav-link" onclick="switchTab('services')" id="nav-services">SERVICES</a></li>
+      <li><a class="nav-link" onclick="switchTab('contact')" id="nav-contact">CONTACT</a></li>
+    </ul>
 
-            <!-- Actions: Light/Dark Theme Switcher & Get a Quote CTA -->
-            <div class="flex items-center space-x-3 sm:space-x-4">
-                
-                <!-- Theme Switcher Button -->
-                <button id="themeToggleBtn" aria-label="Toggle Light and Dark Mode" class="p-2.5 rounded-full border border-brand-border text-brand-textMain hover:bg-brand-border/30 transition-all focus:outline-none">
-                    <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
-                </button>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <span id="theme-icon">☀️</span> <span id="theme-text">Light</span>
+      </button>
+      <button class="btn btn-primary" onclick="openModal()">GET A QUOTE</button>
+    </div>
+  </nav>
 
-                <!-- Get a Quote Button -->
-                <button onclick="openModal()" class="bg-brand-orange hover:bg-brand-orangeHover text-white font-heading text-base sm:text-lg font-semibold tracking-wider px-4 sm:px-6 py-2.5 transition-all shadow-md">
-                    GET A QUOTE
-                </button>
-
-                <!-- Mobile Navigation Toggle -->
-                <button id="mobileMenuBtn" class="md:hidden text-brand-textMain p-2 focus:outline-none">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
+  <!-- HOME TAB -->
+  <div id="tab-home" class="page-tab active">
+    <section class="home-hero">
+      <div class="home-hero-background" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=80" alt="">
+      </div>
+      <div class="home-hero-inner">
+        <div class="home-hero-grid">
+          <div class="home-hero-copy">
+            <div class="home-badge">EPCC SPECIALISTS — ISO 9001:2015</div>
+            <h1 class="home-hero-title">ENGINEERING<br>EXCELLENCE.<br><span>DELIVERED.</span></h1>
+            <div class="home-hero-rule"></div>
+            <p class="home-hero-description">ISO 9001:2015 certified EPCC specialists — Engineering, Procurement, Construction &amp; Commissioning for Chemical, Pharmaceutical, Power, and Infrastructure industries.</p>
+            <div class="home-hero-actions">
+              <button class="home-action home-action-primary" onclick="switchTab('services')">OUR SERVICES <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+              <button class="home-action home-action-outline" onclick="switchTab('contact')">CONTACT US</button>
             </div>
+          </div>
+          <div class="home-hero-badges">
+            <div class="home-hero-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>ISO 9001:2015 CERTIFIED</span></div>
+            <div class="home-hero-badge"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i><span>EPCC SPECIALISTS</span></div>
+            <div class="home-hero-badge"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>GUJARAT, INDIA</span></div>
+          </div>
         </div>
-
-        <!-- Mobile Navigation Drawer -->
-        <div id="mobileMenu" class="hidden md:hidden border-b border-brand-border bg-[var(--header-bg)] px-6 py-4 space-y-3">
-            <a href="#home" class="block font-heading text-brand-orange text-lg font-bold">HOME</a>
-            <a href="#about" class="block font-heading text-brand-textMain text-lg hover:text-brand-orange">ABOUT</a>
-            <a href="#services" class="block font-heading text-brand-textMain text-lg hover:text-brand-orange">SERVICES</a>
-            <a href="#projects" class="block font-heading text-brand-textMain text-lg hover:text-brand-orange">PROJECTS</a>
-            <a href="#contact" class="block font-heading text-brand-textMain text-lg hover:text-brand-orange">CONTACT</a>
-        </div>
-    </header>
-
-    <section id="home" class="relative min-h-[600px] lg:min-h-[680px] text-white flex items-center overflow-hidden bg-black">
-        <!-- Background Aerial Image -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b2?auto=format&fit=crop&w=2000&q=80" alt="Saptam EPCC Industrial Facility" class="w-full h-full object-cover object-center filter brightness-90">
-            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent"></div>
-        </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                
-                <!-- Left Hero Text Content -->
-                <div class="lg:col-span-8 space-y-6">
-                    <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-3 py-1 text-xs sm:text-sm font-semibold tracking-wider uppercase">
-                        <span>EPCC SPECIALISTS — ISO 9001:2015</span>
-                    </div>
-
-                    <h1 class="font-heading text-5xl sm:text-7xl lg:text-8xl font-bold uppercase tracking-tight leading-none text-white">
-                        ENGINEERING<br/>
-                        EXCELLENCE.<br/>
-                        <span class="text-brand-orange">DELIVERED.</span>
-                    </h1>
-
-                    <div class="w-20 h-1 bg-brand-orange my-4"></div>
-
-                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
-                        ISO 9001:2015 certified EPCC specialists — Engineering, Procurement, Construction & Commissioning for Chemical, Pharmaceutical, Power, and Infrastructure industries.
-                    </p>
-
-                    <div class="pt-4 flex flex-wrap gap-4 items-center">
-                        <a href="#services" class="bg-brand-orange hover:bg-brand-orangeHover text-white font-heading text-lg font-semibold px-7 py-3.5 flex items-center gap-3 transition-all shadow-lg">
-                            OUR SERVICES <i class="fa-solid fa-arrow-right text-sm"></i>
-                        </a>
-                        <a href="#contact" class="border border-white/60 hover:border-white hover:bg-white/10 text-white font-heading text-lg font-semibold px-7 py-3.5 transition-all">
-                            CONTACT US
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Badges -->
-                <div class="lg:col-span-4 flex flex-col justify-center space-y-3.5 mt-8 lg:mt-0">
-                    <div class="bg-black/50 backdrop-blur-md border border-white/15 p-4 flex items-center space-x-3">
-                        <div class="text-brand-orange text-lg">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-                        <span class="font-heading text-white text-sm sm:text-base font-semibold tracking-wider uppercase">ISO 9001:2015 CERTIFIED</span>
-                    </div>
-
-                    <div class="bg-black/50 backdrop-blur-md border border-white/15 p-4 flex items-center space-x-3">
-                        <div class="text-brand-orange text-lg">
-                            <i class="fa-solid fa-helmet-safety"></i>
-                        </div>
-                        <span class="font-heading text-white text-sm sm:text-base font-semibold tracking-wider uppercase">EPCC SPECIALISTS</span>
-                    </div>
-
-                    <div class="bg-black/50 backdrop-blur-md border border-white/15 p-4 flex items-center space-x-3">
-                        <div class="text-brand-orange text-lg">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <span class="font-heading text-white text-sm sm:text-base font-semibold tracking-wider uppercase">GUJARAT, INDIA</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+      </div>
     </section>
 
-    <section id="about" class="bg-[var(--feature-bg)] border-t border-b border-brand-border text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-800">
-                
-                <!-- Column 1 -->
-                <div class="pt-6 md:pt-0 md:px-6 first:px-0 space-y-2">
-                    <div class="w-12 h-1 bg-brand-orange mb-3"></div>
-                    <h3 class="font-heading text-2xl font-bold tracking-wide uppercase text-white">TURNKEY SOLUTIONS</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Single-point accountability from concept to commissioning — eliminating coordination gaps across disciplines.
-                    </p>
-                </div>
-
-                <!-- Column 2 -->
-                <div class="pt-6 md:pt-0 md:px-6 space-y-2">
-                    <div class="w-12 h-1 bg-brand-orange mb-3"></div>
-                    <h3 class="font-heading text-2xl font-bold tracking-wide uppercase text-white">ISO CERTIFIED QUALITY</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        ISO 9001:2015 certified processes ensuring consistent quality control, documentation, and delivery standards.
-                    </p>
-                </div>
-
-                <!-- Column 3 -->
-                <div class="pt-6 md:pt-0 md:px-6 space-y-2">
-                    <div class="w-12 h-1 bg-brand-orange mb-3"></div>
-                    <h3 class="font-heading text-2xl font-bold tracking-wide uppercase text-white">ON-TIME DELIVERY</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Streamlined project management with cost-effective systems that keep projects on schedule and within budget.
-                    </p>
-                </div>
-
-            </div>
+    <section class="home-values">
+      <div class="container home-values-grid">
+        <div class="home-value">
+          <div class="home-value-rule"></div>
+          <h2>TURNKEY SOLUTIONS</h2>
+          <p>Single-point accountability from concept to commissioning — eliminating coordination gaps across disciplines.</p>
         </div>
+        <div class="home-value">
+          <div class="home-value-rule"></div>
+          <h2>ISO CERTIFIED QUALITY</h2>
+          <p>ISO 9001:2015 certified processes ensuring consistent quality control, documentation, and delivery standards.</p>
+        </div>
+        <div class="home-value">
+          <div class="home-value-rule"></div>
+          <h2>ON-TIME DELIVERY</h2>
+          <p>Streamlined project management with cost-effective systems that keep projects on schedule and within budget.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="services" class="py-20 bg-brand-bg transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-left mb-12">
-                <span class="text-brand-orange font-heading text-base font-bold tracking-widest uppercase block mb-1">WHAT WE DO</span>
-                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-brand-textMain tracking-tight uppercase">
-                    END-TO-END EPCC CAPABILITIES
-                </h2>
-                <p class="text-brand-textMuted text-base sm:text-lg mt-3 max-w-3xl">
-                    Turnkey engineering solutions across the full project lifecycle — from design and procurement to construction and commissioning.
-                </p>
-            </div>
-
-            <!-- 8 Card Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-brand-border">
-                
-                <!-- Card 1 -->
-                <div class="p-8 border-b md:border-r border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
-                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
-                        CIVIL WORK
-                    </h3>
-                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
-                        Industrial buildings, clean rooms, R&D labs, equipment foundations, warehouses & workshops.
-                    </p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="p-8 border-b lg:border-r border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
-                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
-                        INFRASTRUCTURE
-                    </h3>
-                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
-                        Pre-fab structures, pipe racks, platforms, ladders, and structural steel systems.
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="p-8 border-b md:border-r border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
-                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
-                        PIPING WORKS
-                    </h3>
-                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
-                        IBR & NIBR piping spools, jacketed piping, fire lines, and lined piping systems.
-                    </p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="p-8 border-b border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
-                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
-                        CHEMICAL PROCESS EQUIPMENT
-                    </h3>
-                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
-                        Agitator reactors, distillation columns, scrubbers, pressure vessels, heat exchangers, and piping skids.
-                    </p>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="p-8 border-b md:border-r lg:border-b-0 border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
-                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
-                        ELECTRICAL WORK
-                    </h3>
-                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
-                        Substation design, HV/LV systems, 11KV–66KV transmission & distribution, SLD, cable schedules.
-                    </p>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="p-8 border-b lg:border-b-0 lg:border-r border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
-                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
-                        INDUSTRIAL WASTE WATER
-                    </h3>
-                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
-                        Multiple Effect Evaporators (MEE), Effluent Treatment Plants (ETP), and water management systems.
-                    </p>
-                </div>
-
-                <!-- Card 7 -->
-                <div class="p-8 border-b md:border-b-0 md:border-r border-brand-border bg-brand-card hover:bg-brand-border/10 transition-colors group">
-                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
-                        REFRIGERATION & COOLING
-                    </h3>
-                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
-                        Chilling plants, HVAC systems, and Air Handling Units (AHU) for industrial applications.
-                    </p>
-                </div>
-
-                <!-- Card 8 -->
-                <div class="p-8 bg-brand-card hover:bg-brand-border/10 transition-colors group">
-                    <h3 class="font-heading text-xl font-bold text-brand-textMain uppercase group-hover:text-brand-orange transition-colors">
-                        INSTRUMENTATION
-                    </h3>
-                    <p class="text-brand-textMuted text-sm mt-3 leading-relaxed">
-                        Instrumentation control, system architecture, PLC & SCADA programming, fire alarm systems.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="mt-12 text-center">
-                <a href="#contact" class="inline-flex items-center gap-2 font-heading text-brand-orange hover:text-brand-orangeHover text-lg font-bold tracking-wider uppercase transition-colors">
-                    VIEW ALL SERVICES <i class="fa-solid fa-chevron-right text-sm"></i>
-                </a>
-            </div>
-
+    <section class="home-services">
+      <div class="container">
+        <div class="home-services-heading">
+          <span class="badge-sub">WHAT WE DO</span>
+          <h2 class="home-services-title">END-TO-END EPCC CAPABILITIES</h2>
+          <p class="home-services-intro">Turnkey engineering solutions across the full project lifecycle — from design and procurement to construction and commissioning.</p>
         </div>
+        <div class="home-services-grid">
+          <article class="home-service"><h3>CIVIL WORK</h3><p>Industrial buildings, clean rooms, R&amp;D labs, equipment foundations, warehouses &amp; workshops.</p></article>
+          <article class="home-service"><h3>INFRASTRUCTURE</h3><p>Pre-fab structures, pipe racks, platforms, ladders, and structural steel systems.</p></article>
+          <article class="home-service"><h3>PIPING WORKS</h3><p>IBR &amp; NIBR piping spools, jacketed piping, fire lines, and lined piping systems.</p></article>
+          <article class="home-service"><h3>CHEMICAL PROCESS EQUIPMENT</h3><p>Agitator reactors, distillation columns, scrubbers, pressure vessels, heat exchangers, and piping skids.</p></article>
+          <article class="home-service"><h3>ELECTRICAL WORK</h3><p>Substation design, HV/LV systems, 11KV–66KV transmission &amp; distribution, SLD, cable schedules.</p></article>
+          <article class="home-service"><h3>INDUSTRIAL WASTE WATER</h3><p>Multiple Effect Evaporators (MEE), Effluent Treatment Plants (ETP), and water management systems.</p></article>
+          <article class="home-service"><h3>REFRIGERATION &amp; COOLING</h3><p>Chilling plants, HVAC systems, and Air Handling Units (AHU) for industrial applications.</p></article>
+          <article class="home-service"><h3>INSTRUMENTATION</h3><p>Instrumentation control, system architecture, PLC &amp; SCADA programming, fire alarm systems.</p></article>
+        </div>
+        <div class="home-services-link">
+          <button onclick="switchTab('services')">VIEW ALL SERVICES <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        </div>
+      </div>
     </section>
 
-    <section id="projects" class="bg-[var(--strip-bg)] py-10 border-t border-b border-brand-border transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap items-center justify-between gap-6 md:gap-8">
-                
-                <div class="font-heading text-brand-textMain text-lg md:text-xl font-bold uppercase tracking-wider pr-6 border-r-0 md:border-r-2 border-brand-border">
-                    INDUSTRIES WE SERVE
-                </div>
-
-                <div class="flex-1 flex flex-wrap items-center justify-around gap-6 text-brand-textMain font-heading text-xl md:text-2xl font-bold tracking-wider uppercase">
-                    <span class="hover:text-brand-orange transition-colors cursor-default">CHEMICALS</span>
-                    <span class="text-brand-border hidden sm:inline">|</span>
-                    <span class="hover:text-brand-orange transition-colors cursor-default">PHARMACEUTICALS</span>
-                    <span class="text-brand-border hidden sm:inline">|</span>
-                    <span class="hover:text-brand-orange transition-colors cursor-default">POWER</span>
-                    <span class="text-brand-border hidden sm:inline">|</span>
-                    <span class="hover:text-brand-orange transition-colors cursor-default">INFRASTRUCTURE</span>
-                </div>
-
-            </div>
+    <section class="home-industries" id="home-industries">
+      <div class="container home-industries-row">
+        <div class="home-industries-title">INDUSTRIES WE SERVE</div>
+        <div class="home-industry-list">
+          <span class="home-industry">CHEMICALS</span><span class="home-industry-divider" aria-hidden="true">|</span>
+          <span class="home-industry">PHARMACEUTICALS</span><span class="home-industry-divider" aria-hidden="true">|</span>
+          <span class="home-industry">POWER</span><span class="home-industry-divider" aria-hidden="true">|</span>
+          <span class="home-industry">INFRASTRUCTURE</span>
         </div>
+      </div>
     </section>
 
-    <section class="py-20 bg-brand-bg transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="bg-brand-card border border-brand-border shadow-xl p-8 sm:p-12 lg:p-16 relative overflow-hidden transition-colors duration-300">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    
-                    <div class="lg:col-span-8 space-y-6">
-                        <div class="w-12 h-1 bg-brand-orange"></div>
-                        <h2 class="font-heading text-4xl sm:text-5xl font-bold text-brand-textMain tracking-tight uppercase">
-                            READY TO START YOUR<br/>PROJECT?
-                        </h2>
-                        <p class="text-brand-textMuted text-base sm:text-lg max-w-xl">
-                            Discuss your engineering requirements with our EPCC specialists. We deliver precision-engineered solutions on time and within budget.
-                        </p>
-
-                        <div class="space-y-3 pt-2 text-brand-textMain font-medium text-sm sm:text-base">
-                            <a href="mailto:info@saptamindia.com" class="flex items-center gap-3 hover:text-brand-orange transition-colors">
-                                <i class="fa-regular fa-envelope text-brand-orange text-lg"></i>
-                                <span>info@saptamindia.com</span>
-                            </a>
-                            <a href="tel:+919537533569" class="flex items-center gap-3 hover:text-brand-orange transition-colors">
-                                <i class="fa-solid fa-phone text-brand-orange text-lg"></i>
-                                <span>+91-9537533569</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-4 flex justify-start lg:justify-end">
-                        <button onclick="openModal()" class="bg-brand-orange hover:bg-brand-orangeHover text-white font-heading text-xl font-bold uppercase px-8 py-4 flex items-center gap-3 transition-all shadow-lg transform hover:-translate-y-0.5">
-                            GET IN TOUCH <i class="fa-solid fa-arrow-right text-sm"></i>
-                        </button>
-                    </div>
-
-                </div>
+    <section class="home-contact-prompt">
+      <div class="container">
+        <div class="home-contact-panel">
+          <div>
+            <div class="home-contact-rule"></div>
+            <h2 class="home-contact-title">READY TO START YOUR<br>PROJECT?</h2>
+            <p class="home-contact-description">Discuss your engineering requirements with our EPCC specialists. We deliver precision-engineered solutions on time and within budget.</p>
+            <div class="home-contact-details">
+              <a href="mailto:info@saptamindia.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i><span>info@saptamindia.com</span></a>
+              <a href="tel:+919537533569"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>+91-9537533569</span></a>
             </div>
-
+          </div>
+          <button class="home-action home-action-primary home-contact-cta" onclick="openModal()">GET IN TOUCH <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
         </div>
+      </div>
     </section>
+  </div>
 
-    <footer id="contact" class="bg-[var(--footer-bg)] text-gray-300 pt-16 pb-8 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-gray-800">
-                
-                <div class="md:col-span-5 space-y-6">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 flex-shrink-0">
-                            <svg viewBox="0 0 100 100" class="w-full h-full text-brand-gold fill-current">
-                                <path d="M50,15 C35,25 25,40 25,60 C35,50 45,45 55,45 C65,45 75,50 85,60 C75,35 65,20 50,15 Z" fill="#C59B3F"/>
-                                <circle cx="50" cy="32" r="6" fill="#D96B27"/>
-                            </svg>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="font-heading text-2xl font-bold tracking-wider text-white leading-none">SAPTAM</span>
-                            <span class="text-[9px] tracking-[0.2em] text-gray-400 font-semibold uppercase mt-0.5">INFRASTRUCTURE</span>
-                        </div>
-                    </div>
-
-                    <p class="text-gray-400 text-sm leading-relaxed max-w-md">
-                        ISO 9001:2015 certified EPCC company delivering turnkey engineering solutions for Chemical, Pharmaceutical, Power, and Infrastructure industries.
-                    </p>
-
-                    <div class="inline-flex items-center gap-2 border border-white/20 px-4 py-2 text-xs font-heading tracking-wider uppercase text-gray-300">
-                        <i class="fa-solid fa-shield-halved text-brand-orange"></i> ISO 9001:2015 CERTIFIED
-                    </div>
-                </div>
-
-                <div class="md:col-span-3 space-y-4">
-                    <h4 class="font-heading text-lg font-bold uppercase tracking-wider text-white">QUICK LINKS</h4>
-                    <ul class="space-y-2.5 text-sm">
-                        <li><a href="#home" class="hover:text-brand-orange transition-colors">Home</a></li>
-                        <li><a href="#about" class="hover:text-brand-orange transition-colors">About Us</a></li>
-                        <li><a href="#services" class="hover:text-brand-orange transition-colors">Services</a></li>
-                        <li><a href="#projects" class="hover:text-brand-orange transition-colors">Projects</a></li>
-                        <li><a href="#contact" class="hover:text-brand-orange transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="md:col-span-4 space-y-4">
-                    <h4 class="font-heading text-lg font-bold uppercase tracking-wider text-white">CONTACT US</h4>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot text-brand-orange text-base mt-1"></i>
-                            <span>Block no 723/P, Behind Gurukrupa Farm, Savli Manjusar Road, Manjusar, Vadodara, Gujarat 391775</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-regular fa-envelope text-brand-orange text-base"></i>
-                            <a href="mailto:info@saptamindia.com" class="hover:text-white transition-colors">info@saptamindia.com</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-brand-orange text-base"></i>
-                            <a href="tel:+919537533569" class="hover:text-white transition-colors">+91-9537533569</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-                <p>© 2026 Saptam Infrastructure. All rights reserved.</p>
-                <p class="uppercase tracking-wider">EPCC — Engineering, Procurement, Construction & Commissioning</p>
-            </div>
-        </div>
-    </footer>
-
-    <div id="quoteModal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center hidden p-4">
-        <div class="bg-brand-card border border-brand-border max-w-lg w-full p-8 shadow-2xl relative border-t-4 border-t-brand-orange transition-colors duration-300">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-brand-textMuted hover:text-brand-textMain text-xl p-2 focus:outline-none">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <h3 class="font-heading text-3xl font-bold uppercase text-brand-textMain mb-2">REQUEST A QUOTE</h3>
-            <p class="text-brand-textMuted text-sm mb-6">Fill out the details below and our EPCC engineering team will get back to you shortly.</p>
-
-            <form id="quoteForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-semibold uppercase text-brand-textMain mb-1">Full Name *</label>
-                    <input type="text" required class="w-full bg-brand-bg border border-brand-border text-brand-textMain p-3 text-sm focus:border-brand-orange focus:outline-none" placeholder="John Doe">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold uppercase text-brand-textMain mb-1">Email Address *</label>
-                    <input type="email" required class="w-full bg-brand-bg border border-brand-border text-brand-textMain p-3 text-sm focus:border-brand-orange focus:outline-none" placeholder="john@company.com">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold uppercase text-brand-textMain mb-1">Phone Number *</label>
-                    <input type="tel" required class="w-full bg-brand-bg border border-brand-border text-brand-textMain p-3 text-sm focus:border-brand-orange focus:outline-none" placeholder="+91 9876543210">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold uppercase text-brand-textMain mb-1">Select Industry</label>
-                    <select class="w-full bg-brand-bg border border-brand-border text-brand-textMain p-3 text-sm focus:border-brand-orange focus:outline-none">
-                        <option>Chemicals</option>
-                        <option>Pharmaceuticals</option>
-                        <option>Power</option>
-                        <option>Infrastructure</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold uppercase text-brand-textMain mb-1">Project Requirements</label>
-                    <textarea rows="3" class="w-full bg-brand-bg border border-brand-border text-brand-textMain p-3 text-sm focus:border-brand-orange focus:outline-none" placeholder="Brief details about scope, requirements, timeline..."></textarea>
-                </div>
-
-                <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-heading text-lg font-bold uppercase py-3 transition-colors mt-2">
-                    SUBMIT INQUIRY
-                </button>
-            </form>
-
-            <div id="successMsg" class="hidden text-center py-8 space-y-3">
-                <div class="text-emerald-500 text-5xl">
-                    <i class="fa-regular fa-circle-check"></i>
-                </div>
-                <h4 class="font-heading text-2xl font-bold uppercase text-brand-textMain">INQUIRY RECEIVED</h4>
-                <p class="text-brand-textMuted text-sm">Thank you for reaching out. Our technical team will get in touch with you within 24 business hours.</p>
-                <button onclick="closeModal()" class="mt-4 bg-brand-orange text-white font-heading px-6 py-2 uppercase text-sm">CLOSE</button>
-            </div>
-        </div>
+  <!-- ABOUT US TAB -->
+  <div id="tab-about" class="page-tab">
+    <div class="page-header">
+      <div class="container">
+        <span class="badge-sub about-eyebrow">ABOUT SAPTAM INFRASTRUCTURE</span>
+        <h1 class="page-title about-page-title">PIONEERS IN EPCC ENGINEERING</h1>
+        <p class="about-page-description">Based in Vadodara, Gujarat, Saptam Infrastructure is an ISO 9001:2015 certified EPCC company delivering turnkey engineering solutions across Chemical, Pharmaceutical, Power, and Infrastructure industries.</p>
+      </div>
     </div>
 
-    <script>
-        // Light & Dark Theme Controller
-        const themeToggleBtn = document.getElementById('themeToggleBtn');
-        const themeIcon = document.getElementById('themeIcon');
-        const htmlElement = document.documentElement;
+    <section class="about-stats" aria-label="Company facts">
+      <div class="about-stat"><span class="about-stat-number">ISO 9001:2015</span><span class="about-stat-label">Certified Quality System</span></div>
+      <div class="about-stat"><span class="about-stat-number">EPCC</span><span class="about-stat-label">Full Lifecycle Delivery</span></div>
+      <div class="about-stat"><span class="about-stat-number">4+</span><span class="about-stat-label">Industries Served</span></div>
+      <div class="about-stat"><span class="about-stat-number">8</span><span class="about-stat-label">Engineering Disciplines</span></div>
+    </section>
 
-        // Load saved theme or default to light
-        const savedTheme = localStorage.getItem('saptam_theme') || 'light';
-        if (savedTheme === 'dark') {
-            htmlElement.classList.add('dark');
-            themeIcon.className = 'fa-solid fa-sun text-yellow-400 text-lg';
-        } else {
-            htmlElement.classList.remove('dark');
-            themeIcon.className = 'fa-solid fa-moon text-lg';
-        }
+    <div class="container about-story-content">
+      <section class="about-story">
+        <div class="about-copy">
+          <span class="badge-sub">OUR STORY</span>
+          <h2>WHO WE ARE</h2>
+          <div class="about-story-rule"></div>
+          <p>Saptam Infrastructure (SI) is one of the pioneers in EPCC (Engineering, Procurement, Construction &amp; Commissioning) based in Vadodara, Gujarat. We have established ourselves as turnkey solution providers for Chemicals, Pharmaceuticals, Power, and Infrastructure Industries.</p>
+          <p>We deal with a wide range of services which includes design, engineering, material procurement, manufacturing, supply of plant and equipment, field services, construction, and project management in the fields of mechanical, piping, electrical, instrumentation, fabrication and erection — including heavy structures and equipment.</p>
+          <p>As an organization, we provide customization as required, offer guidelines for the latest economical processes and technologies for process improvement. Our approach toward construction management — streamlined, cost-effective, and state-of-the-art — has helped us deliver projects on time and within budget, while adhering to strict quality control and safety measures.</p>
+        </div>
+        <figure class="about-image">
+          <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Industrial process piping and equipment at a refinery" loading="lazy">
+        </figure>
+      </section>
 
-        // Toggle action
-        themeToggleBtn.addEventListener('click', () => {
-            if (htmlElement.classList.contains('dark')) {
-                htmlElement.classList.remove('dark');
-                themeIcon.className = 'fa-solid fa-moon text-lg';
-                localStorage.setItem('saptam_theme', 'light');
-            } else {
-                htmlElement.classList.add('dark');
-                themeIcon.className = 'fa-solid fa-sun text-yellow-400 text-lg';
-                localStorage.setItem('saptam_theme', 'dark');
-            }
-        });
+      <section class="about-policy">
+        <div class="about-policy-heading">
+          <span class="badge-sub about-policy-eyebrow">OUR COMMITMENT</span>
+          <h2 class="about-policy-title">OUR COMPANY POLICY</h2>
+          <p class="about-policy-intro">At Saptam Infrastructure, we are committed to the highest standards of quality, safety, and continuous improvement.</p>
+        </div>
+        <div class="about-policy-grid">
+          <article class="about-policy-card">
+            <h3>CUSTOMER SATISFACTION</h3>
+            <p>We meet customer requirements, standards, and specifications to achieve maximum customer satisfaction with unerring regularity on a lasting basis.</p>
+          </article>
+          <article class="about-policy-card">
+            <h3>CONTINUAL IMPROVEMENT</h3>
+            <p>We make continual improvements by adopting a process approach and involvement of employees for the effectiveness of quality management.</p>
+          </article>
+          <article class="about-policy-card">
+            <h3>LEADERSHIP &amp; GROWTH</h3>
+            <p>We provide efficient leadership, encourage creativity, and impart training to develop individual capabilities and support organizational growth.</p>
+          </article>
+          <article class="about-policy-card">
+            <h3>SAFETY, HEALTH &amp; ENVIRONMENT</h3>
+            <p>We maintain the highest standards of safety, health, and environment by promoting safe work practices and minimizing environmental impact.</p>
+          </article>
+        </div>
+      </section>
 
-        // Mobile Menu Drawer Handler
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
+      <section class="about-philosophy-section">
+        <span class="badge-sub about-philosophy-eyebrow">WHAT DRIVES US</span>
+        <h2 class="about-philosophy-title">OUR PHILOSOPHY</h2>
+        
+        <div class="quote-box">
+          "Excellence is our way of life. It is not an attribute or end result — it is the attitude with which all our business processes are created and sustained."
+        </div>
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        <div class="check-list">
+          <div class="check-item">
+            <span class="check-icon">&#10003;</span>
+            <p>We look after individuals of highest integrity, professionalism, and self-esteem and provide an ambiance where they are able to realize their fullest potential.</p>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">&#10003;</span>
+            <p>The touchstones of all our transactions with employees, suppliers, and service providers shall be fairness, equitability, transparency, and consistency.</p>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">&#10003;</span>
+            <p>We take care of our commitments to customers as sacred covenants and shall leave no stone unturned to fulfill them.</p>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">&#10003;</span>
+            <p>We are committed to the health and safety of our employees and shall not categorize any person on the basis of gender, class, caste, religion, ethnicity, or domicile.</p>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">&#10003;</span>
+            <p>We remain steadfast in our commitment to protect the environment and minimize our footprint beyond what is absolutely essential in sustaining our business.</p>
+          </div>
+        </div>
+      </section>
 
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+      <div class="cta-banner about-partner-cta">
+        <div class="about-partner-copy">
+          <div class="about-partner-rule"></div>
+          <h2>PARTNER WITH US</h2>
+          <p>Bring your next engineering project to a team that delivers precision, quality, and accountability at every stage.</p>
+        </div>
+        <button class="btn btn-primary" onclick="openModal()">GET IN TOUCH &rarr;</button>
+      </div>
+    </div>
+  </div>
 
-        // Get A Quote Modal Handler
-        const modal = document.getElementById('quoteModal');
-        const quoteForm = document.getElementById('quoteForm');
-        const successMsg = document.getElementById('successMsg');
+  <!-- SERVICES TAB -->
+  <div id="tab-services" class="page-tab">
+    <div class="page-header">
+      <div class="container">
+        <span class="badge-sub services-eyebrow">OUR SERVICES</span>
+        <h1 class="page-title services-page-title">End-to-End EPCC Engineering Solutions</h1>
+        <p class="services-page-description">From concept to commissioning, Saptam Infrastructure delivers precision-engineered solutions across 8 core disciplines — serving Chemical, Pharmaceutical, Power, and Infrastructure industries.</p>
+      </div>
+    </div>
 
-        function openModal() {
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
+    <section class="services-deliver">
+      <div class="container services-deliver-inner">
+        <h2 class="services-deliver-title">What We Deliver</h2>
+        <p class="services-deliver-copy">As a full-scope EPCC company, we manage every phase of your project — Engineering, Procurement, Construction, and Commissioning — under one roof. Our multidisciplinary team ensures seamless coordination, strict quality control, and on-time delivery.</p>
+      </div>
+    </section>
 
-        function closeModal() {
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-            setTimeout(() => {
-                quoteForm.classList.remove('hidden');
-                successMsg.classList.add('hidden');
-                quoteForm.reset();
-            }, 300);
-        }
+    <section class="service-detail-grid" aria-label="Detailed service capabilities">
+      <article class="service-detail-card">
+        <div class="service-detail-heading">
+          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <div>
+            <span class="service-detail-number">01</span>
+            <h2 class="service-detail-title">Design &amp; Engineering</h2>
+          </div>
+        </div>
+        <p class="service-detail-description">Our engineering team delivers FEED (Front-End Engineering Design) and detailed engineering services covering process, mechanical, piping, civil/structural, electrical, and instrumentation disciplines. We produce fully coordinated design packages — P&amp;IDs, equipment layouts, isometrics, structural drawings, and 3D models — that form the backbone of every successful project.</p>
+        <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
+        <ul class="service-capabilities">
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Process design &amp; simulation</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>FEED and detailed engineering</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>P&amp;ID development</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>3D plant modelling</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Equipment sizing &amp; selection</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Hazard &amp; operability studies (HAZOP)</span></li>
+        </ul>
+      </article>
 
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            quoteForm.classList.add('hidden');
-            successMsg.classList.remove('hidden');
-        }
+      <article class="service-detail-card">
+        <div class="service-detail-heading">
+          <span class="service-detail-icon"><i class="fa-solid fa-cube" aria-hidden="true"></i></span>
+          <div>
+            <span class="service-detail-number">02</span>
+            <h2 class="service-detail-title">Procurement</h2>
+          </div>
+        </div>
+        <p class="service-detail-description">We manage the full procurement lifecycle — from vendor qualification and technical bid evaluation to expediting, inspection, and logistics. Our established supplier network ensures quality-compliant materials and equipment are delivered on schedule, reducing project risk and cost overruns.</p>
+        <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
+        <ul class="service-capabilities">
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Vendor qualification &amp; management</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Technical bid evaluation</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Material requisitions &amp; RFQs</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Expediting &amp; inspection</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Import/export logistics</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Inventory &amp; warehouse management</span></li>
+        </ul>
+      </article>
+    </section>
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-    </script>
+    <div class="container services-cards">
+      <div class="grid-4">
+        <div class="card">
+          <h3>CIVIL WORK</h3>
+          <p>Industrial buildings, clean rooms, R&D labs, equipment foundations, warehouses & workshops.</p>
+        </div>
+        <div class="card">
+          <h3>INFRASTRUCTURE</h3>
+          <p>Pre-fab structures, pipe racks, platforms, ladders, and structural steel systems.</p>
+        </div>
+        <div class="card">
+          <h3>PIPING WORKS</h3>
+          <p>IBR & NIBR piping spools, jacketed piping, fire lines, and lined piping systems.</p>
+        </div>
+        <div class="card">
+          <h3>CHEMICAL PROCESS EQUIPMENT</h3>
+          <p>Agitator reactors, distillation columns, scrubbers, pressure vessels, heat exchangers, and piping skids.</p>
+        </div>
+        <div class="card">
+          <h3>ELECTRICAL WORK</h3>
+          <p>Substation design, HV/LV systems, 11KV-66KV transmission & distribution, SLD, cable schedules.</p>
+        </div>
+        <div class="card">
+          <h3>INDUSTRIAL WASTE WATER</h3>
+          <p>Multiple Effect Evaporators (MEE), Effluent Treatment Plants (ETP), and water management systems.</p>
+        </div>
+        <div class="card">
+          <h3>REFRIGERATION & COOLING</h3>
+          <p>Chilling plants, HVAC systems, and Air Handling Units (AHU) for industrial applications.</p>
+        </div>
+        <div class="card">
+          <h3>INSTRUMENTATION</h3>
+          <p>Instrumentation control, system architecture, PLC & SCADA programming, fire alarm systems.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="industries-section">
+      <div class="container">
+        <h2 class="industries-title">Industries We Serve</h2>
+        <div class="industries-grid">
+          <article class="industry-card">
+            <div class="industry-rule"></div>
+            <h3>Chemical &amp; Petrochemical</h3>
+            <p>Process plants, storage terminals, and utility systems for bulk chemicals and petrochemical facilities.</p>
+          </article>
+          <article class="industry-card">
+            <div class="industry-rule"></div>
+            <h3>Pharmaceutical</h3>
+            <p>GMP-compliant process facilities, HVAC systems, and utility infrastructure for API and formulation plants.</p>
+          </article>
+          <article class="industry-card">
+            <div class="industry-rule"></div>
+            <h3>Power</h3>
+            <p>Balance-of-plant works, piping systems, and structural installations for thermal and renewable power projects.</p>
+          </article>
+          <article class="industry-card">
+            <div class="industry-rule"></div>
+            <h3>Infrastructure</h3>
+            <p>Industrial buildings, warehouses, water treatment plants, and civil infrastructure projects.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-cta">
+      <div class="container">
+        <h2>Ready to Start Your Project?</h2>
+        <p>Discuss your engineering requirements with our EPCC specialists. We deliver precision-engineered solutions on time and within budget.</p>
+        <button class="btn btn-primary" onclick="openModal()">GET IN TOUCH</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- CONTACT TAB -->
+  <div id="tab-contact" class="page-tab">
+    <div class="page-header">
+      <div class="container">
+        <span class="badge-sub">CONTACT US</span>
+        <h1 class="page-title">Let's Discuss Your Project</h1>
+        <h5>Reach out to our engineering team for project inquiries, <br>
+            technical consultations, or partnership opportunities.</h5>
+      </div>
+    </div>
+    <div class="container office-section">
+      <h1 class="office-title">Our Office</h1>
+      <div class="office-details">
+        <div class="office-item">
+          <span class="office-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+          <div>
+            <div class="office-label">Address</div>
+            <div class="office-value">Block no 723/P, Behind Gurukrupa Farm,<br>Savli Manjusar Road, Manjusar,<br>Vadodara, Gujarat — 391775</div>
+          </div>
+        </div>
+        <div class="office-item">
+          <span class="office-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+          <div>
+            <div class="office-label">Phone</div>
+            <div class="office-value"><a href="tel:+919537533569">+91 9537533569</a></div>
+          </div>
+        </div>
+        <div class="office-item">
+          <span class="office-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></span>
+          <div>
+            <div class="office-label">Email</div>
+            <div class="office-value"><a href="mailto:info@saptamindia.com">info@saptamindia.com</a></div>
+          </div>
+        </div>
+        <div class="office-item">
+          <span class="office-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></span>
+          <div>
+            <div class="office-label">Office Hours</div>
+            <div class="office-value">Mon – Sat: 9:00 AM – 6:00 PM IST</div>
+          </div>
+        </div>
+      </div>
+      <div class="office-map">
+        <iframe title="Map to Saptam Infrastructure office" src="https://maps.google.com/maps?q=Block%20no%20723%2FP%2C%20Behind%20Gurukrupa%20Farm%2C%20Savli%20Manjusar%20Road%2C%20Manjusar%2C%20Vadodara%2C%20Gujarat%20391775&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a class="office-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Block%20no%20723%2FP%2C%20Behind%20Gurukrupa%20Farm%2C%20Savli%20Manjusar%20Road%2C%20Manjusar%2C%20Vadodara%2C%20Gujarat%20391775" target="_blank" rel="noopener noreferrer">Open in Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <section class="container contact-form-section">
+      <h2 class="contact-form-title">Send Us a Message</h2>
+      <p class="contact-form-intro">Fill in the form below and our team will get back to you within one business day.</p>
+      <form onsubmit="handleFormSubmit(event)">
+        <div class="contact-form-grid">
+          <div class="contact-form-field">
+            <label for="contact-name">Full Name <span>*</span></label>
+            <input id="contact-name" name="name" type="text" class="form-control" required placeholder="Rajesh Sharma">
+          </div>
+          <div class="contact-form-field">
+            <label for="contact-company">Company / Organisation</label>
+            <input id="contact-company" name="company" type="text" class="form-control" placeholder="Acme Chemicals Ltd.">
+          </div>
+          <div class="contact-form-field">
+            <label for="contact-email">Email Address <span>*</span></label>
+            <input id="contact-email" name="email" type="email" class="form-control" required placeholder="rajesh@company.com">
+          </div>
+          <div class="contact-form-field">
+            <label for="contact-phone">Phone Number</label>
+            <input id="contact-phone" name="phone" type="tel" class="form-control" placeholder="+91 98765 43210">
+          </div>
+          <div class="contact-form-field contact-form-field-full">
+            <label for="contact-service">Service of Interest</label>
+            <select id="contact-service" name="service" class="form-control">
+              <option value="">Select a service...</option>
+              <option>Civil Work</option>
+              <option>Infrastructure</option>
+              <option>Piping Works</option>
+              <option>Chemical Process Equipment</option>
+              <option>Electrical Work</option>
+              <option>Industrial Waste Water</option>
+              <option>Refrigeration &amp; Cooling</option>
+              <option>Instrumentation</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="contact-form-field contact-form-field-full">
+            <label for="contact-message">Project Brief / Message <span>*</span></label>
+            <textarea id="contact-message" name="message" class="form-control" required placeholder="Briefly describe your project scope, industry, and timeline..."></textarea>
+          </div>
+        </div>
+        <div class="contact-form-submit">
+          <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-column">
+          <svg class="footer-brand-mark" viewBox="0 0 100 100" aria-label="Saptam Infrastructure logo" role="img">
+            <path d="M50,5 C25,5 5,25 5,50 C5,75 25,95 50,95 C75,95 95,75 95,50 C95,25 75,5 50,5 Z M50,12 C71,12 88,29 88,50 C88,71 71,88 50,88 C29,88 12,71 12,50 C12,29 29,12 50,12 Z" fill="currentColor" opacity=".35"/>
+            <path d="M50,15 C35,25 25,40 25,60 C35,50 45,45 55,45 C65,45 75,50 85,60 C75,35 65,20 50,15 Z" fill="currentColor"/>
+            <circle cx="50" cy="32" r="6" fill="#D96B27"/>
+            <path d="M30,65 L70,65 L50,85 Z" fill="currentColor"/>
+          </svg>
+          <p class="footer-brand-copy">ISO 9001:2015 certified EPCC company delivering turnkey engineering solutions for Chemical, Pharmaceutical, Power, and Infrastructure industries.</p>
+          <span class="footer-certification"><i class="fa-regular fa-shield-halved" aria-hidden="true"></i> ISO 9001:2015 CERTIFIED</span>
+        </div>
+        <div>
+          <h4 class="footer-column-title">QUICK LINKS</h4>
+          <ul class="footer-link-list">
+            <li><a href="#" onclick="switchTab('home'); return false;">Home</a></li>
+            <li><a href="#" onclick="switchTab('about'); return false;">About Us</a></li>
+            <li><a href="#" onclick="switchTab('services'); return false;">Services</a></li>
+            <!-- <li><a href="#home-industries" onclick="switchTab('home'); window.setTimeout(() => document.getElementById('home-industries').scrollIntoView({ behavior: 'smooth' }), 350); return false;">Projects</a></li> -->
+            <li><a href="#" onclick="switchTab('contact'); return false;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-column-title">CONTACT US</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fa-solid fa-location-dot footer-contact-icon" aria-hidden="true"></i><span>Block no 723/P, Behind Gurukrupa Farm,<br>Savli Manjusar Road, Manjusar,<br>Vadodara, Gujarat 391775</span></li>
+            <li><i class="fa-regular fa-envelope footer-contact-icon" aria-hidden="true"></i><a href="mailto:info@saptamindia.com">info@saptamindia.com</a></li>
+            <li><i class="fa-solid fa-phone footer-contact-icon" aria-hidden="true"></i><a href="tel:+919537533569">+91-9537533569</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Saptam Infrastructure. All rights reserved.</span>
+        <span>EPCC — Engineering, Procurement, Construction &amp; Commissioning</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="quoteModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h2 style="margin-bottom: 0.5rem; font-size: 1.8rem;">GET A QUOTE</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Fill in your details below and our technical engineering team will get back to you within 24 hours.</p>
+      
+      <form onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" required placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea class="form-control" rows="3" required placeholder="Tell us about your project..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">SEND REQUEST</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Tab Switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.page-tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+
+      document.getElementById('tab-' + tabId).classList.add('active');
+      const activeNav = document.getElementById('nav-' + tabId);
+      if (activeNav) activeNav.classList.add('active');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Theme Toggle
+    function toggleTheme() {
+      const body = document.body;
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', newTheme);
+
+      document.getElementById('theme-icon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+      document.getElementById('theme-text').textContent = newTheme === 'dark' ? 'Light' : 'Dark';
+    }
+
+    // Modal Handlers
+    function openModal() {
+      document.getElementById('quoteModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('quoteModal').classList.remove('active');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      alert('Thank you for reaching out! Your inquiry has been submitted successfully.');
+      closeModal();
+    }
+  </script>
 </body>
 </html>
