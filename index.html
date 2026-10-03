@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Saptam Infrastructure — Engineering Excellence. Delivered.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -61,7 +64,13 @@
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4, .brand-text, .nav-link, .btn {
+    h1,
+    h2,
+    h3,
+    h4,
+    .brand-text,
+    .nav-link,
+    .btn {
       font-family: 'Oswald', sans-serif;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -86,6 +95,15 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
+      cursor: pointer;
+    }
+
+    .brand-logo-img {
+      height: 52px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .brand-logo {
@@ -135,7 +153,8 @@
       position: relative;
     }
 
-    .nav-link.active, .nav-link:hover {
+    .nav-link.active,
+    .nav-link:hover {
       color: var(--primary);
     }
 
@@ -217,8 +236,15 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Hero Section */
@@ -472,10 +498,22 @@
     }
 
     @media (max-width: 768px) {
-      .navbar { flex-direction: column; gap: 1rem; }
-      .grid-2 { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .hero-title { font-size: 2.8rem; }
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+      }
     }
 
     :root {
@@ -495,14 +533,34 @@
       --accent-bg-light: #F4EFEA;
     }
 
-    *, *::before, *::after { box-sizing: border-box; }
-    * { font-family: 'Inter', sans-serif; }
-    h1, h2, h3, h4, .brand-text, .brand-title, .nav-link, .btn,
-    .badge-sub, .stat-number, .stat-label {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .brand-text,
+    .brand-title,
+    .nav-link,
+    .btn,
+    .badge-sub,
+    .stat-number,
+    .stat-label {
       font-family: 'Oswald', sans-serif;
       letter-spacing: 0.03em;
     }
-    body { line-height: 1.6; }
+
+    body {
+      line-height: 1.6;
+    }
 
     .navbar {
       min-height: 80px;
@@ -512,6 +570,7 @@
       backdrop-filter: blur(12px);
       box-shadow: 0 2px 8px rgba(13, 14, 17, 0.08);
     }
+
     .brand-logo {
       background: transparent;
       border-radius: 0;
@@ -521,6 +580,7 @@
       font-size: 0;
       position: relative;
     }
+
     .brand-logo::before {
       content: 'S';
       display: grid;
@@ -531,22 +591,57 @@
       border-radius: 50%;
       font: 700 28px 'Oswald', sans-serif;
     }
-    .brand-title { color: #C59B3F; }
-    .brand-subtitle { letter-spacing: 2px; }
-    .nav-menu { gap: 2rem; }
-    .nav-link { font-size: 1.1rem; }
-    .btn { border-radius: 0; transition: background-color .2s, color .2s, border-color .2s; }
-    .btn-primary { background: var(--primary); }
+
+    .brand-title {
+      color: #C59B3F;
+    }
+
+    .brand-subtitle {
+      letter-spacing: 2px;
+    }
+
+    .nav-menu {
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      border-radius: 0;
+      transition: background-color .2s, color .2s, border-color .2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+    }
 
     .hero {
       min-height: 680px;
-      background-image: linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.75) 58%, rgba(0,0,0,.25)), url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b2?auto=format&fit=crop&w=2000&q=80');
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, .94), rgba(0, 0, 0, .75) 58%, rgba(0, 0, 0, .25)), url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b2?auto=format&fit=crop&w=2000&q=80');
     }
-    .hero-title { font-size: clamp(3.4rem, 7vw, 6rem); }
-    .badge-sub { color: var(--primary); }
-    .stats-strip { background: var(--accent-card); padding: 2.5rem 0; }
-    .stat-number { font-size: 2.1rem; }
-    .stat-label { color: var(--text-muted); }
+
+    .hero-title {
+      font-size: clamp(3.4rem, 7vw, 6rem);
+    }
+
+    .badge-sub {
+      color: var(--primary);
+    }
+
+    .stats-strip {
+      background: var(--accent-card);
+      padding: 2.5rem 0;
+    }
+
+    .stat-number {
+      font-size: 2.1rem;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+    }
 
     .page-header {
       position: relative;
@@ -557,19 +652,60 @@
       align-items: center;
       color: #fff;
       border: 0;
-      background: linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.62)), url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b2?auto=format&fit=crop&w=2000&q=80') center 48% / cover no-repeat;
+      background: linear-gradient(90deg, rgba(0, 0, 0, .92), rgba(0, 0, 0, .62)), url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b2?auto=format&fit=crop&w=2000&q=80') center 48% / cover no-repeat;
     }
-    .page-header .container { width: 100%; }
-    .page-header p { max-width: 780px; color: #D1D5DB !important; font-size: 1.05rem; }
-    .page-title { font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.05; }
-    .container { max-width: 1280px; }
-    .page-tab > .container { padding-bottom: 1rem; }
-    .grid-2 { gap: 4rem; }
-    .grid-4 { gap: 0; border: 1px solid var(--border); }
-    .card { border-radius: 0; padding: 1.75rem; }
-    .grid-4 .card { border: 0; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .grid-4 .card h3 { color: var(--text-main); }
-    .grid-4 .card:hover { border-top: 2px solid var(--primary); padding-top: calc(1.75rem - 1px); }
+
+    .page-header .container {
+      width: 100%;
+    }
+
+    .page-header p {
+      max-width: 780px;
+      color: #D1D5DB !important;
+      font-size: 1.05rem;
+    }
+
+    .page-title {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      line-height: 1.05;
+    }
+
+    .container {
+      max-width: 1280px;
+    }
+
+    .page-tab>.container {
+      padding-bottom: 1rem;
+    }
+
+    .grid-2 {
+      gap: 4rem;
+    }
+
+    .grid-4 {
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+
+    .card {
+      border-radius: 0;
+      padding: 1.75rem;
+    }
+
+    .grid-4 .card {
+      border: 0;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .grid-4 .card h3 {
+      color: var(--text-main);
+    }
+
+    .grid-4 .card:hover {
+      border-top: 2px solid var(--primary);
+      padding-top: calc(1.75rem - 1px);
+    }
 
     .about-story {
       display: grid;
@@ -578,20 +714,43 @@
       align-items: center;
       margin-bottom: 5rem !important;
     }
-    .about-copy p { margin-bottom: 1.2rem; color: var(--text-muted); }
-    .about-copy h2, .about-philosophy h2 { font-size: 2.6rem !important; }
-    .about-image { position: relative; min-height: 360px; overflow: hidden; background: #0D0E11; }
-    .about-image img { width: 100%; height: 100%; min-height: 360px; object-fit: cover; display: block; }
+
+    .about-copy p {
+      margin-bottom: 1.2rem;
+      color: var(--text-muted);
+    }
+
+    .about-copy h2,
+    .about-philosophy h2 {
+      font-size: 2.6rem !important;
+    }
+
+    .about-image {
+      position: relative;
+      min-height: 360px;
+      overflow: hidden;
+      background: #0D0E11;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      display: block;
+    }
+
     .about-image-caption {
       position: absolute;
       inset: auto 0 0;
       padding: 1.1rem 1.25rem;
-      background: linear-gradient(transparent, rgba(0,0,0,.88));
+      background: linear-gradient(transparent, rgba(0, 0, 0, .88));
       color: #fff;
       font: 600 1rem 'Oswald', sans-serif;
       letter-spacing: .08em;
       text-transform: uppercase;
     }
+
     .about-philosophy {
       margin: 0 -24px 4rem;
       padding: 4rem max(24px, calc((100vw - 1280px) / 2));
@@ -599,10 +758,23 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-    .quote-box { border-color: var(--primary); font-size: 1.25rem; }
-    .check-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .check-item { color: var(--text-muted); }
-    .check-icon { color: var(--primary); }
+
+    .quote-box {
+      border-color: var(--primary);
+      font-size: 1.25rem;
+    }
+
+    .check-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .check-item {
+      color: var(--text-muted);
+    }
+
+    .check-icon {
+      color: var(--primary);
+    }
 
     .cta-banner {
       border-radius: 0;
@@ -611,259 +783,1381 @@
       background: var(--accent-card);
       margin: 4rem 0;
     }
-    footer { background: var(--bg-dark); color: #D1D5DB; border-color: #30363D; }
-    footer h3, footer h4 { color: #fff; }
-    .footer-bottom { border-color: #30363D; }
-    .modal-card { border-radius: 0; border-top: 4px solid var(--primary); }
+
+    footer {
+      background: var(--bg-dark);
+      color: #D1D5DB;
+      border-color: #30363D;
+    }
+
+    footer h3,
+    footer h4 {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-color: #30363D;
+    }
+
+    .modal-card {
+      border-radius: 0;
+      border-top: 4px solid var(--primary);
+    }
 
     @media (max-width: 900px) {
-      .navbar { padding: 12px 20px; flex-wrap: wrap; }
-      .nav-menu { gap: 1.25rem; }
-      .nav-actions { gap: .5rem; }
-      .about-story { gap: 2rem; }
+      .navbar {
+        padding: 12px 20px;
+        flex-wrap: wrap;
+      }
+
+      .nav-menu {
+        gap: 1.25rem;
+      }
+
+      .nav-actions {
+        gap: .5rem;
+      }
+
+      .about-story {
+        gap: 2rem;
+      }
     }
+
     @media (max-width: 768px) {
-      .navbar { flex-direction: row; }
-      .nav-menu { order: 3; width: 100%; justify-content: space-between; gap: .75rem; overflow-x: auto; }
-      .nav-link { font-size: .95rem; white-space: nowrap; }
-      .nav-actions .theme-toggle { padding: .45rem .6rem; }
-      .nav-actions .btn { padding: .65rem .8rem; font-size: .78rem; }
-      .hero { min-height: 600px; }
-      .page-header { min-height: 300px; padding: 4rem 0 3rem; }
-      .about-story { grid-template-columns: 1fr; }
-      .about-image, .about-image img { min-height: 280px; max-height: 380px; }
-      .about-philosophy { margin-right: -24px; margin-left: -24px; }
-      .check-list { grid-template-columns: 1fr; }
-      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .navbar {
+        flex-direction: row;
+      }
+
+      .nav-menu {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: .75rem;
+        overflow-x: auto;
+      }
+
+      .nav-link {
+        font-size: .95rem;
+        white-space: nowrap;
+      }
+
+      .nav-actions .theme-toggle {
+        padding: .45rem .6rem;
+      }
+
+      .nav-actions .btn {
+        padding: .65rem .8rem;
+        font-size: .78rem;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .page-header {
+        min-height: 300px;
+        padding: 4rem 0 3rem;
+      }
+
+      .about-story {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image,
+      .about-image img {
+        min-height: 280px;
+        max-height: 380px;
+      }
+
+      .about-philosophy {
+        margin-right: -24px;
+        margin-left: -24px;
+      }
+
+      .check-list {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
+
     @media (max-width: 520px) {
-      .navbar { padding: 12px 16px; gap: 12px; }
-      .brand-logo { width: 36px; height: 36px; }
-      .brand-title { font-size: 1.25rem; }
-      .brand-subtitle { font-size: .58rem; }
-      .nav-actions { margin-left: auto; }
-      .nav-actions .theme-toggle { font-size: 0; gap: 0; }
-      .nav-actions .theme-toggle span:first-child { font-size: .9rem; }
-      .nav-actions .btn { font-size: .68rem; padding: .6rem .55rem; }
-      .grid-4 { grid-template-columns: 1fr; }
-      .grid-4 .card { border-right: 0; }
-      .hero-title { font-size: 2.8rem; }
-      .cta-banner { padding: 2rem 1.5rem; }
-      .modal-card { padding: 2rem 1.25rem; }
+      .navbar {
+        padding: 12px 16px;
+        gap: 12px;
+      }
+
+      .brand-logo-img {
+        height: 40px;
+      }
+
+      .brand-logo {
+        width: 36px;
+        height: 36px;
+      }
+
+      .brand-title {
+        font-size: 1.25rem;
+      }
+
+      .brand-subtitle {
+        font-size: .58rem;
+      }
+
+      .nav-actions {
+        margin-left: auto;
+      }
+
+      .nav-actions .theme-toggle {
+        font-size: 0;
+        gap: 0;
+      }
+
+      .nav-actions .theme-toggle span:first-child {
+        font-size: .9rem;
+      }
+
+      .nav-actions .btn {
+        font-size: .68rem;
+        padding: .6rem .55rem;
+      }
+
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-4 .card {
+        border-right: 0;
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .cta-banner {
+        padding: 2rem 1.5rem;
+      }
+
+      .modal-card {
+        padding: 2rem 1.25rem;
+      }
     }
 
     /* Home page sections carried over from index.html */
-    .home-hero { position: relative; min-height: 680px; display: flex; align-items: center; overflow: hidden; background: #000; color: #fff; }
-    .home-hero-background { position: absolute; inset: 0; }
-    .home-hero-background img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(.9); }
-    .home-hero-background::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #000, rgba(0, 0, 0, .85) 58%, transparent); }
-    .home-hero-inner { position: relative; z-index: 1; width: 100%; max-width: 1280px; margin: 0 auto; padding: 6rem 1.5rem; }
-    .home-hero-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; align-items: center; }
-    .home-hero-copy { grid-column: span 8; }
-    .home-hero-copy > * + * { margin-top: 1.5rem; }
-    .home-badge { display: inline-flex; padding: .25rem .75rem; border: 1px solid rgba(217, 107, 39, .4); background: rgba(217, 107, 39, .2); color: var(--primary); font-size: .875rem; font-weight: 600; text-transform: uppercase; }
-    .home-hero-title { color: #fff; font-size: 3rem; font-weight: 700; line-height: .98; }
-    .home-hero-title span { color: var(--primary); }
-    .home-hero-rule { width: 5rem; height: .25rem; margin-top: 1rem; background: var(--primary); }
-    .home-hero-description { max-width: 42rem; color: #d1d5db; font-size: 1.125rem; line-height: 1.7; }
-    .home-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; padding-top: .5rem; }
-    .home-action { display: inline-flex; align-items: center; gap: .75rem; padding: .875rem 1.75rem; color: #fff; font-family: 'Oswald', sans-serif; font-size: 1.125rem; font-weight: 600; text-decoration: none; transition: background-color .2s, border-color .2s; }
-    .home-action-primary { background: var(--primary); box-shadow: 0 8px 20px rgba(0, 0, 0, .25); }
-    .home-action-primary:hover { background: var(--primary-hover); }
-    .home-action-outline { border: 1px solid rgba(255, 255, 255, .6); }
-    .home-action-outline:hover { border-color: #fff; background: rgba(255, 255, 255, .1); }
-    .home-hero-badges { grid-column: span 4; display: flex; flex-direction: column; gap: .875rem; margin-top: 2rem; }
-    .home-hero-badge { display: flex; align-items: center; gap: .75rem; padding: 1rem; border: 1px solid rgba(255, 255, 255, .15); background: rgba(0, 0, 0, .5); backdrop-filter: blur(12px); }
-    .home-hero-badge i { color: var(--primary); font-size: 1.125rem; }
-    .home-hero-badge span { color: #fff; font-family: 'Oswald', sans-serif; font-size: .95rem; font-weight: 600; }
-    .home-values { padding: 3rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: #0d0e11; color: #fff; }
-    .home-values-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .home-value { padding: 0 1.5rem; }
-    .home-value:first-child { padding-left: 0; }
-    .home-value-rule { width: 3rem; height: .25rem; margin-bottom: .75rem; background: var(--primary); }
-    .home-value h2 { margin-bottom: .5rem; color: #fff; font-size: 1.5rem; }
-    .home-value p { color: #9ca3af; font-size: .875rem; line-height: 1.65; }
-    .home-services { padding: 1rem 0 2.5rem; background: #fff; }
-    .home-services-heading { margin-bottom: 3rem; }
-    .home-services-heading .badge-sub { margin-bottom: .55rem; font-size: .68rem; letter-spacing: .1em; }
-    .home-services-title { color: #111827; font-size: 2.5rem; line-height: 1.1; }
-    .home-services-intro { max-width: 33rem; margin-top: .9rem; color: #64748b; font-size: .86rem; line-height: 1.6; }
-    .home-services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .home-service { min-width: 0; min-height: 145px; padding: 1.35rem 1.4rem; border: 0; background: transparent; }
-    .home-service:nth-child(n+5) { border-top: 1px solid #d6d6d6; }
-    .home-service h3 { color: #111; font-size: .78rem; line-height: 1.4; }
-    .home-service p { margin-top: .45rem; color: #64748b; font-size: .68rem; line-height: 1.55; }
-    .home-services-link { display: flex; justify-content: center; margin-top: 1.1rem; }
-    .home-services-link button { display: inline-flex; align-items: center; gap: .5rem; border: 0; background: transparent; color: #f36b0a; font-family: 'Oswald', sans-serif; font-size: .7rem; font-weight: 600; cursor: pointer; }
-    .home-services-link button:hover { color: var(--primary-hover); }
-    .home-industries { padding: 1.55rem 0; border-top: 1px solid #ded8d2; border-bottom: 1px solid #ded8d2; background: #F4EFEA; }
-    .home-industries-row { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; }
-    .home-industries-title { flex: 0 0 auto; padding-right: 1.35rem; border-right: 1px solid #d8d1cb; color: #64748b; font-family: 'Oswald', sans-serif; font-size: .65rem; font-weight: 500; letter-spacing: .08em; }
-    .home-industry-list { display: flex; flex: 1; align-items: center; justify-content: space-around; }
-    .home-industry { padding: 0 1.15rem; color: #111827; font-family: 'Oswald', sans-serif; font-size: .84rem; font-weight: 700; white-space: nowrap; }
-    .home-industry-divider { width: 1px; height: 20px; flex: 0 0 1px; overflow: hidden; background: #d8d1cb; color: transparent; font-size: 0; }
-    .home-contact-prompt { padding: 4.75rem 0; background: #fff; }
-    .home-contact-panel { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: center; padding: 2.8rem; border: 1px solid #d6d6d6; background: #fff; }
-    .home-contact-rule { width: 2rem; height: 2px; margin-bottom: 1.25rem; background: #f36b0a; }
-    .home-contact-title { color: #111827; font-size: 2rem; line-height: 1.15; }
-    .home-contact-description { max-width: 430px; margin-top: .85rem; color: #64748b; font-size: .85rem; line-height: 1.65; }
-    .home-contact-details { display: grid; gap: .55rem; margin-top: 1.5rem; }
-    .home-contact-details a { display: flex; align-items: center; gap: .65rem; color: #111827; font-size: .75rem; text-decoration: none; }
-    .home-contact-details i { color: #f36b0a; }
-    .home-contact-details a:hover { color: #f36b0a; }
-    .home-contact-cta { justify-self: end; min-width: 145px; justify-content: center; padding: .9rem 1.15rem; font-size: .76rem; }
-    #tab-home .home-hero-background img { filter: brightness(.72); }
-    #tab-home .home-hero-background::after { background: linear-gradient(90deg, rgba(5, 8, 13, .9) 0%, rgba(5, 8, 13, .74) 54%, rgba(5, 8, 13, .43) 100%); }
-    #tab-home .home-hero-title { line-height: .95; }
-    #tab-home .home-badge { padding: .2rem 0; border: 0; background: transparent; font-size: .72rem; letter-spacing: .1em; }
-    #tab-home .home-hero-description { max-width: 430px; font-size: 1rem; line-height: 1.55; }
-    #tab-home .home-hero-actions { gap: .85rem; padding-top: .35rem; }
-    #tab-home .home-hero-actions .home-action { min-height: 41px; justify-content: center; padding: .65rem 1.35rem; font-size: .75rem; }
-    #tab-home .home-hero-badges { align-items: flex-end; gap: .75rem; }
-    #tab-home .home-hero-badge { width: 183px; min-height: 40px; padding: .55rem .8rem; gap: .6rem; }
-    #tab-home .home-hero-badge i { font-size: .8rem; }
-    #tab-home .home-hero-badge span { font-size: .7rem; }
-    @media (min-width: 640px) { .home-hero-title { font-size: 4.5rem; } }
-    @media (min-width: 1024px) {
-      .home-hero-title { font-size: 6rem; }
-      .home-hero-badges { margin-top: 0; }
-      .home-services-title { font-size: 3rem; }
-    }
-    @media (max-width: 900px) {
-      .home-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .home-service:nth-child(n+5) { border-top: 0; }
-      .home-service:nth-child(n+3) { border-top: 1px solid #d6d6d6; }
-    }
-    @media (max-width: 768px) {
-      .home-hero { min-height: 600px; }
-      .home-hero-copy, .home-hero-badges { grid-column: 1 / -1; }
-      .home-hero-badges { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 0; }
-      .home-hero-badge { align-items: flex-start; flex-direction: column; }
-      .home-values-grid { grid-template-columns: 1fr; }
-      .home-value, .home-value:first-child { padding: 1.5rem 0; }
-      .home-value + .home-value { border-top: 1px solid #30363d; }
-      .home-contact-panel { grid-template-columns: 1fr; padding: 3rem; }
-      .home-contact-cta { justify-self: start; }
-    }
-    @media (max-width: 520px) {
-      .home-hero-inner { padding: 4rem 1.25rem; }
-      .home-hero-title { font-size: 2.75rem; }
-      .home-hero-badges { grid-template-columns: 1fr; }
-      .home-hero-badge { flex-direction: row; align-items: center; }
-      .home-services-title { font-size: 2rem; }
-      .home-services-grid { grid-template-columns: 1fr; }
-      .home-service { min-height: 0; padding: 1.25rem 1rem; }
-      .home-service:nth-child(n+2) { border-top: 1px solid #d6d6d6; }
-      .home-industries-row { align-items: flex-start; flex-direction: column; gap: .9rem; }
-      .home-industries-title { padding: 0 0 .6rem; border-right: 0; border-bottom: 1px solid #d8d1cb; }
-      .home-industry-list { width: 100%; justify-content: space-between; gap: .25rem; }
-      .home-industry { padding: 0 .2rem; font-size: .78rem; }
-      .home-industry-divider { height: 16px; }
-      .home-contact-panel { padding: 2rem 1.5rem; }
-      .home-contact-title { font-size: 1.75rem; }
-      .home-contact-cta { justify-self: start; }
+    .home-hero {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #000;
+      color: #fff;
     }
 
-    #tab-contact .office-section { max-width: 900px; padding-top: 1.25rem; padding-bottom: 3rem; }
-    #tab-contact .office-title { margin-bottom: 1.25rem; color: var(--text-main); font-size: 1.5rem; }
-    #tab-contact .office-details { display: grid; gap: 1.5rem; }
-    #tab-contact .office-item { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 1rem; align-items: start; }
-    #tab-contact .office-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 4px; background: #fbf1e9; color: #f36b0a; font-size: 1.05rem; }
-    #tab-contact .office-label { margin-bottom: .2rem; color: var(--text-muted); font-size: .75rem; font-weight: 600; letter-spacing: .12em; line-height: 1.4; text-transform: uppercase; }
-    #tab-contact .office-value { color: var(--text-main); font-size: .95rem; line-height: 1.55; }
-    #tab-contact .office-value a { color: inherit; text-decoration: none; }
-    #tab-contact .office-value a:hover { color: var(--primary); }
-    #tab-contact .office-map { position: relative; height: 360px; margin-top: 2rem; overflow: hidden; border: 1px solid var(--border); border-radius: 5px; background: var(--bg-card); }
-    #tab-contact .office-map iframe { width: 100%; height: 100%; border: 0; }
-    #tab-contact .office-map-link { position: absolute; top: 8px; left: 8px; display: inline-flex; align-items: center; gap: .35rem; padding: .5rem .75rem; border: 1px solid #d9e2ec; border-radius: 3px; background: #fff; color: #1769c2; font-size: .875rem; font-weight: 600; text-decoration: none; box-shadow: 0 1px 4px rgba(0, 0, 0, .15); }
-    #tab-contact .office-map-link:hover { background: #f4f8fc; }
-    #tab-contact .contact-form-section { max-width: 900px; padding-top: 0; padding-bottom: 3rem; }
-    #tab-contact .contact-form-title { margin-bottom: .2rem; color: var(--text-main); font-size: 1.4rem; }
-    #tab-contact .contact-form-intro { margin-bottom: 1.5rem; color: var(--text-muted); font-size: .875rem; }
-    #tab-contact .contact-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.1rem; }
-    #tab-contact .contact-form-field label { display: block; margin-bottom: .4rem; color: var(--text-main); font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-    #tab-contact .contact-form-field label span { color: var(--primary); }
-    #tab-contact .contact-form-field .form-control { min-height: 42px; padding: .65rem .8rem; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: .8rem; }
-    #tab-contact .contact-form-field select.form-control { color: var(--text-main); }
-    #tab-contact .contact-form-field textarea.form-control { min-height: 112px; resize: vertical; }
-    #tab-contact .contact-form-field-full { grid-column: 1 / -1; }
-    #tab-contact .contact-form-submit { margin-top: 1rem; }
-    #tab-contact .contact-form-submit .btn { min-width: 150px; justify-content: center; }
-    #tab-services .page-header { min-height: 330px; margin: 0; padding: 3rem 0; border-left: 5px solid var(--primary); background: #0a0a0a; }
-    #tab-services .page-header .container { padding-top: 0; padding-bottom: 0; }
-    #tab-services .services-eyebrow { margin-bottom: .65rem; }
-    #tab-services .services-page-title { color: #fff; font-size: clamp(2.5rem, 5vw, 3.1rem); line-height: 1.15; }
-    #tab-services .services-page-description { max-width: 710px; margin-top: .55rem; color: #d1d5db !important; font-size: 1.125rem; line-height: 1.5; }
-    #tab-services .services-deliver { background: var(--accent-card); }
-    #tab-services .services-deliver-inner { display: grid; grid-template-columns: minmax(240px, .7fr) minmax(0, 1.3fr); gap: 2rem; align-items: center; padding-top: 2.5rem; padding-bottom: 2.5rem; }
-    #tab-services .services-deliver-title { color: var(--text-main); font-size: 1.8rem; }
-    #tab-services .services-deliver-copy { color: var(--text-muted); font-size: 1.05rem; line-height: 1.65; }
-    #tab-services .service-detail-grid { max-width: 960px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem; margin: 0 auto; padding: 5.5rem 1.5rem 1rem; }
-    #tab-services .service-detail-card { min-width: 0; padding: 1.6rem; border: 1px solid #d6d6d6; border-radius: 4px; background: #f5f5f5; color: #1e293b; }
-    #tab-services .service-detail-card:first-child { border-left: 5px solid var(--primary); }
-    #tab-services .service-detail-heading { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.1rem; }
-    #tab-services .service-detail-icon { width: 38px; height: 38px; flex: 0 0 38px; display: grid; place-items: center; border-radius: 3px; background: #f8ebe1; color: #f36b0a; font-size: 1.15rem; }
-    #tab-services .service-detail-number { display: block; color: #475569; font-size: .65rem; line-height: 1.2; }
-    #tab-services .service-detail-title { color: #111827; font-size: 1.1rem; line-height: 1.3; }
-    #tab-services .service-detail-description { margin-bottom: 1rem; color: #475569; font-size: .78rem; line-height: 1.55; }
-    #tab-services .service-capabilities-title { margin-bottom: .55rem; color: #111827; font-size: .65rem; font-weight: 700; letter-spacing: .09em; }
-    #tab-services .service-capabilities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem .8rem; list-style: none; }
-    #tab-services .service-capabilities li { display: flex; align-items: flex-start; gap: .45rem; color: #64748b; font-size: .72rem; line-height: 1.4; }
-    #tab-services .service-capabilities i { margin-top: .1rem; color: #f36b0a; font-size: .75rem; }
-    #tab-services .services-cards { padding-top: 3rem; }
-    #tab-services .industries-section { padding: 3.5rem 0 4.75rem; background: #F4EFEA; }
-    #tab-services .industries-title { margin-bottom: 2rem; color: #111827; text-align: center; font-size: 1.8rem; }
-    #tab-services .industries-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
-    #tab-services .industry-card { min-width: 0; padding: 1.25rem; border: 1px solid #d6d6d6; border-radius: 4px; background: #f5f5f5; }
-    #tab-services .industry-rule { width: 1.5rem; height: 3px; margin-bottom: .8rem; background: #f36b0a; }
-    #tab-services .industry-card h3 { margin-bottom: .4rem; color: #111827; font-size: 1rem; line-height: 1.35; }
-    #tab-services .industry-card p { color: #64748b; font-size: .75rem; line-height: 1.55; }
-    #tab-services .services-cta { padding: 4.5rem 1.5rem; background: #0a0a0a; color: #fff; text-align: center; }
-    #tab-services .services-cta h2 { color: #fff; font-size: 1.8rem; }
-    #tab-services .services-cta p { max-width: 620px; margin: .75rem auto 1.25rem; color: #d1d5db; }
-    @media (max-width: 520px) {
-      #tab-contact .office-section { padding-top: 1rem; }
-      #tab-contact .office-map { height: 300px; margin-top: 1.5rem; }
-      #tab-contact .contact-form-grid { grid-template-columns: 1fr; }
-      #tab-contact .contact-form-field-full { grid-column: auto; }
+    .home-hero-background {
+      position: absolute;
+      inset: 0;
     }
+
+    .home-hero-background img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(.9);
+    }
+
+    .home-hero-background::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #000, rgba(0, 0, 0, .85) 58%, transparent);
+    }
+
+    .home-hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem;
+    }
+
+    .home-hero-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .home-hero-copy {
+      grid-column: span 8;
+    }
+
+    .home-hero-copy>*+* {
+      margin-top: 1.5rem;
+    }
+
+    .home-badge {
+      display: inline-flex;
+      padding: .25rem .75rem;
+      border: 1px solid rgba(217, 107, 39, .4);
+      background: rgba(217, 107, 39, .2);
+      color: var(--primary);
+      font-size: .875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .home-hero-title {
+      color: #fff;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: .98;
+    }
+
+    .home-hero-title span {
+      color: var(--primary);
+    }
+
+    .home-hero-rule {
+      width: 5rem;
+      height: .25rem;
+      margin-top: 1rem;
+      background: var(--primary);
+    }
+
+    .home-hero-description {
+      max-width: 42rem;
+      color: #d1d5db;
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+
+    .home-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      padding-top: .5rem;
+    }
+
+    .home-action {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .875rem 1.75rem;
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color .2s, border-color .2s;
+    }
+
+    .home-action-primary {
+      background: var(--primary);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+    }
+
+    .home-action-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .home-action-outline {
+      border: 1px solid rgba(255, 255, 255, .6);
+    }
+
+    .home-action-outline:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .home-hero-badges {
+      grid-column: span 4;
+      display: flex;
+      flex-direction: column;
+      gap: .875rem;
+      margin-top: 2rem;
+    }
+
+    .home-hero-badge {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, .15);
+      background: rgba(0, 0, 0, .5);
+      backdrop-filter: blur(12px);
+    }
+
+    .home-hero-badge i {
+      color: var(--primary);
+      font-size: 1.125rem;
+    }
+
+    .home-hero-badge span {
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+    }
+
+    .home-values {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: #0d0e11;
+      color: #fff;
+    }
+
+    .home-values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .home-value {
+      padding: 0 1.5rem;
+    }
+
+    .home-value:first-child {
+      padding-left: 0;
+    }
+
+    .home-value-rule {
+      width: 3rem;
+      height: .25rem;
+      margin-bottom: .75rem;
+      background: var(--primary);
+    }
+
+    .home-value h2 {
+      margin-bottom: .5rem;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
+    .home-value p {
+      color: #9ca3af;
+      font-size: .875rem;
+      line-height: 1.65;
+    }
+
+    .home-services {
+      padding: 1rem 0 2.5rem;
+      background: #fff;
+    }
+
+    .home-services-heading {
+      margin-bottom: 3rem;
+    }
+
+    .home-services-heading .badge-sub {
+      margin-bottom: .55rem;
+      font-size: .68rem;
+      letter-spacing: .1em;
+    }
+
+    .home-services-title {
+      color: #111827;
+      font-size: 2.5rem;
+      line-height: 1.1;
+    }
+
+    .home-services-intro {
+      max-width: 33rem;
+      margin-top: .9rem;
+      color: #64748b;
+      font-size: .86rem;
+      line-height: 1.6;
+    }
+
+    .home-services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .home-service {
+      min-width: 0;
+      min-height: 145px;
+      padding: 1.35rem 1.4rem;
+      border: 0;
+      background: transparent;
+    }
+
+    .home-service:nth-child(n+5) {
+      border-top: 1px solid #d6d6d6;
+    }
+
+    .home-service h3 {
+      color: #111;
+      font-size: .78rem;
+      line-height: 1.4;
+    }
+
+    .home-service p {
+      margin-top: .45rem;
+      color: #64748b;
+      font-size: .68rem;
+      line-height: 1.55;
+    }
+
+    .home-services-link {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.1rem;
+    }
+
+    .home-services-link button {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      border: 0;
+      background: transparent;
+      color: #f36b0a;
+      font-family: 'Oswald', sans-serif;
+      font-size: .7rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .home-services-link button:hover {
+      color: var(--primary-hover);
+    }
+
+    .home-industries {
+      padding: 1.55rem 0;
+      border-top: 1px solid #ded8d2;
+      border-bottom: 1px solid #ded8d2;
+      background: #F4EFEA;
+    }
+
+    .home-industries-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .home-industries-title {
+      flex: 0 0 auto;
+      padding-right: 1.35rem;
+      border-right: 1px solid #d8d1cb;
+      color: #64748b;
+      font-family: 'Oswald', sans-serif;
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+    }
+
+    .home-industry-list {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .home-industry {
+      padding: 0 1.15rem;
+      color: #111827;
+      font-family: 'Oswald', sans-serif;
+      font-size: .84rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .home-industry-divider {
+      width: 1px;
+      height: 20px;
+      flex: 0 0 1px;
+      overflow: hidden;
+      background: #d8d1cb;
+      color: transparent;
+      font-size: 0;
+    }
+
+    .home-contact-prompt {
+      padding: 4.75rem 0;
+      background: #fff;
+    }
+
+    .home-contact-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 2rem;
+      align-items: center;
+      padding: 2.8rem;
+      border: 1px solid #d6d6d6;
+      background: #fff;
+    }
+
+    .home-contact-rule {
+      width: 2rem;
+      height: 2px;
+      margin-bottom: 1.25rem;
+      background: #f36b0a;
+    }
+
+    .home-contact-title {
+      color: #111827;
+      font-size: 2rem;
+      line-height: 1.15;
+    }
+
+    .home-contact-description {
+      max-width: 430px;
+      margin-top: .85rem;
+      color: #64748b;
+      font-size: .85rem;
+      line-height: 1.65;
+    }
+
+    .home-contact-details {
+      display: grid;
+      gap: .55rem;
+      margin-top: 1.5rem;
+    }
+
+    .home-contact-details a {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      color: #111827;
+      font-size: .75rem;
+      text-decoration: none;
+    }
+
+    .home-contact-details i {
+      color: #f36b0a;
+    }
+
+    .home-contact-details a:hover {
+      color: #f36b0a;
+    }
+
+    .home-contact-cta {
+      justify-self: end;
+      min-width: 145px;
+      justify-content: center;
+      padding: .9rem 1.15rem;
+      font-size: .76rem;
+    }
+
+    #tab-home .home-hero-background img {
+      filter: brightness(.72);
+    }
+
+    #tab-home .home-hero-background::after {
+      background: linear-gradient(90deg, rgba(5, 8, 13, .9) 0%, rgba(5, 8, 13, .74) 54%, rgba(5, 8, 13, .43) 100%);
+    }
+
+    #tab-home .home-hero-title {
+      line-height: .95;
+    }
+
+    #tab-home .home-badge {
+      padding: .2rem 0;
+      border: 0;
+      background: transparent;
+      font-size: .72rem;
+      letter-spacing: .1em;
+    }
+
+    #tab-home .home-hero-description {
+      max-width: 430px;
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    #tab-home .home-hero-actions {
+      gap: .85rem;
+      padding-top: .35rem;
+    }
+
+    #tab-home .home-hero-actions .home-action {
+      min-height: 41px;
+      justify-content: center;
+      padding: .65rem 1.35rem;
+      font-size: .75rem;
+    }
+
+    #tab-home .home-hero-badges {
+      align-items: flex-end;
+      gap: .75rem;
+    }
+
+    #tab-home .home-hero-badge {
+      width: 183px;
+      min-height: 40px;
+      padding: .55rem .8rem;
+      gap: .6rem;
+    }
+
+    #tab-home .home-hero-badge i {
+      font-size: .8rem;
+    }
+
+    #tab-home .home-hero-badge span {
+      font-size: .7rem;
+    }
+
+    @media (min-width: 640px) {
+      .home-hero-title {
+        font-size: 4.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .home-hero-title {
+        font-size: 6rem;
+      }
+
+      .home-hero-badges {
+        margin-top: 0;
+      }
+
+      .home-services-title {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .home-services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .home-service:nth-child(n+5) {
+        border-top: 0;
+      }
+
+      .home-service:nth-child(n+3) {
+        border-top: 1px solid #d6d6d6;
+      }
+    }
+
     @media (max-width: 768px) {
-      #tab-services .page-header { min-height: 330px; padding: 3rem 0; }
-      #tab-services .services-deliver-inner { grid-template-columns: 1fr; gap: .75rem; padding-top: 2rem; padding-bottom: 2rem; }
-      #tab-services .service-detail-grid { padding-top: 3rem; }
-      #tab-services .services-cards { padding-top: 2rem; }
-      #tab-services .industries-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .home-hero {
+        min-height: 600px;
+      }
+
+      .home-hero-copy,
+      .home-hero-badges {
+        grid-column: 1 / -1;
+      }
+
+      .home-hero-badges {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 0;
+      }
+
+      .home-hero-badge {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .home-values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home-value,
+      .home-value:first-child {
+        padding: 1.5rem 0;
+      }
+
+      .home-value+.home-value {
+        border-top: 1px solid #30363d;
+      }
+
+      .home-contact-panel {
+        grid-template-columns: 1fr;
+        padding: 3rem;
+      }
+
+      .home-contact-cta {
+        justify-self: start;
+      }
     }
-    @media (max-width: 620px) {
-      #tab-services .service-detail-grid { grid-template-columns: 1fr; gap: 1rem; padding: 2rem 1.5rem .5rem; }
-      #tab-services .service-detail-card { padding: 1.25rem; }
-      #tab-services .service-capabilities { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 380px) {
-      #tab-services .service-capabilities { grid-template-columns: 1fr; }
-    }
+
     @media (max-width: 520px) {
-      #tab-services .industries-section { padding: 2.5rem 0 3rem; }
-      #tab-services .industries-grid { grid-template-columns: 1fr; }
-      #tab-services .industries-title { font-size: 1.6rem; }
-      #tab-services .services-cta { padding: 3rem 1.25rem; }
+      .home-hero-inner {
+        padding: 4rem 1.25rem;
+      }
+
+      .home-hero-title {
+        font-size: 2.75rem;
+      }
+
+      .home-hero-badges {
+        grid-template-columns: 1fr;
+      }
+
+      .home-hero-badge {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .home-services-title {
+        font-size: 2rem;
+      }
+
+      .home-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home-service {
+        min-height: 0;
+        padding: 1.25rem 1rem;
+      }
+
+      .home-service:nth-child(n+2) {
+        border-top: 1px solid #d6d6d6;
+      }
+
+      .home-industries-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .9rem;
+      }
+
+      .home-industries-title {
+        padding: 0 0 .6rem;
+        border-right: 0;
+        border-bottom: 1px solid #d8d1cb;
+      }
+
+      .home-industry-list {
+        width: 100%;
+        justify-content: space-between;
+        gap: .25rem;
+      }
+
+      .home-industry {
+        padding: 0 .2rem;
+        font-size: .78rem;
+      }
+
+      .home-industry-divider {
+        height: 16px;
+      }
+
+      .home-contact-panel {
+        padding: 2rem 1.5rem;
+      }
+
+      .home-contact-title {
+        font-size: 1.75rem;
+      }
+
+      .home-contact-cta {
+        justify-self: start;
+      }
     }
-    .site-footer { margin-top: 0; padding: 2.75rem 0 1rem; border-top: 0; background: #090909; color: #d1d5db; }
-    .site-footer .footer-grid { display: grid; grid-template-columns: 1.35fr 1.2fr 1.3fr; gap: 3rem; margin-bottom: 2.75rem; }
-    .site-footer .footer-brand-mark { width: 30px; height: 34px; margin-bottom: 1.1rem; color: #c59b3f; }
-    .site-footer .footer-brand-copy { max-width: 330px; margin-bottom: 1.1rem; color: #c3c6ca; font-size: .76rem; line-height: 1.55; }
-    .site-footer .footer-certification { display: inline-flex; align-items: center; gap: .5rem; padding: .4rem .65rem; border: 1px solid #414141; color: #d1d5db; font-size: .62rem; font-weight: 600; letter-spacing: .04em; }
-    .site-footer .footer-certification i, .site-footer .footer-contact-icon { color: #f36b0a; }
-    .site-footer .footer-column-title { margin: .1rem 0 1rem; color: #9ca3af; font-size: .62rem; }
-    .site-footer .footer-link-list { display: grid; gap: .3rem; list-style: none; }
-    .site-footer .footer-link-list a { color: #d1d5db; font-size: .76rem; text-decoration: none; }
-    .site-footer .footer-link-list a:hover, .site-footer .footer-contact a:hover { color: #f36b0a; }
-    .site-footer .footer-contact-list { display: grid; gap: .75rem; list-style: none; }
-    .site-footer .footer-contact-list li { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: .5rem; align-items: start; color: #d1d5db; font-size: .72rem; line-height: 1.55; }
-    .site-footer .footer-contact-icon { margin-top: .15rem; }
-    .site-footer .footer-contact a { color: inherit; text-decoration: none; }
-    .site-footer .footer-bottom { border-color: #292929; padding-top: .85rem; color: #777; font-size: .62rem; }
+
+    #tab-contact .office-section {
+      max-width: 900px;
+      padding-top: 1.25rem;
+      padding-bottom: 3rem;
+    }
+
+    #tab-contact .office-title {
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+      font-size: 1.5rem;
+    }
+
+    #tab-contact .office-details {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    #tab-contact .office-item {
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    #tab-contact .office-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 4px;
+      background: #fbf1e9;
+      color: #f36b0a;
+      font-size: 1.05rem;
+    }
+
+    #tab-contact .office-label {
+      margin-bottom: .2rem;
+      color: var(--text-muted);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    #tab-contact .office-value {
+      color: var(--text-main);
+      font-size: .95rem;
+      line-height: 1.55;
+    }
+
+    #tab-contact .office-value a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    #tab-contact .office-value a:hover {
+      color: var(--primary);
+    }
+
+    #tab-contact .office-map {
+      position: relative;
+      height: 360px;
+      margin-top: 2rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: var(--bg-card);
+    }
+
+    #tab-contact .office-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    #tab-contact .office-map-link {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .5rem .75rem;
+      border: 1px solid #d9e2ec;
+      border-radius: 3px;
+      background: #fff;
+      color: #1769c2;
+      font-size: .875rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+    }
+
+    #tab-contact .office-map-link:hover {
+      background: #f4f8fc;
+    }
+
+    #tab-contact .contact-form-section {
+      scroll-margin-top: 100px;
+      max-width: 900px;
+      padding-top: 0;
+      padding-bottom: 3rem;
+    }
+
+    #tab-contact .contact-form-title {
+      margin-bottom: .2rem;
+      color: var(--text-main);
+      font-size: 1.4rem;
+    }
+
+    #tab-contact .contact-form-intro {
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+      font-size: .875rem;
+    }
+
+    #tab-contact .contact-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem 1.1rem;
+    }
+
+    #tab-contact .contact-form-field label {
+      display: block;
+      margin-bottom: .4rem;
+      color: var(--text-main);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    #tab-contact .contact-form-field label span {
+      color: var(--primary);
+    }
+
+    #tab-contact .contact-form-field .form-control {
+      min-height: 42px;
+      padding: .65rem .8rem;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: .8rem;
+    }
+
+    #tab-contact .contact-form-field select.form-control {
+      color: var(--text-main);
+    }
+
+    #tab-contact .contact-form-field textarea.form-control {
+      min-height: 112px;
+      resize: vertical;
+    }
+
+    #tab-contact .contact-form-field-full {
+      grid-column: 1 / -1;
+    }
+
+    #tab-contact .contact-form-submit {
+      margin-top: 1rem;
+    }
+
+    #tab-contact .contact-form-submit .btn {
+      min-width: 150px;
+      justify-content: center;
+    }
+
+    #tab-services .page-header {
+      min-height: 330px;
+      margin: 0;
+      padding: 3rem 0;
+      border-left: 5px solid var(--primary);
+      background: #0a0a0a;
+    }
+
+    #tab-services .page-header .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    #tab-services .services-eyebrow {
+      margin-bottom: .65rem;
+    }
+
+    #tab-services .services-page-title {
+      color: #fff;
+      font-size: clamp(2.5rem, 5vw, 3.1rem);
+      line-height: 1.15;
+    }
+
+    #tab-services .services-page-description {
+      max-width: 710px;
+      margin-top: .55rem;
+      color: #d1d5db !important;
+      font-size: 1.125rem;
+      line-height: 1.5;
+    }
+
+    #tab-services .services-deliver {
+      background: var(--accent-card);
+    }
+
+    #tab-services .services-deliver-inner {
+      display: grid;
+      grid-template-columns: minmax(240px, .7fr) minmax(0, 1.3fr);
+      gap: 2rem;
+      align-items: center;
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    #tab-services .services-deliver-title {
+      color: var(--text-main);
+      font-size: 1.8rem;
+    }
+
+    #tab-services .services-deliver-copy {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    #tab-services .service-detail-grid {
+      max-width: 1280px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.75rem;
+      margin: 0 auto;
+      padding: 2.25rem 1.5rem 2rem;
+    }
+
+    #tab-services .service-detail-card {
+      position: relative;
+      overflow: hidden;
+      min-width: 0;
+      padding: 1.75rem 2rem;
+      border: 1px solid #d6d6d6;
+      border-radius: 4px;
+      background: #f5f5f5;
+      color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    #tab-services .service-detail-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 5px;
+      background: var(--primary);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    #tab-services .service-detail-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    #tab-services .service-detail-card:hover::before {
+      opacity: 1;
+    }
+
+    #tab-services .service-detail-heading {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      margin-bottom: 1.1rem;
+    }
+
+    #tab-services .service-detail-icon {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 3px;
+      background: #f8ebe1;
+      color: #f36b0a;
+      font-size: 1.15rem;
+    }
+
+    #tab-services .service-detail-number {
+      display: block;
+      color: #475569;
+      font-size: .65rem;
+      line-height: 1.2;
+    }
+
+    #tab-services .service-detail-title {
+      color: #111827;
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    #tab-services .service-detail-description {
+      flex: 1 1 auto;
+      margin-bottom: 1.25rem;
+      color: #475569;
+      font-size: .84rem;
+      line-height: 1.6;
+    }
+
+    #tab-services .service-capabilities-title {
+      margin-top: auto;
+      margin-bottom: .6rem;
+      color: #111827;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+    }
+
+    #tab-services .service-capabilities {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .45rem .8rem;
+      list-style: none;
+    }
+
+    #tab-services .service-capabilities li {
+      display: flex;
+      align-items: flex-start;
+      gap: .45rem;
+      color: #64748b;
+      font-size: .72rem;
+      line-height: 1.4;
+    }
+
+    #tab-services .service-capabilities i {
+      margin-top: .1rem;
+      color: #f36b0a;
+      font-size: .75rem;
+    }
+
+    #tab-services .services-cards {
+      padding-top: 3rem;
+    }
+
+    #tab-services .industries-section {
+      padding: 3.5rem 0 4.75rem;
+      background: #F4EFEA;
+    }
+
+    #tab-services .industries-title {
+      margin-bottom: 2rem;
+      color: #111827;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    #tab-services .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    #tab-services .industry-card {
+      min-width: 0;
+      padding: 1.25rem;
+      border: 1px solid #d6d6d6;
+      border-radius: 4px;
+      background: #f5f5f5;
+    }
+
+    #tab-services .industry-rule {
+      width: 1.5rem;
+      height: 3px;
+      margin-bottom: .8rem;
+      background: #f36b0a;
+    }
+
+    #tab-services .industry-card h3 {
+      margin-bottom: .4rem;
+      color: #111827;
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    #tab-services .industry-card p {
+      color: #64748b;
+      font-size: .75rem;
+      line-height: 1.55;
+    }
+
+    #tab-services .services-cta {
+      padding: 4.5rem 1.5rem;
+      background: #0a0a0a;
+      color: #fff;
+      text-align: center;
+    }
+
+    #tab-services .services-cta h2 {
+      color: #fff;
+      font-size: 1.8rem;
+    }
+
+    #tab-services .services-cta p {
+      max-width: 620px;
+      margin: .75rem auto 1.25rem;
+      color: #d1d5db;
+    }
+
+    @media (max-width: 520px) {
+      #tab-contact .office-section {
+        padding-top: 1rem;
+      }
+
+      #tab-contact .office-map {
+        height: 300px;
+        margin-top: 1.5rem;
+      }
+
+      #tab-contact .contact-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #tab-contact .contact-form-field-full {
+        grid-column: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #tab-services .page-header {
+        min-height: 330px;
+        padding: 3rem 0;
+      }
+
+      #tab-services .services-deliver-inner {
+        grid-template-columns: 1fr;
+        gap: .75rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      #tab-services .service-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 1.75rem 1.5rem 1rem;
+      }
+
+      #tab-services .service-detail-card {
+        padding: 1.5rem;
+      }
+
+      #tab-services .services-cards {
+        padding-top: 2rem;
+      }
+
+      #tab-services .industries-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      #tab-services .service-detail-grid {
+        padding: 1.5rem 1rem .5rem;
+      }
+
+      #tab-services .service-detail-card {
+        padding: 1.25rem;
+      }
+
+      #tab-services .service-capabilities {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 380px) {
+      #tab-services .service-capabilities {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      #tab-services .industries-section {
+        padding: 2.5rem 0 3rem;
+      }
+
+      #tab-services .industries-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #tab-services .industries-title {
+        font-size: 1.6rem;
+      }
+
+      #tab-services .services-cta {
+        padding: 3rem 1.25rem;
+      }
+    }
+
+    .site-footer {
+      margin-top: 0;
+      padding: 2.75rem 0 1rem;
+      border-top: 0;
+      background: #090909;
+      color: #d1d5db;
+    }
+
+    .site-footer .footer-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1.2fr 1.3fr;
+      gap: 3rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .site-footer .footer-brand-mark {
+      width: 30px;
+      height: 34px;
+      margin-bottom: 1.1rem;
+      color: #c59b3f;
+    }
+
+    .site-footer .footer-brand-copy {
+      max-width: 330px;
+      margin-bottom: 1.1rem;
+      color: #c3c6ca;
+      font-size: .76rem;
+      line-height: 1.55;
+    }
+
+    .site-footer .footer-certification {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .4rem .65rem;
+      border: 1px solid #414141;
+      color: #d1d5db;
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+
+    .site-footer .footer-certification i,
+    .site-footer .footer-contact-icon {
+      color: #f36b0a;
+    }
+
+    .site-footer .footer-column-title {
+      margin: .1rem 0 1rem;
+      color: #9ca3af;
+      font-size: .62rem;
+    }
+
+    .site-footer .footer-link-list {
+      display: grid;
+      gap: .3rem;
+      list-style: none;
+    }
+
+    .site-footer .footer-link-list a {
+      color: #d1d5db;
+      font-size: .76rem;
+      text-decoration: none;
+    }
+
+    .site-footer .footer-link-list a:hover,
+    .site-footer .footer-contact-list a:hover {
+      color: #f36b0a;
+    }
+
+    .site-footer .footer-contact-list {
+      display: grid;
+      gap: .75rem;
+      list-style: none;
+    }
+
+    .site-footer .footer-contact-list li {
+      display: grid;
+      grid-template-columns: 14px minmax(0, 1fr);
+      gap: .5rem;
+      align-items: start;
+      color: #d1d5db;
+      font-size: .72rem;
+      line-height: 1.55;
+    }
+
+    .site-footer .footer-contact-icon {
+      margin-top: .15rem;
+    }
+
+    .site-footer .footer-contact-list a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .site-footer .footer-bottom {
+      border-color: #292929;
+      padding-top: .85rem;
+      color: #777;
+      font-size: .62rem;
+    }
+
     #tab-about .page-header {
       min-height: 322px;
       margin: 0;
@@ -871,197 +2165,805 @@
       border-left: 5px solid var(--primary);
       background: linear-gradient(90deg, rgba(6, 10, 16, .9), rgba(6, 10, 16, .68)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=85') center 48% / cover no-repeat;
     }
-    #tab-about .page-header .container { padding-top: 0; padding-bottom: 0; }
-    #tab-about .about-eyebrow { margin-bottom: .65rem; }
-    #tab-about .about-page-title { color: #fff; font-size: clamp(2.5rem, 5vw, 3.25rem); line-height: 1.1; }
-    #tab-about .about-page-description { max-width: 570px; margin-top: .65rem; color: #e5e7eb !important; font-size: .98rem; line-height: 1.55; }
-    #tab-about .about-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #090909; color: #fff; }
-    #tab-about .about-stat { min-height: 122px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .35rem; border-right: 1px solid #252525; text-align: center; }
-    #tab-about .about-stat:last-child { border-right: 0; }
-    #tab-about .about-stat-number { color: #f36b0a; font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; line-height: 1.1; }
-    #tab-about .about-stat-label { color: #9ca3af; font-family: 'Oswald', sans-serif; font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; }
-    #tab-about .about-story-content { padding-top: 3rem; }
-    #tab-about .about-story { grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); gap: 3rem; align-items: start; margin-bottom: 4rem !important; }
-    #tab-about .about-copy .badge-sub { margin-bottom: .85rem; font-size: .68rem; letter-spacing: .12em; }
-    #tab-about .about-copy h2 { margin-bottom: 1.6rem !important; font-size: 2.2rem !important; line-height: 1.15; }
-    #tab-about .about-story-rule { width: 2rem; height: 1px; margin: 0 0 1.5rem; background: var(--primary); }
-    #tab-about .about-copy p { margin-bottom: 1rem; color: var(--text-muted); font-size: .86rem; line-height: 1.62; }
-    #tab-about .about-image { min-height: 0; margin: 0; overflow: visible; background: transparent; }
-    #tab-about .about-image::after { content: ''; position: absolute; z-index: 0; left: -12px; bottom: -12px; width: 76px; height: 76px; border-bottom: 3px solid var(--primary); border-left: 3px solid var(--primary); pointer-events: none; }
-    #tab-about .about-image img { position: relative; z-index: 1; width: 100%; height: auto; min-height: 0; aspect-ratio: 4 / 3; object-fit: cover; }
-    #tab-about .about-policy { margin: 0 -24px 4rem; padding: 4rem max(24px, calc((100vw - 1280px) / 2)) 5rem; background: #F4EFEA; }
-    #tab-about .about-policy-heading { margin-bottom: 2.8rem; }
-    #tab-about .about-policy-eyebrow { margin-bottom: .7rem; font-size: .68rem; letter-spacing: .12em; }
-    #tab-about .about-policy-title { margin-bottom: .8rem; color: #111827; font-size: 2.2rem; line-height: 1.15; }
-    #tab-about .about-policy-intro { max-width: 560px; color: #64748b; font-size: .86rem; line-height: 1.6; }
-    #tab-about .about-policy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem 1.25rem; }
-    #tab-about .about-policy-card { min-width: 0; padding: 1.5rem 1.6rem; border-left: 1px solid var(--primary); background: #fff; }
-    #tab-about .about-policy-card h3 { margin-bottom: .65rem; color: #111827; font-size: .82rem; line-height: 1.35; }
-    #tab-about .about-policy-card p { color: #64748b; font-size: .76rem; line-height: 1.6; }
-    #tab-about .about-philosophy-section { margin: 0 0 4rem; }
-    #tab-about .about-philosophy-eyebrow { margin-bottom: .7rem; font-size: .68rem; letter-spacing: .12em; }
-    #tab-about .about-philosophy-title { margin-bottom: 2rem !important; color: #111827; font-size: 2.2rem !important; line-height: 1.15; }
-    #tab-about .about-philosophy-section .quote-box { max-width: 760px; margin: 2.2rem 0 2.8rem; padding: .75rem 1.6rem; border-left: 3px solid var(--primary); color: #111827; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-style: italic; font-weight: 700; line-height: 1.65; }
-    #tab-about .about-philosophy-section .check-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.35rem 1.6rem; margin-top: 0; }
-    #tab-about .about-philosophy-section .check-item { gap: .7rem; color: #64748b; }
-    #tab-about .about-philosophy-section .check-icon { flex: 0 0 auto; color: #f36b0a; font-size: .9rem; }
-    #tab-about .about-philosophy-section .check-item p { color: #64748b; font-size: .76rem; line-height: 1.6; }
-    #tab-about .about-partner-cta { margin: 4rem -24px 0; padding: 4rem max(24px, calc((100vw - 1280px) / 2)); border: 0; background: #090909; color: #fff; }
-    #tab-about .about-partner-copy { max-width: 560px; }
-    #tab-about .about-partner-rule { width: 2rem; height: 2px; margin-bottom: 1.25rem; background: #f36b0a; }
-    #tab-about .about-partner-cta h2 { color: #fff; font-size: 1.8rem !important; line-height: 1.2; }
-    #tab-about .about-partner-cta p { margin-top: .65rem !important; color: #cbd5e1 !important; font-size: .82rem; line-height: 1.55; }
-    #tab-about .about-partner-cta > .btn { flex: 0 0 auto; min-width: 145px; justify-content: center; padding: .85rem 1.1rem; font-size: .75rem; }
-    @media (max-width: 768px) {
-      .site-footer .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
-      .site-footer .footer-brand-column { grid-column: 1 / -1; }
-      #tab-about .page-header { min-height: 322px; padding: 3rem 0; }
-      #tab-about .about-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      #tab-about .about-stat:nth-child(2) { border-right: 0; }
-      #tab-about .about-stat:nth-child(-n+2) { border-bottom: 1px solid #252525; }
-      #tab-about .about-story { grid-template-columns: 1fr; gap: 2rem; }
-      #tab-about .about-image { max-width: 560px; width: calc(100% - 12px); margin: 0 12px 12px 0; }
-      #tab-about .about-policy { margin-right: -24px; margin-left: -24px; padding-top: 3rem; padding-bottom: 3.5rem; }
-      #tab-about .about-philosophy-section .check-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      #tab-about .about-partner-cta { gap: 1.5rem; padding-top: 3rem; padding-bottom: 3rem; }
-    }
-    @media (max-width: 520px) {
-      #tab-about .about-policy-grid { grid-template-columns: 1fr; }
-      #tab-about .about-policy-title { font-size: 1.9rem; }
-      #tab-about .about-policy-card { padding: 1.25rem; }
-      #tab-about .about-philosophy-section .check-list { grid-template-columns: 1fr; }
-      #tab-about .about-philosophy-section .quote-box { padding-left: 1rem; font-size: 1rem; }
-      #tab-about .about-partner-cta { align-items: flex-start; flex-direction: column; }
-    }
-    @media (max-width: 520px) {
-      .site-footer .footer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
-      .site-footer .footer-brand-column { grid-column: auto; }
-      .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; gap: .5rem; }
-    }
-    @media (max-width: 900px) {
-      .navbar { gap: 1rem; }
-      .nav-menu { gap: 1rem; }
-      .nav-actions { gap: .6rem; }
-    }
-    @media (max-width: 768px) {
-      #tab-home .home-hero-grid { grid-template-columns: minmax(0, 1fr); }
-      #tab-home .home-hero-copy,
-      #tab-home .home-hero-badges { grid-column: 1; min-width: 0; }
-      #tab-home .home-hero-badges { width: 100%; }
-      #tab-home .home-hero-badge { width: 100%; max-width: 300px; }
-      #tab-home .home-hero-title { font-size: 4rem; }
-      #tab-home .home-hero-inner { padding-top: 3.5rem; padding-bottom: 3.5rem; }
-      #tab-home .home-industries-row { flex-wrap: wrap; }
-      #tab-home .home-industry-list { min-width: 0; }
-      #quoteModal .modal-card { max-height: calc(100dvh - 2rem); overflow-y: auto; }
-    }
-    @media (max-width: 520px) {
-      .navbar { gap: .5rem; }
-      .brand { gap: 8px; min-width: 0; }
-      .brand-logo { width: 32px; height: 32px; flex: 0 0 32px; }
-      .brand-title { font-size: 1.05rem; }
-      .brand-subtitle { font-size: .5rem; letter-spacing: 1px; }
-      .nav-actions { gap: .35rem; }
-      .nav-actions .theme-toggle { padding: .35rem .45rem; }
-      .nav-actions .btn { padding: .55rem .45rem; font-size: .64rem; }
-      #tab-home .home-hero-title { font-size: 2.65rem; }
-      #tab-home .home-hero-description { font-size: .92rem; }
-      #tab-home .home-hero-actions .home-action { padding: .6rem .9rem; }
-      #tab-home .home-hero-badges { grid-template-columns: 1fr; }
-      #tab-home .home-industries-row { align-items: flex-start; }
-      #tab-home .home-industry-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-items: start; gap: .65rem .4rem; }
-      #tab-home .home-industry { padding: .15rem .25rem; font-size: .75rem; white-space: normal; }
-      #tab-home .home-industry-divider { display: none; }
-      #tab-about .about-story-content { padding-top: 2rem; }
-      #tab-about .about-partner-cta { margin-top: 2.5rem; }
-      #tab-services .service-detail-card { overflow-wrap: anywhere; }
-      #tab-contact .office-section,
-      #tab-contact .contact-form-section { width: 100%; }
-      .site-footer { padding-top: 2rem; }
-    }
-    @media (max-width: 360px) {
-      .navbar { padding-right: 10px; padding-left: 10px; }
-      .nav-menu { gap: .65rem; }
-      .nav-link { font-size: .82rem; }
-      .nav-actions .theme-toggle { padding: .3rem .35rem; }
-      .nav-actions .btn { padding: .5rem .35rem; font-size: .6rem; }
-      #tab-home .home-hero-title { font-size: 2.4rem; }
-      #tab-home .home-hero-inner { padding-right: 1rem; padding-left: 1rem; }
+
+    #tab-about .page-header .container {
+      padding-top: 0;
+      padding-bottom: 0;
     }
 
-    body { font-size: 1.0625rem; }
-    .brand-subtitle { font-size: .72rem; }
-    .theme-toggle { font-size: .92rem; }
-    .badge-sub { font-size: .98rem; }
-    .hero-desc { font-size: 1.18rem; }
-    .stat-label { font-size: .92rem; }
-    .card p { font-size: 1.03rem; }
-    .form-group label { font-size: .94rem; }
-    .form-control { font-size: 1rem; }
-    .footer-bottom { font-size: .94rem; }
-    .home-badge { font-size: .8rem; }
-    .home-hero-description { font-size: 1.08rem; }
-    .home-hero-badge span { font-size: .78rem; }
-    .home-value p { font-size: .96rem; }
-    .home-services-heading .badge-sub { font-size: .76rem; }
-    .home-services-intro { font-size: .96rem; }
-    .home-service h3 { font-size: .86rem; }
-    .home-service p { font-size: .78rem; }
-    .home-services-link button { font-size: .78rem; }
-    .home-industries-title { font-size: .74rem; }
-    .home-industry { font-size: .92rem; }
-    .home-contact-description { font-size: .96rem; }
-    .home-contact-details a { font-size: .86rem; }
-    .site-footer .footer-brand-copy { font-size: .86rem; }
-    .site-footer .footer-certification { font-size: .7rem; }
-    .site-footer .footer-column-title { font-size: .7rem; }
-    .site-footer .footer-link-list a { font-size: .86rem; }
-    .site-footer .footer-contact-list li { font-size: .82rem; }
-    .site-footer .footer-bottom { font-size: .7rem; }
-    #tab-contact .office-label { font-size: .82rem; }
-    #tab-contact .office-value { font-size: 1rem; }
-    #tab-contact .contact-form-intro { font-size: .96rem; }
-    #tab-contact .contact-form-field label { font-size: .76rem; }
-    #tab-contact .contact-form-field .form-control { font-size: .88rem; }
-    #tab-services .services-page-description { font-size: 1.2rem; }
-    #tab-services .services-deliver-copy { font-size: 1.13rem; }
-    #tab-services .service-detail-description { font-size: .86rem; }
-    #tab-services .service-capabilities-title { font-size: .72rem; }
-    #tab-services .service-capabilities li { font-size: .8rem; }
-    #tab-services .industry-card h3 { font-size: 1.06rem; }
-    #tab-services .industry-card p { font-size: .83rem; }
-    #tab-about .about-page-description { font-size: 1.06rem; }
+    #tab-about .about-eyebrow {
+      margin-bottom: .65rem;
+    }
+
+    #tab-about .about-page-title {
+      color: #fff;
+      font-size: clamp(2.5rem, 5vw, 3.25rem);
+      line-height: 1.1;
+    }
+
+    #tab-about .about-page-description {
+      max-width: 570px;
+      margin-top: .65rem;
+      color: #e5e7eb !important;
+      font-size: .98rem;
+      line-height: 1.55;
+    }
+
+    #tab-about .about-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      background: #090909;
+      color: #fff;
+    }
+
+    #tab-about .about-stat {
+      min-height: 122px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .35rem;
+      border-right: 1px solid #252525;
+      text-align: center;
+    }
+
+    #tab-about .about-stat:last-child {
+      border-right: 0;
+    }
+
+    #tab-about .about-stat-number {
+      color: #f36b0a;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    #tab-about .about-stat-label {
+      color: #9ca3af;
+      font-family: 'Oswald', sans-serif;
+      font-size: .62rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    #tab-about .about-story-content {
+      padding-top: 3rem;
+    }
+
+    #tab-about .about-story {
+      grid-template-columns: minmax(0, 1fr) minmax(0, .95fr);
+      gap: 3rem;
+      align-items: start;
+      margin-bottom: 4rem !important;
+    }
+
+    #tab-about .about-copy .badge-sub {
+      margin-bottom: .85rem;
+      font-size: .68rem;
+      letter-spacing: .12em;
+    }
+
+    #tab-about .about-copy h2 {
+      margin-bottom: 1.6rem !important;
+      font-size: 2.2rem !important;
+      line-height: 1.15;
+    }
+
+    #tab-about .about-story-rule {
+      width: 2rem;
+      height: 1px;
+      margin: 0 0 1.5rem;
+      background: var(--primary);
+    }
+
+    #tab-about .about-copy p {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+      font-size: .86rem;
+      line-height: 1.62;
+    }
+
+    #tab-about .about-image {
+      min-height: 0;
+      margin: 0;
+      overflow: visible;
+      background: transparent;
+    }
+
+    #tab-about .about-image::after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      left: -12px;
+      bottom: -12px;
+      width: 76px;
+      height: 76px;
+      border-bottom: 3px solid var(--primary);
+      border-left: 3px solid var(--primary);
+      pointer-events: none;
+    }
+
+    #tab-about .about-image img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    #tab-about .about-policy {
+      margin: 0 -24px 4rem;
+      padding: 4rem max(24px, calc((100vw - 1280px) / 2)) 5rem;
+      background: #F4EFEA;
+    }
+
+    #tab-about .about-policy-heading {
+      margin-bottom: 2.8rem;
+    }
+
+    #tab-about .about-policy-eyebrow {
+      margin-bottom: .7rem;
+      font-size: .68rem;
+      letter-spacing: .12em;
+    }
+
+    #tab-about .about-policy-title {
+      margin-bottom: .8rem;
+      color: #111827;
+      font-size: 2.2rem;
+      line-height: 1.15;
+    }
+
+    #tab-about .about-policy-intro {
+      max-width: 560px;
+      color: #64748b;
+      font-size: .86rem;
+      line-height: 1.6;
+    }
+
+    #tab-about .about-policy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem 1.25rem;
+    }
+
+    #tab-about .about-policy-card {
+      min-width: 0;
+      padding: 1.5rem 1.6rem;
+      border-left: 1px solid var(--primary);
+      background: #fff;
+    }
+
+    #tab-about .about-policy-card h3 {
+      margin-bottom: .65rem;
+      color: #111827;
+      font-size: .82rem;
+      line-height: 1.35;
+    }
+
+    #tab-about .about-policy-card p {
+      color: #64748b;
+      font-size: .76rem;
+      line-height: 1.6;
+    }
+
+    #tab-about .about-philosophy-section {
+      margin: 0 0 4rem;
+    }
+
+    #tab-about .about-philosophy-eyebrow {
+      margin-bottom: .7rem;
+      font-size: .68rem;
+      letter-spacing: .12em;
+    }
+
+    #tab-about .about-philosophy-title {
+      margin-bottom: 2rem !important;
+      color: #111827;
+      font-size: 2.2rem !important;
+      line-height: 1.15;
+    }
+
+    #tab-about .about-philosophy-section .quote-box {
+      max-width: 760px;
+      margin: 2.2rem 0 2.8rem;
+      padding: .75rem 1.6rem;
+      border-left: 3px solid var(--primary);
+      color: #111827;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.65;
+    }
+
+    #tab-about .about-philosophy-section .check-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.35rem 1.6rem;
+      margin-top: 0;
+    }
+
+    #tab-about .about-philosophy-section .check-item {
+      gap: .7rem;
+      color: #64748b;
+    }
+
+    #tab-about .about-philosophy-section .check-icon {
+      flex: 0 0 auto;
+      color: #f36b0a;
+      font-size: .9rem;
+    }
+
+    #tab-about .about-philosophy-section .check-item p {
+      color: #64748b;
+      font-size: .76rem;
+      line-height: 1.6;
+    }
+
+    #tab-about .about-partner-cta {
+      margin: 4rem -24px 0;
+      padding: 4rem max(24px, calc((100vw - 1280px) / 2));
+      border: 0;
+      background: #090909;
+      color: #fff;
+    }
+
+    #tab-about .about-partner-copy {
+      max-width: 560px;
+    }
+
+    #tab-about .about-partner-rule {
+      width: 2rem;
+      height: 2px;
+      margin-bottom: 1.25rem;
+      background: #f36b0a;
+    }
+
+    #tab-about .about-partner-cta h2 {
+      color: #fff;
+      font-size: 1.8rem !important;
+      line-height: 1.2;
+    }
+
+    #tab-about .about-partner-cta p {
+      margin-top: .65rem !important;
+      color: #cbd5e1 !important;
+      font-size: .82rem;
+      line-height: 1.55;
+    }
+
+    #tab-about .about-partner-cta>.btn {
+      flex: 0 0 auto;
+      min-width: 145px;
+      justify-content: center;
+      padding: .85rem 1.1rem;
+      font-size: .75rem;
+    }
+
+    @media (max-width: 768px) {
+      .site-footer .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+      }
+
+      .site-footer .footer-brand-column {
+        grid-column: 1 / -1;
+      }
+
+      #tab-about .page-header {
+        min-height: 322px;
+        padding: 3rem 0;
+      }
+
+      #tab-about .about-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #tab-about .about-stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      #tab-about .about-stat:nth-child(-n+2) {
+        border-bottom: 1px solid #252525;
+      }
+
+      #tab-about .about-story {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      #tab-about .about-image {
+        max-width: 560px;
+        width: calc(100% - 12px);
+        margin: 0 12px 12px 0;
+      }
+
+      #tab-about .about-policy {
+        margin-right: -24px;
+        margin-left: -24px;
+        padding-top: 3rem;
+        padding-bottom: 3.5rem;
+      }
+
+      #tab-about .about-philosophy-section .check-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #tab-about .about-partner-cta {
+        gap: 1.5rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      #tab-about .about-policy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #tab-about .about-policy-title {
+        font-size: 1.9rem;
+      }
+
+      #tab-about .about-policy-card {
+        padding: 1.25rem;
+      }
+
+      #tab-about .about-philosophy-section .check-list {
+        grid-template-columns: 1fr;
+      }
+
+      #tab-about .about-philosophy-section .quote-box {
+        padding-left: 1rem;
+        font-size: 1rem;
+      }
+
+      #tab-about .about-partner-cta {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .site-footer .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+      }
+
+      .site-footer .footer-brand-column {
+        grid-column: auto;
+      }
+
+      .site-footer .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        gap: 1rem;
+      }
+
+      .nav-menu {
+        gap: 1rem;
+      }
+
+      .nav-actions {
+        gap: .6rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #tab-home .home-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      #tab-home .home-hero-copy,
+      #tab-home .home-hero-badges {
+        grid-column: 1;
+        min-width: 0;
+      }
+
+      #tab-home .home-hero-badges {
+        width: 100%;
+      }
+
+      #tab-home .home-hero-badge {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      #tab-home .home-hero-title {
+        font-size: 4rem;
+      }
+
+      #tab-home .home-hero-inner {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+      }
+
+      #tab-home .home-industries-row {
+        flex-wrap: wrap;
+      }
+
+      #tab-home .home-industry-list {
+        min-width: 0;
+      }
+
+      #quoteModal .modal-card {
+        max-height: calc(100dvh - 2rem);
+        overflow-y: auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .navbar {
+        gap: .5rem;
+      }
+
+      .brand {
+        gap: 8px;
+        min-width: 0;
+      }
+
+      .brand-logo {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;
+      }
+
+      .brand-title {
+        font-size: 1.05rem;
+      }
+
+      .brand-subtitle {
+        font-size: .5rem;
+        letter-spacing: 1px;
+      }
+
+      .nav-actions {
+        gap: .35rem;
+      }
+
+      .nav-actions .theme-toggle {
+        padding: .35rem .45rem;
+      }
+
+      .nav-actions .btn {
+        padding: .55rem .45rem;
+        font-size: .64rem;
+      }
+
+      #tab-home .home-hero-title {
+        font-size: 2.65rem;
+      }
+
+      #tab-home .home-hero-description {
+        font-size: .92rem;
+      }
+
+      #tab-home .home-hero-actions .home-action {
+        padding: .6rem .9rem;
+      }
+
+      #tab-home .home-hero-badges {
+        grid-template-columns: 1fr;
+      }
+
+      #tab-home .home-industries-row {
+        align-items: flex-start;
+      }
+
+      #tab-home .home-industry-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: start;
+        gap: .65rem .4rem;
+      }
+
+      #tab-home .home-industry {
+        padding: .15rem .25rem;
+        font-size: .75rem;
+        white-space: normal;
+      }
+
+      #tab-home .home-industry-divider {
+        display: none;
+      }
+
+      #tab-about .about-story-content {
+        padding-top: 2rem;
+      }
+
+      #tab-about .about-partner-cta {
+        margin-top: 2.5rem;
+      }
+
+      #tab-services .service-detail-card {
+        overflow-wrap: anywhere;
+      }
+
+      #tab-contact .office-section,
+      #tab-contact .contact-form-section {
+        width: 100%;
+      }
+
+      .site-footer {
+        padding-top: 2rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .navbar {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+
+      .nav-menu {
+        gap: .65rem;
+      }
+
+      .nav-link {
+        font-size: .82rem;
+      }
+
+      .nav-actions .theme-toggle {
+        padding: .3rem .35rem;
+      }
+
+      .nav-actions .btn {
+        padding: .5rem .35rem;
+        font-size: .6rem;
+      }
+
+      #tab-home .home-hero-title {
+        font-size: 2.4rem;
+      }
+
+      #tab-home .home-hero-inner {
+        padding-right: 1rem;
+        padding-left: 1rem;
+      }
+    }
+
+    body {
+      font-size: 1.0625rem;
+    }
+
+    .brand-subtitle {
+      font-size: .72rem;
+    }
+
+    .theme-toggle {
+      font-size: .92rem;
+    }
+
+    .badge-sub {
+      font-size: .98rem;
+    }
+
+    .hero-desc {
+      font-size: 1.18rem;
+    }
+
+    .stat-label {
+      font-size: .92rem;
+    }
+
+    .card p {
+      font-size: 1.03rem;
+    }
+
+    .form-group label {
+      font-size: .94rem;
+    }
+
+    .form-control {
+      font-size: 1rem;
+    }
+
+    .footer-bottom {
+      font-size: .94rem;
+    }
+
+    .home-badge {
+      font-size: .8rem;
+    }
+
+    .home-hero-description {
+      font-size: 1.08rem;
+    }
+
+    .home-hero-badge span {
+      font-size: .78rem;
+    }
+
+    .home-value p {
+      font-size: .96rem;
+    }
+
+    .home-services-heading .badge-sub {
+      font-size: .76rem;
+    }
+
+    .home-services-intro {
+      font-size: .96rem;
+    }
+
+    .home-service h3 {
+      font-size: .86rem;
+    }
+
+    .home-service p {
+      font-size: .78rem;
+    }
+
+    .home-services-link button {
+      font-size: .78rem;
+    }
+
+    .home-industries-title {
+      font-size: .74rem;
+    }
+
+    .home-industry {
+      font-size: .92rem;
+    }
+
+    .home-contact-description {
+      font-size: .96rem;
+    }
+
+    .home-contact-details a {
+      font-size: .86rem;
+    }
+
+    .site-footer .footer-brand-copy {
+      font-size: .86rem;
+    }
+
+    .site-footer .footer-certification {
+      font-size: .7rem;
+    }
+
+    .site-footer .footer-column-title {
+      font-size: .7rem;
+    }
+
+    .site-footer .footer-link-list a {
+      font-size: .86rem;
+    }
+
+    .site-footer .footer-contact-list li {
+      font-size: .82rem;
+    }
+
+    .site-footer .footer-bottom {
+      font-size: .7rem;
+    }
+
+    #tab-contact .office-label {
+      font-size: .82rem;
+    }
+
+    #tab-contact .office-value {
+      font-size: 1rem;
+    }
+
+    #tab-contact .contact-form-intro {
+      font-size: .96rem;
+    }
+
+    #tab-contact .contact-form-field label {
+      font-size: .76rem;
+    }
+
+    #tab-contact .contact-form-field .form-control {
+      font-size: .88rem;
+    }
+
+    #tab-services .services-page-description {
+      font-size: 1.2rem;
+    }
+
+    #tab-services .services-deliver-copy {
+      font-size: 1.13rem;
+    }
+
+    #tab-services .service-detail-description {
+      font-size: .86rem;
+    }
+
+    #tab-services .service-capabilities-title {
+      font-size: .72rem;
+    }
+
+    #tab-services .service-capabilities li {
+      font-size: .8rem;
+    }
+
+    #tab-services .industry-card h3 {
+      font-size: 1.06rem;
+    }
+
+    #tab-services .industry-card p {
+      font-size: .83rem;
+    }
+
+    #tab-about .about-page-description {
+      font-size: 1.06rem;
+    }
+
     #tab-about .about-copy .badge-sub,
     #tab-about .about-policy-eyebrow,
-    #tab-about .about-philosophy-eyebrow { font-size: .76rem; }
-    #tab-about .about-copy p { font-size: .94rem; }
-    #tab-about .about-policy-intro { font-size: .94rem; }
-    #tab-about .about-policy-card h3 { font-size: .9rem; }
+    #tab-about .about-philosophy-eyebrow {
+      font-size: .76rem;
+    }
+
+    #tab-about .about-copy p {
+      font-size: .94rem;
+    }
+
+    #tab-about .about-policy-intro {
+      font-size: .94rem;
+    }
+
+    #tab-about .about-policy-card h3 {
+      font-size: .9rem;
+    }
+
     #tab-about .about-policy-card p,
-    #tab-about .about-philosophy-section .check-item p { font-size: .84rem; }
-    #tab-about .about-partner-cta p { font-size: .9rem; }
+    #tab-about .about-philosophy-section .check-item p {
+      font-size: .84rem;
+    }
+
+    #tab-about .about-partner-cta p {
+      font-size: .9rem;
+    }
 
     @media (max-width: 520px) {
-      body { font-size: 1rem; }
-      .brand-subtitle { font-size: .58rem; }
-      .nav-actions .btn { font-size: .64rem; }
-      .home-hero-description { font-size: 1rem; }
-      .home-industry { font-size: .8rem; }
-      #tab-services .services-page-description { font-size: 1.08rem; }
-      #tab-about .about-page-description { font-size: 1rem; }
+      body {
+        font-size: 1rem;
+      }
+
+      .brand-subtitle {
+        font-size: .58rem;
+      }
+
+      .nav-actions .btn {
+        font-size: .64rem;
+      }
+
+      .home-hero-description {
+        font-size: 1rem;
+      }
+
+      .home-industry {
+        font-size: .8rem;
+      }
+
+      #tab-services .services-page-description {
+        font-size: 1.08rem;
+      }
+
+      #tab-about .about-page-description {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
+
 <body data-theme="light">
 
   <!-- Header Navigation -->
   <nav class="navbar">
     <a class="brand" onclick="switchTab('home')">
-      <div class="brand-logo">SI</div>
-      <div class="brand-info">
-        <span class="brand-title">SAPTAM</span>
-        <span class="brand-subtitle">INFRASTRUCTURE</span>
-      </div>
+      <img src="saptam-infrastructure.png" alt="Saptam Infrastructure" class="brand-logo-img">
     </a>
 
     <ul class="nav-menu">
@@ -1072,8 +2974,8 @@
     </ul>
 
     <div class="nav-actions">
-      <button class="theme-toggle" onclick="toggleTheme()">
-        <span id="theme-icon">☀️</span> <span id="theme-text">Light</span>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span id="theme-icon"><i class="fa-solid fa-moon" aria-hidden="true"></i></span> <span id="theme-text">Dark</span>
       </button>
       <button class="btn btn-primary" onclick="openModal()">GET A QUOTE</button>
     </div>
@@ -1091,16 +2993,21 @@
             <div class="home-badge">EPCC SPECIALISTS — ISO 9001:2015</div>
             <h1 class="home-hero-title">ENGINEERING<br>EXCELLENCE.<br><span>DELIVERED.</span></h1>
             <div class="home-hero-rule"></div>
-            <p class="home-hero-description">ISO 9001:2015 certified EPCC specialists — Engineering, Procurement, Construction &amp; Commissioning for Chemical, Pharmaceutical, Power, and Infrastructure industries.</p>
+            <p class="home-hero-description">ISO 9001:2015 certified EPCC specialists — Engineering, Procurement,
+              Construction &amp; Commissioning for Chemical, Pharmaceutical, Power, and Infrastructure industries.</p>
             <div class="home-hero-actions">
-              <button class="home-action home-action-primary" onclick="switchTab('services')">OUR SERVICES <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+              <button class="home-action home-action-primary" onclick="switchTab('services')">OUR SERVICES <i
+                  class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
               <button class="home-action home-action-outline" onclick="switchTab('contact')">CONTACT US</button>
             </div>
           </div>
           <div class="home-hero-badges">
-            <div class="home-hero-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>ISO 9001:2015 CERTIFIED</span></div>
-            <div class="home-hero-badge"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i><span>EPCC SPECIALISTS</span></div>
-            <div class="home-hero-badge"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>GUJARAT, INDIA</span></div>
+            <div class="home-hero-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>ISO 9001:2015
+                CERTIFIED</span></div>
+            <div class="home-hero-badge"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i><span>EPCC
+                SPECIALISTS</span></div>
+            <div class="home-hero-badge"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>GUJARAT,
+                INDIA</span></div>
           </div>
         </div>
       </div>
@@ -1111,17 +3018,20 @@
         <div class="home-value">
           <div class="home-value-rule"></div>
           <h2>TURNKEY SOLUTIONS</h2>
-          <p>Single-point accountability from concept to commissioning — eliminating coordination gaps across disciplines.</p>
+          <p>Single-point accountability from concept to commissioning — eliminating coordination gaps across
+            disciplines.</p>
         </div>
         <div class="home-value">
           <div class="home-value-rule"></div>
           <h2>ISO CERTIFIED QUALITY</h2>
-          <p>ISO 9001:2015 certified processes ensuring consistent quality control, documentation, and delivery standards.</p>
+          <p>ISO 9001:2015 certified processes ensuring consistent quality control, documentation, and delivery
+            standards.</p>
         </div>
         <div class="home-value">
           <div class="home-value-rule"></div>
           <h2>ON-TIME DELIVERY</h2>
-          <p>Streamlined project management with cost-effective systems that keep projects on schedule and within budget.</p>
+          <p>Streamlined project management with cost-effective systems that keep projects on schedule and within
+            budget.</p>
         </div>
       </div>
     </section>
@@ -1131,20 +3041,47 @@
         <div class="home-services-heading">
           <span class="badge-sub">WHAT WE DO</span>
           <h2 class="home-services-title">END-TO-END EPCC CAPABILITIES</h2>
-          <p class="home-services-intro">Turnkey engineering solutions across the full project lifecycle — from design and procurement to construction and commissioning.</p>
+          <p class="home-services-intro">Turnkey engineering solutions across the full project lifecycle — from design
+            and procurement to construction and commissioning.</p>
         </div>
         <div class="home-services-grid">
-          <article class="home-service"><h3>CIVIL WORK</h3><p>Industrial buildings, clean rooms, R&amp;D labs, equipment foundations, warehouses &amp; workshops.</p></article>
-          <article class="home-service"><h3>INFRASTRUCTURE</h3><p>Pre-fab structures, pipe racks, platforms, ladders, and structural steel systems.</p></article>
-          <article class="home-service"><h3>PIPING WORKS</h3><p>IBR &amp; NIBR piping spools, jacketed piping, fire lines, and lined piping systems.</p></article>
-          <article class="home-service"><h3>CHEMICAL PROCESS EQUIPMENT</h3><p>Agitator reactors, distillation columns, scrubbers, pressure vessels, heat exchangers, and piping skids.</p></article>
-          <article class="home-service"><h3>ELECTRICAL WORK</h3><p>Substation design, HV/LV systems, 11KV–66KV transmission &amp; distribution, SLD, cable schedules.</p></article>
-          <article class="home-service"><h3>INDUSTRIAL WASTE WATER</h3><p>Multiple Effect Evaporators (MEE), Effluent Treatment Plants (ETP), and water management systems.</p></article>
-          <article class="home-service"><h3>REFRIGERATION &amp; COOLING</h3><p>Chilling plants, HVAC systems, and Air Handling Units (AHU) for industrial applications.</p></article>
-          <article class="home-service"><h3>INSTRUMENTATION</h3><p>Instrumentation control, system architecture, PLC &amp; SCADA programming, fire alarm systems.</p></article>
+          <article class="home-service">
+            <h3>CIVIL WORK</h3>
+            <p>Industrial buildings, clean rooms, R&amp;D labs, equipment foundations, warehouses &amp; workshops.</p>
+          </article>
+          <article class="home-service">
+            <h3>INFRASTRUCTURE</h3>
+            <p>Pre-fab structures, pipe racks, platforms, ladders, and structural steel systems.</p>
+          </article>
+          <article class="home-service">
+            <h3>PIPING WORKS</h3>
+            <p>IBR &amp; NIBR piping spools, jacketed piping, fire lines, and lined piping systems.</p>
+          </article>
+          <article class="home-service">
+            <h3>CHEMICAL PROCESS EQUIPMENT</h3>
+            <p>Agitator reactors, distillation columns, scrubbers, pressure vessels, heat exchangers, and piping skids.
+            </p>
+          </article>
+          <article class="home-service">
+            <h3>ELECTRICAL WORK</h3>
+            <p>Substation design, HV/LV systems, 11KV–66KV transmission &amp; distribution, SLD, cable schedules.</p>
+          </article>
+          <article class="home-service">
+            <h3>INDUSTRIAL WASTE WATER</h3>
+            <p>Multiple Effect Evaporators (MEE), Effluent Treatment Plants (ETP), and water management systems.</p>
+          </article>
+          <article class="home-service">
+            <h3>REFRIGERATION &amp; COOLING</h3>
+            <p>Chilling plants, HVAC systems, and Air Handling Units (AHU) for industrial applications.</p>
+          </article>
+          <article class="home-service">
+            <h3>INSTRUMENTATION</h3>
+            <p>Instrumentation control, system architecture, PLC &amp; SCADA programming, fire alarm systems.</p>
+          </article>
         </div>
         <div class="home-services-link">
-          <button onclick="switchTab('services')">VIEW ALL SERVICES <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+          <button onclick="switchTab('services')">VIEW ALL SERVICES <i class="fa-solid fa-chevron-right"
+              aria-hidden="true"></i></button>
         </div>
       </div>
     </section>
@@ -1154,7 +3091,8 @@
         <div class="home-industries-title">INDUSTRIES WE SERVE</div>
         <div class="home-industry-list">
           <span class="home-industry">CHEMICALS</span><span class="home-industry-divider" aria-hidden="true">|</span>
-          <span class="home-industry">PHARMACEUTICALS</span><span class="home-industry-divider" aria-hidden="true">|</span>
+          <span class="home-industry">PHARMACEUTICALS</span><span class="home-industry-divider"
+            aria-hidden="true">|</span>
           <span class="home-industry">POWER</span><span class="home-industry-divider" aria-hidden="true">|</span>
           <span class="home-industry">INFRASTRUCTURE</span>
         </div>
@@ -1167,13 +3105,17 @@
           <div>
             <div class="home-contact-rule"></div>
             <h2 class="home-contact-title">READY TO START YOUR<br>PROJECT?</h2>
-            <p class="home-contact-description">Discuss your engineering requirements with our EPCC specialists. We deliver precision-engineered solutions on time and within budget.</p>
+            <p class="home-contact-description">Discuss your engineering requirements with our EPCC specialists. We
+              deliver precision-engineered solutions on time and within budget.</p>
             <div class="home-contact-details">
-              <a href="mailto:info@saptamindia.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i><span>info@saptamindia.com</span></a>
-              <a href="tel:+919537533569"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>+91-9537533569</span></a>
+              <a href="mailto:info@saptamindia.com"><i class="fa-regular fa-envelope"
+                  aria-hidden="true"></i><span>info@saptamindia.com</span></a>
+              <a href="tel:+919537533569"><i class="fa-solid fa-phone"
+                  aria-hidden="true"></i><span>+91-9537533569</span></a>
             </div>
           </div>
-          <button class="home-action home-action-primary home-contact-cta" onclick="switchTab('contact')">GET IN TOUCH <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+          <button class="home-action home-action-primary home-contact-cta" onclick="switchTab('contact')">GET IN TOUCH
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
         </div>
       </div>
     </section>
@@ -1185,15 +3127,21 @@
       <div class="container">
         <span class="badge-sub about-eyebrow">ABOUT SAPTAM INFRASTRUCTURE</span>
         <h1 class="page-title about-page-title">PIONEERS IN EPCC ENGINEERING</h1>
-        <p class="about-page-description">Based in Vadodara, Gujarat, Saptam Infrastructure is an ISO 9001:2015 certified EPCC company delivering turnkey engineering solutions across Chemical, Pharmaceutical, Power, and Infrastructure industries.</p>
+        <p class="about-page-description">Based in Vadodara, Gujarat, Saptam Infrastructure is an ISO 9001:2015
+          certified EPCC company delivering turnkey engineering solutions across Chemical, Pharmaceutical, Power, and
+          Infrastructure industries.</p>
       </div>
     </div>
 
     <section class="about-stats" aria-label="Company facts">
-      <div class="about-stat"><span class="about-stat-number">ISO 9001:2015</span><span class="about-stat-label">Certified Quality System</span></div>
-      <div class="about-stat"><span class="about-stat-number">EPCC</span><span class="about-stat-label">Full Lifecycle Delivery</span></div>
-      <div class="about-stat"><span class="about-stat-number">4+</span><span class="about-stat-label">Industries Served</span></div>
-      <div class="about-stat"><span class="about-stat-number">8</span><span class="about-stat-label">Engineering Disciplines</span></div>
+      <div class="about-stat"><span class="about-stat-number">ISO 9001:2015</span><span
+          class="about-stat-label">Certified Quality System</span></div>
+      <div class="about-stat"><span class="about-stat-number">EPCC</span><span class="about-stat-label">Full Lifecycle
+          Delivery</span></div>
+      <div class="about-stat"><span class="about-stat-number">4+</span><span class="about-stat-label">Industries
+          Served</span></div>
+      <div class="about-stat"><span class="about-stat-number">8</span><span class="about-stat-label">Engineering
+          Disciplines</span></div>
     </section>
 
     <div class="container about-story-content">
@@ -1202,9 +3150,17 @@
           <span class="badge-sub">OUR STORY</span>
           <h2>WHO WE ARE</h2>
           <div class="about-story-rule"></div>
-          <p>Saptam Infrastructure (SI) is one of the pioneers in EPCC (Engineering, Procurement, Construction &amp; Commissioning) based in Vadodara, Gujarat. We have established ourselves as turnkey solution providers for Chemicals, Pharmaceuticals, Power, and Infrastructure Industries.</p>
-          <p>We deal with a wide range of services which includes design, engineering, material procurement, manufacturing, supply of plant and equipment, field services, construction, and project management in the fields of mechanical, piping, electrical, instrumentation, fabrication and erection — including heavy structures and equipment.</p>
-          <p>As an organization, we provide customization as required, offer guidelines for the latest economical processes and technologies for process improvement. Our approach toward construction management — streamlined, cost-effective, and state-of-the-art — has helped us deliver projects on time and within budget, while adhering to strict quality control and safety measures.</p>
+          <p>Saptam Infrastructure (SI) is one of the pioneers in EPCC (Engineering, Procurement, Construction &amp;
+            Commissioning) based in Vadodara, Gujarat. We have established ourselves as turnkey solution providers for
+            Chemicals, Pharmaceuticals, Power, and Infrastructure Industries.</p>
+          <p>We deal with a wide range of services which includes design, engineering, material procurement,
+            manufacturing, supply of plant and equipment, field services, construction, and project management in the
+            fields of mechanical, piping, electrical, instrumentation, fabrication and erection — including heavy
+            structures and equipment.</p>
+          <p>As an organization, we provide customization as required, offer guidelines for the latest economical
+            processes and technologies for process improvement. Our approach toward construction management —
+            streamlined, cost-effective, and state-of-the-art — has helped us deliver projects on time and within
+            budget, while adhering to strict quality control and safety measures.</p>
         </div>
         <figure class="about-image">
           <img src="2281962437.webp" alt="Industrial process piping and equipment at a refinery" loading="lazy">
@@ -1215,24 +3171,29 @@
         <div class="about-policy-heading">
           <span class="badge-sub about-policy-eyebrow">OUR COMMITMENT</span>
           <h2 class="about-policy-title">OUR COMPANY POLICY</h2>
-          <p class="about-policy-intro">At Saptam Infrastructure, we are committed to the highest standards of quality, safety, and continuous improvement.</p>
+          <p class="about-policy-intro">At Saptam Infrastructure, we are committed to the highest standards of quality,
+            safety, and continuous improvement.</p>
         </div>
         <div class="about-policy-grid">
           <article class="about-policy-card">
             <h3>CUSTOMER SATISFACTION</h3>
-            <p>We meet customer requirements, standards, and specifications to achieve maximum customer satisfaction with unerring regularity on a lasting basis.</p>
+            <p>We meet customer requirements, standards, and specifications to achieve maximum customer satisfaction
+              with unerring regularity on a lasting basis.</p>
           </article>
           <article class="about-policy-card">
             <h3>CONTINUAL IMPROVEMENT</h3>
-            <p>We make continual improvements by adopting a process approach and involvement of employees for the effectiveness of quality management.</p>
+            <p>We make continual improvements by adopting a process approach and involvement of employees for the
+              effectiveness of quality management.</p>
           </article>
           <article class="about-policy-card">
             <h3>LEADERSHIP &amp; GROWTH</h3>
-            <p>We provide efficient leadership, encourage creativity, and impart training to develop individual capabilities and support organizational growth.</p>
+            <p>We provide efficient leadership, encourage creativity, and impart training to develop individual
+              capabilities and support organizational growth.</p>
           </article>
           <article class="about-policy-card">
             <h3>SAFETY, HEALTH &amp; ENVIRONMENT</h3>
-            <p>We maintain the highest standards of safety, health, and environment by promoting safe work practices and minimizing environmental impact.</p>
+            <p>We maintain the highest standards of safety, health, and environment by promoting safe work practices and
+              minimizing environmental impact.</p>
           </article>
         </div>
       </section>
@@ -1240,31 +3201,37 @@
       <section class="about-philosophy-section">
         <span class="badge-sub about-philosophy-eyebrow">WHAT DRIVES US</span>
         <h2 class="about-philosophy-title">OUR PHILOSOPHY</h2>
-        
+
         <div class="quote-box">
-          "Excellence is our way of life. It is not an attribute or end result — it is the attitude with which all our business processes are created and sustained."
+          "Excellence is our way of life. It is not an attribute or end result — it is the attitude with which all our
+          business processes are created and sustained."
         </div>
 
         <div class="check-list">
           <div class="check-item">
             <span class="check-icon">&#10003;</span>
-            <p>We look after individuals of highest integrity, professionalism, and self-esteem and provide an ambiance where they are able to realize their fullest potential.</p>
+            <p>We look after individuals of highest integrity, professionalism, and self-esteem and provide an ambiance
+              where they are able to realize their fullest potential.</p>
           </div>
           <div class="check-item">
             <span class="check-icon">&#10003;</span>
-            <p>The touchstones of all our transactions with employees, suppliers, and service providers shall be fairness, equitability, transparency, and consistency.</p>
+            <p>The touchstones of all our transactions with employees, suppliers, and service providers shall be
+              fairness, equitability, transparency, and consistency.</p>
           </div>
           <div class="check-item">
             <span class="check-icon">&#10003;</span>
-            <p>We take care of our commitments to customers as sacred covenants and shall leave no stone unturned to fulfill them.</p>
+            <p>We take care of our commitments to customers as sacred covenants and shall leave no stone unturned to
+              fulfill them.</p>
           </div>
           <div class="check-item">
             <span class="check-icon">&#10003;</span>
-            <p>We are committed to the health and safety of our employees and shall not categorize any person on the basis of gender, class, caste, religion, ethnicity, or domicile.</p>
+            <p>We are committed to the health and safety of our employees and shall not categorize any person on the
+              basis of gender, class, caste, religion, ethnicity, or domicile.</p>
           </div>
           <div class="check-item">
             <span class="check-icon">&#10003;</span>
-            <p>We remain steadfast in our commitment to protect the environment and minimize our footprint beyond what is absolutely essential in sustaining our business.</p>
+            <p>We remain steadfast in our commitment to protect the environment and minimize our footprint beyond what
+              is absolutely essential in sustaining our business.</p>
           </div>
         </div>
       </section>
@@ -1273,9 +3240,10 @@
         <div class="about-partner-copy">
           <div class="about-partner-rule"></div>
           <h2>PARTNER WITH US</h2>
-          <p>Bring your next engineering project to a team that delivers precision, quality, and accountability at every stage.</p>
+          <p>Bring your next engineering project to a team that delivers precision, quality, and accountability at every
+            stage.</p>
         </div>
-        <button class="btn btn-primary" onclick="openModal()">GET IN TOUCH &rarr;</button>
+        <button class="btn btn-primary" onclick="switchTab('contact', 'contact-form-section')">GET IN TOUCH &rarr;</button>
       </div>
     </div>
   </div>
@@ -1286,14 +3254,18 @@
       <div class="container">
         <span class="badge-sub services-eyebrow">OUR SERVICES</span>
         <h1 class="page-title services-page-title">End-to-End EPCC Engineering Solutions</h1>
-        <p class="services-page-description">From concept to commissioning, Saptam Infrastructure delivers precision-engineered solutions across 8 core disciplines — serving Chemical, Pharmaceutical, Power, and Infrastructure industries.</p>
+        <p class="services-page-description">From concept to commissioning, Saptam Infrastructure delivers
+          precision-engineered solutions across 8 core disciplines — serving Chemical, Pharmaceutical, Power, and
+          Infrastructure industries.</p>
       </div>
     </div>
 
     <section class="services-deliver">
       <div class="container services-deliver-inner">
         <h2 class="services-deliver-title">What We Deliver</h2>
-        <p class="services-deliver-copy">As a full-scope EPCC company, we manage every phase of your project — Engineering, Procurement, Construction, and Commissioning — under one roof. Our multidisciplinary team ensures seamless coordination, strict quality control, and on-time delivery.</p>
+        <p class="services-deliver-copy">As a full-scope EPCC company, we manage every phase of your project —
+          Engineering, Procurement, Construction, and Commissioning — under one roof. Our multidisciplinary team ensures
+          seamless coordination, strict quality control, and on-time delivery.</p>
       </div>
     </section>
 
@@ -1306,15 +3278,22 @@
             <h2 class="service-detail-title">Design &amp; Engineering</h2>
           </div>
         </div>
-        <p class="service-detail-description">Our engineering team delivers FEED (Front-End Engineering Design) and detailed engineering services covering process, mechanical, piping, civil/structural, electrical, and instrumentation disciplines. We produce fully coordinated design packages — P&amp;IDs, equipment layouts, isometrics, structural drawings, and 3D models — that form the backbone of every successful project.</p>
+        <p class="service-detail-description">Our engineering team delivers FEED (Front-End Engineering Design) and
+          detailed engineering services covering process, mechanical, piping, civil/structural, electrical, and
+          instrumentation disciplines. We produce fully coordinated design packages — P&amp;IDs, equipment layouts,
+          isometrics, structural drawings, and 3D models — that form the backbone of every successful project.</p>
         <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
         <ul class="service-capabilities">
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Process design &amp; simulation</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>FEED and detailed engineering</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Process design &amp; simulation</span>
+          </li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>FEED and detailed engineering</span>
+          </li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>P&amp;ID development</span></li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>3D plant modelling</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Equipment sizing &amp; selection</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Hazard &amp; operability studies (HAZOP)</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Equipment sizing &amp; selection</span>
+          </li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Hazard &amp; operability studies
+              (HAZOP)</span></li>
         </ul>
       </article>
 
@@ -1326,53 +3305,73 @@
             <h2 class="service-detail-title">Procurement</h2>
           </div>
         </div>
-        <p class="service-detail-description">We manage the full procurement lifecycle — from vendor qualification and technical bid evaluation to expediting, inspection, and logistics. Our established supplier network ensures quality-compliant materials and equipment are delivered on schedule, reducing project risk and cost overruns.</p>
+        <p class="service-detail-description">We manage the full procurement lifecycle — from vendor qualification and
+          technical bid evaluation to expediting, inspection, and logistics. Our established supplier network ensures
+          quality-compliant materials and equipment are delivered on schedule, reducing project risk and cost overruns.
+        </p>
         <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
         <ul class="service-capabilities">
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Vendor qualification &amp; management</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Vendor qualification &amp;
+              management</span></li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Technical bid evaluation</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Material requisitions &amp; RFQs</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Material requisitions &amp; RFQs</span>
+          </li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Expediting &amp; inspection</span></li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Import/export logistics</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Inventory &amp; warehouse management</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Inventory &amp; warehouse
+              management</span></li>
         </ul>
       </article>
 
       <article class="service-detail-card">
         <div class="service-detail-heading">
-          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <span class="service-detail-icon"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i></span>
           <div>
             <span class="service-detail-number">03</span>
             <h2 class="service-detail-title">Construction</h2>
           </div>
         </div>
-        <p class="service-detail-description">Our construction teams execute civil, structural, mechanical, piping, electrical, and instrumentation works with a strong emphasis on safety and quality. We deploy experienced site supervisors, skilled tradespeople, and modern construction equipment to deliver complex installations on time and within budget.</p>
+        <p class="service-detail-description">Our construction teams execute civil, structural, mechanical, piping,
+          electrical, and instrumentation works with a strong emphasis on safety and quality. We deploy experienced site
+          supervisors, skilled tradespeople, and modern construction equipment to deliver complex installations on time
+          and within budget.</p>
         <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
         <ul class="service-capabilities">
           <!-- <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Process design &amp; simulation</span></li> -->
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Civil & structural construction</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Mechanical equipment installation</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Piping fabrication &amp; erection</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Electrical installation &amp; cabling</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Instrumentation &amp; control systems</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>HSE management &amp; compliance</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Civil & structural construction</span>
+          </li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Mechanical equipment
+              installation</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Piping fabrication &amp;
+              erection</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Electrical installation &amp;
+              cabling</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Instrumentation &amp; control
+              systems</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>HSE management &amp; compliance</span>
+          </li>
         </ul>
       </article>
 
       <article class="service-detail-card">
         <div class="service-detail-heading">
-          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <span class="service-detail-icon"><i class="fa-solid fa-gear" aria-hidden="true"></i></span>
           <div>
             <span class="service-detail-number">04</span>
             <h2 class="service-detail-title">Commissioning</h2>
           </div>
         </div>
-        <p class="service-detail-description">We provide structured commissioning services that transition your plant from mechanical completion to full operational readiness. Our commissioning engineers develop detailed procedures, conduct loop checks, functional testing, and performance verification — ensuring your facility operates safely and at design capacity from day one.</p>
+        <p class="service-detail-description">We provide structured commissioning services that transition your plant
+          from mechanical completion to full operational readiness. Our commissioning engineers develop detailed
+          procedures, conduct loop checks, functional testing, and performance verification — ensuring your facility
+          operates safely and at design capacity from day one.</p>
         <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
         <ul class="service-capabilities">
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Pre-commissioning planning</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Loop checks &amp; functional testing</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Performance testing &amp; verification</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Loop checks &amp; functional
+              testing</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Performance testing &amp;
+              verification</span></li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Punch list management</span></li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Operator training support</span></li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>As-built documentation</span></li>
@@ -1381,18 +3380,24 @@
 
       <article class="service-detail-card">
         <div class="service-detail-heading">
-          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <span class="service-detail-icon"><i class="fa-solid fa-code-pull-request" aria-hidden="true"></i></span>
           <div>
             <span class="service-detail-number">05</span>
             <h2 class="service-detail-title">Piping Fabrication &amp; Erection</h2>
           </div>
         </div>
-        <p class="service-detail-description">We specialise in the fabrication and erection of process piping, utility lines, and high-pressure systems. Our certified welders and piping engineers work to ASME, IBR, and client-specific standards, delivering leak-free, code-compliant piping systems for the most demanding process environments.</p>
+        <p class="service-detail-description">We specialise in the fabrication and erection of process piping, utility
+          lines, and high-pressure systems. Our certified welders and piping engineers work to ASME, IBR, and
+          client-specific standards, delivering leak-free, code-compliant piping systems for the most demanding process
+          environments.</p>
         <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
         <ul class="service-capabilities">
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Carbon steel &amp; alloy piping</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Stainless steel &amp; exotic alloys</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>High-pressure &amp; high-temperature systems</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Carbon steel &amp; alloy piping</span>
+          </li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Stainless steel &amp; exotic
+              alloys</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>High-pressure &amp; high-temperature
+              systems</span></li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>IBR-compliant steam lines</span></li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Pipe stress analysis</span></li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>NDT &amp; hydro-testing</span></li>
@@ -1401,61 +3406,83 @@
 
       <article class="service-detail-card">
         <div class="service-detail-heading">
-          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <span class="service-detail-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
           <div>
             <span class="service-detail-number">06</span>
             <h2 class="service-detail-title">Structural Fabrication &amp; Erection</h2>
           </div>
         </div>
-        <p class="service-detail-description">From pipe racks and equipment platforms to large-span industrial buildings and storage structures, our structural team handles the full scope — design, fabrication, surface treatment, and erection. We work to IS, AISC, and client standards with full traceability of materials and welds.</p>
+        <p class="service-detail-description">From pipe racks and equipment platforms to large-span industrial buildings
+          and storage structures, our structural team handles the full scope — design, fabrication, surface treatment,
+          and erection. We work to IS, AISC, and client standards with full traceability of materials and welds.</p>
         <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
         <ul class="service-capabilities">
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Pipe racks &amp; cable trays</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Equipment support structures</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Industrial buildings &amp; sheds</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Mezzanine floors &amp; platforms</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Pipe racks &amp; cable trays</span>
+          </li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Equipment support structures</span>
+          </li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Industrial buildings &amp; sheds</span>
+          </li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Mezzanine floors &amp; platforms</span>
+          </li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Storage tanks &amp; vessels</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Surface preparation &amp; painting</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Surface preparation &amp;
+              painting</span></li>
         </ul>
       </article>
 
       <article class="service-detail-card">
         <div class="service-detail-heading">
-          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <span class="service-detail-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></span>
           <div>
             <span class="service-detail-number">07</span>
             <h2 class="service-detail-title">Electrical &amp; Instrumentation</h2>
           </div>
         </div>
-        <p class="service-detail-description">Our E&I division delivers end-to-end electrical and instrumentation systems — from HT/LT switchgear, transformers, and power distribution to field instrumentation, control panels, DCS/PLC integration, and SCADA systems. We ensure safe, reliable, and code-compliant installations across all plant areas.</p>
+        <p class="service-detail-description">Our E&I division delivers end-to-end electrical and instrumentation
+          systems — from HT/LT switchgear, transformers, and power distribution to field instrumentation, control
+          panels, DCS/PLC integration, and SCADA systems. We ensure safe, reliable, and code-compliant installations
+          across all plant areas.</p>
         <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
         <ul class="service-capabilities">
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>HT/LT power distribution</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Transformer &amp; switchgear installation</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>MCC &amp; control panel erection</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Field instrumentation installation</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Transformer &amp; switchgear
+              installation</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>MCC &amp; control panel erection</span>
+          </li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Field instrumentation
+              installation</span></li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>DCS/PLC/SCADA integration</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Hazardous area (ATEX/IECEx) installations</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Hazardous area (ATEX/IECEx)
+              installations</span></li>
         </ul>
       </article>
 
       <article class="service-detail-card">
         <div class="service-detail-heading">
-          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <span class="service-detail-icon"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></span>
           <div>
             <span class="service-detail-number">08</span>
             <h2 class="service-detail-title">Project Management</h2>
           </div>
         </div>
-        <p class="service-detail-description">Our project management professionals apply proven methodologies — planning, scheduling, cost control, risk management, and stakeholder coordination — to keep your project on track. We use modern project management tools to provide real-time visibility into progress, resource utilisation, and risk status throughout the project lifecycle.</p>
+        <p class="service-detail-description">Our project management professionals apply proven methodologies —
+          planning, scheduling, cost control, risk management, and stakeholder coordination — to keep your project on
+          track. We use modern project management tools to provide real-time visibility into progress, resource
+          utilisation, and risk status throughout the project lifecycle.</p>
         <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
         <ul class="service-capabilities">
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Project planning &amp; scheduling (Primavera/MS Project)</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Cost estimation &amp; control</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Risk identification &amp; mitigation</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Project planning &amp; scheduling
+              (Primavera/MS Project)</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Cost estimation &amp; control</span>
+          </li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Risk identification &amp;
+              mitigation</span></li>
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Subcontractor management</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Progress reporting &amp; dashboards</span></li>
-          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Document control &amp; management</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Progress reporting &amp;
+              dashboards</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Document control &amp;
+              management</span></li>
         </ul>
       </article>
     </section>
@@ -1469,17 +3496,20 @@
           <article class="industry-card">
             <div class="industry-rule"></div>
             <h3>Chemical &amp; Petrochemical</h3>
-            <p>Process plants, storage terminals, and utility systems for bulk chemicals and petrochemical facilities.</p>
+            <p>Process plants, storage terminals, and utility systems for bulk chemicals and petrochemical facilities.
+            </p>
           </article>
           <article class="industry-card">
             <div class="industry-rule"></div>
             <h3>Pharmaceutical</h3>
-            <p>GMP-compliant process facilities, HVAC systems, and utility infrastructure for API and formulation plants.</p>
+            <p>GMP-compliant process facilities, HVAC systems, and utility infrastructure for API and formulation
+              plants.</p>
           </article>
           <article class="industry-card">
             <div class="industry-rule"></div>
             <h3>Power</h3>
-            <p>Balance-of-plant works, piping systems, and structural installations for thermal and renewable power projects.</p>
+            <p>Balance-of-plant works, piping systems, and structural installations for thermal and renewable power
+              projects.</p>
           </article>
           <article class="industry-card">
             <div class="industry-rule"></div>
@@ -1493,8 +3523,9 @@
     <section class="services-cta">
       <div class="container">
         <h2>Ready to Start Your Project?</h2>
-        <p>Tell us about your engineering challenge. Our team will respond with a tailored approach and preliminary scope assessment.</p>
-        <button class="btn btn-primary" onclick="openModal()">GET IN TOUCH</button>
+        <p>Tell us about your engineering challenge. Our team will respond with a tailored approach and preliminary
+          scope assessment.</p>
+        <button class="btn btn-primary" onclick="switchTab('contact', 'contact-form-section')">GET IN TOUCH</button>
       </div>
     </section>
   </div>
@@ -1506,7 +3537,7 @@
         <span class="badge-sub">CONTACT US</span>
         <h1 class="page-title">Let's Discuss Your Project</h1>
         <h5>Reach out to our engineering team for project inquiries, <br>
-            technical consultations, or partnership opportunities.</h5>
+          technical consultations, or partnership opportunities.</h5>
       </div>
     </div>
     <div class="container office-section">
@@ -1516,7 +3547,8 @@
           <span class="office-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
           <div>
             <div class="office-label">Address</div>
-            <div class="office-value">Block no 723/P, Behind Gurukrupa Farm,<br>Savli Manjusar Road, Manjusar,<br>Vadodara, Gujarat — 391775</div>
+            <div class="office-value">Block no 723/P, Behind Gurukrupa Farm,<br>Savli Manjusar Road,
+              Manjusar,<br>Vadodara, Gujarat — 391775</div>
           </div>
         </div>
         <div class="office-item">
@@ -1542,13 +3574,19 @@
         </div>
       </div>
       <div class="office-map">
-        <iframe title="Map to Saptam Infrastructure office" src="https://maps.google.com/maps?q=Block%20no%20723%2FP%2C%20Behind%20Gurukrupa%20Farm%2C%20Savli%20Manjusar%20Road%2C%20Manjusar%2C%20Vadodara%2C%20Gujarat%20391775&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <a class="office-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Block%20no%20723%2FP%2C%20Behind%20Gurukrupa%20Farm%2C%20Savli%20Manjusar%20Road%2C%20Manjusar%2C%20Vadodara%2C%20Gujarat%20391775" target="_blank" rel="noopener noreferrer">Open in Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        <iframe title="Map to Saptam Infrastructure office"
+          src="https://maps.google.com/maps?q=Block%20no%20723%2FP%2C%20Behind%20Gurukrupa%20Farm%2C%20Savli%20Manjusar%20Road%2C%20Manjusar%2C%20Vadodara%2C%20Gujarat%20391775&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a class="office-map-link"
+          href="https://www.google.com/maps/search/?api=1&amp;query=Block%20no%20723%2FP%2C%20Behind%20Gurukrupa%20Farm%2C%20Savli%20Manjusar%20Road%2C%20Manjusar%2C%20Vadodara%2C%20Gujarat%20391775"
+          target="_blank" rel="noopener noreferrer">Open in Maps <i class="fa-solid fa-arrow-up-right-from-square"
+            aria-hidden="true"></i></a>
       </div>
     </div>
-    <section class="container contact-form-section">
+    <section class="container contact-form-section" id="contact-form-section">
       <h2 class="contact-form-title">Send Us a Message</h2>
-      <p class="contact-form-intro">Fill in the form below and our team will get back to you within one business day.</p>
+      <p class="contact-form-intro">Fill in the form below and our team will get back to you within one business day.
+      </p>
       <form onsubmit="handleFormSubmit(event)">
         <div class="contact-form-grid">
           <div class="contact-form-field">
@@ -1557,11 +3595,13 @@
           </div>
           <div class="contact-form-field">
             <label for="contact-company">Company / Organisation</label>
-            <input id="contact-company" name="company" type="text" class="form-control" placeholder="Acme Chemicals Ltd.">
+            <input id="contact-company" name="company" type="text" class="form-control"
+              placeholder="Acme Chemicals Ltd.">
           </div>
           <div class="contact-form-field">
             <label for="contact-email">Email Address <span>*</span></label>
-            <input id="contact-email" name="email" type="email" class="form-control" required placeholder="rajesh@company.com">
+            <input id="contact-email" name="email" type="email" class="form-control" required
+              placeholder="rajesh@company.com">
           </div>
           <div class="contact-form-field">
             <label for="contact-phone">Phone Number</label>
@@ -1584,7 +3624,8 @@
           </div>
           <div class="contact-form-field contact-form-field-full">
             <label for="contact-message">Project Brief / Message <span>*</span></label>
-            <textarea id="contact-message" name="message" class="form-control" required placeholder="Briefly describe your project scope, industry, and timeline..."></textarea>
+            <textarea id="contact-message" name="message" class="form-control" required
+              placeholder="Briefly describe your project scope, industry, and timeline..."></textarea>
           </div>
         </div>
         <div class="contact-form-submit">
@@ -1600,13 +3641,18 @@
       <div class="footer-grid">
         <div class="footer-brand-column">
           <svg class="footer-brand-mark" viewBox="0 0 100 100" aria-label="Saptam Infrastructure logo" role="img">
-            <path d="M50,5 C25,5 5,25 5,50 C5,75 25,95 50,95 C75,95 95,75 95,50 C95,25 75,5 50,5 Z M50,12 C71,12 88,29 88,50 C88,71 71,88 50,88 C29,88 12,71 12,50 C12,29 29,12 50,12 Z" fill="currentColor" opacity=".35"/>
-            <path d="M50,15 C35,25 25,40 25,60 C35,50 45,45 55,45 C65,45 75,50 85,60 C75,35 65,20 50,15 Z" fill="currentColor"/>
-            <circle cx="50" cy="32" r="6" fill="#D96B27"/>
-            <path d="M30,65 L70,65 L50,85 Z" fill="currentColor"/>
+            <path
+              d="M50,5 C25,5 5,25 5,50 C5,75 25,95 50,95 C75,95 95,75 95,50 C95,25 75,5 50,5 Z M50,12 C71,12 88,29 88,50 C88,71 71,88 50,88 C29,88 12,71 12,50 C12,29 29,12 50,12 Z"
+              fill="currentColor" opacity=".35" />
+            <path d="M50,15 C35,25 25,40 25,60 C35,50 45,45 55,45 C65,45 75,50 85,60 C75,35 65,20 50,15 Z"
+              fill="currentColor" />
+            <circle cx="50" cy="32" r="6" fill="#D96B27" />
+            <path d="M30,65 L70,65 L50,85 Z" fill="currentColor" />
           </svg>
-          <p class="footer-brand-copy">ISO 9001:2015 certified EPCC company delivering turnkey engineering solutions for Chemical, Pharmaceutical, Power, and Infrastructure industries.</p>
-          <span class="footer-certification"><i class="fa-regular fa-shield-halved" aria-hidden="true"></i> ISO 9001:2015 CERTIFIED</span>
+          <p class="footer-brand-copy">ISO 9001:2015 certified EPCC company delivering turnkey engineering solutions for
+            Chemical, Pharmaceutical, Power, and Infrastructure industries.</p>
+          <span class="footer-certification"><i class="fa-regular fa-shield-halved" aria-hidden="true"></i> ISO
+            9001:2015 CERTIFIED</span>
         </div>
         <div>
           <h4 class="footer-column-title">QUICK LINKS</h4>
@@ -1621,9 +3667,12 @@
         <div>
           <h4 class="footer-column-title">CONTACT US</h4>
           <ul class="footer-contact-list">
-            <li><i class="fa-solid fa-location-dot footer-contact-icon" aria-hidden="true"></i><span>Block no 723/P, Behind Gurukrupa Farm,<br>Savli Manjusar Road, Manjusar,<br>Vadodara, Gujarat 391775</span></li>
-            <li><i class="fa-regular fa-envelope footer-contact-icon" aria-hidden="true"></i><a href="mailto:info@saptamindia.com">info@saptamindia.com</a></li>
-            <li><i class="fa-solid fa-phone footer-contact-icon" aria-hidden="true"></i><a href="tel:+919537533569">+91-9537533569</a></li>
+            <li><i class="fa-solid fa-location-dot footer-contact-icon" aria-hidden="true"></i><span>Block no 723/P,
+                Behind Gurukrupa Farm,<br>Savli Manjusar Road, Manjusar,<br>Vadodara, Gujarat 391775</span></li>
+            <li><i class="fa-regular fa-envelope footer-contact-icon" aria-hidden="true"></i><a
+                href="mailto:info@saptamindia.com">info@saptamindia.com</a></li>
+            <li><i class="fa-solid fa-phone footer-contact-icon" aria-hidden="true"></i><a
+                href="tel:+919537533569">+91-9537533569</a></li>
           </ul>
         </div>
       </div>
@@ -1640,8 +3689,9 @@
     <div class="modal-card">
       <button class="modal-close" onclick="closeModal()">&times;</button>
       <h2 style="margin-bottom: 0.5rem; font-size: 1.8rem;">GET A QUOTE</h2>
-      <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Fill in your details below and our technical engineering team will get back to you within 24 hours.</p>
-      
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Fill in your details below and our
+        technical engineering team will get back to you within 24 hours.</p>
+
       <form onsubmit="handleFormSubmit(event)">
         <div class="form-group">
           <label>Name</label>
@@ -1662,7 +3712,7 @@
 
   <script>
     // Tab Switching
-    function switchTab(tabId) {
+    function switchTab(tabId, targetElementId) {
       document.querySelectorAll('.page-tab').forEach(tab => tab.classList.remove('active'));
       document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
 
@@ -1670,19 +3720,56 @@
       const activeNav = document.getElementById('nav-' + tabId);
       if (activeNav) activeNav.classList.add('active');
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (targetElementId) {
+        setTimeout(() => {
+          const el = document.getElementById(targetElementId);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 50);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
 
-    // Theme Toggle
+    // Theme Management
+    function applyTheme(theme) {
+      document.body.setAttribute('data-theme', theme);
+      const isDark = theme === 'dark';
+      const iconEl = document.getElementById('theme-icon');
+      const textEl = document.getElementById('theme-text');
+      if (iconEl) {
+        iconEl.innerHTML = isDark ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>' : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
+      }
+      if (textEl) {
+        textEl.textContent = isDark ? 'Light' : 'Dark';
+      }
+      try {
+        localStorage.setItem('saptam_theme', theme);
+      } catch (err) {
+        // Ignore if localStorage is unavailable
+      }
+    }
+
     function toggleTheme() {
-      const body = document.body;
-      const currentTheme = body.getAttribute('data-theme');
+      const currentTheme = document.body.getAttribute('data-theme') || 'light';
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      body.setAttribute('data-theme', newTheme);
-
-      document.getElementById('theme-icon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
-      document.getElementById('theme-text').textContent = newTheme === 'dark' ? 'Light' : 'Dark';
+      applyTheme(newTheme);
     }
+
+    // Initialize theme on load (default to light)
+    (function initTheme() {
+      try {
+        const savedTheme = localStorage.getItem('saptam_theme');
+        if (savedTheme === 'dark') {
+          applyTheme('dark');
+        } else {
+          applyTheme('light');
+        }
+      } catch (err) {
+        applyTheme('light');
+      }
+    })();
 
     // Modal Handlers
     function openModal() {
@@ -1700,4 +3787,5 @@
     }
   </script>
 </body>
+
 </html>
