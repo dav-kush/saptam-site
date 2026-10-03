@@ -988,6 +988,68 @@
       #tab-home .home-hero-title { font-size: 2.4rem; }
       #tab-home .home-hero-inner { padding-right: 1rem; padding-left: 1rem; }
     }
+
+    body { font-size: 1.0625rem; }
+    .brand-subtitle { font-size: .72rem; }
+    .theme-toggle { font-size: .92rem; }
+    .badge-sub { font-size: .98rem; }
+    .hero-desc { font-size: 1.18rem; }
+    .stat-label { font-size: .92rem; }
+    .card p { font-size: 1.03rem; }
+    .form-group label { font-size: .94rem; }
+    .form-control { font-size: 1rem; }
+    .footer-bottom { font-size: .94rem; }
+    .home-badge { font-size: .8rem; }
+    .home-hero-description { font-size: 1.08rem; }
+    .home-hero-badge span { font-size: .78rem; }
+    .home-value p { font-size: .96rem; }
+    .home-services-heading .badge-sub { font-size: .76rem; }
+    .home-services-intro { font-size: .96rem; }
+    .home-service h3 { font-size: .86rem; }
+    .home-service p { font-size: .78rem; }
+    .home-services-link button { font-size: .78rem; }
+    .home-industries-title { font-size: .74rem; }
+    .home-industry { font-size: .92rem; }
+    .home-contact-description { font-size: .96rem; }
+    .home-contact-details a { font-size: .86rem; }
+    .site-footer .footer-brand-copy { font-size: .86rem; }
+    .site-footer .footer-certification { font-size: .7rem; }
+    .site-footer .footer-column-title { font-size: .7rem; }
+    .site-footer .footer-link-list a { font-size: .86rem; }
+    .site-footer .footer-contact-list li { font-size: .82rem; }
+    .site-footer .footer-bottom { font-size: .7rem; }
+    #tab-contact .office-label { font-size: .82rem; }
+    #tab-contact .office-value { font-size: 1rem; }
+    #tab-contact .contact-form-intro { font-size: .96rem; }
+    #tab-contact .contact-form-field label { font-size: .76rem; }
+    #tab-contact .contact-form-field .form-control { font-size: .88rem; }
+    #tab-services .services-page-description { font-size: 1.2rem; }
+    #tab-services .services-deliver-copy { font-size: 1.13rem; }
+    #tab-services .service-detail-description { font-size: .86rem; }
+    #tab-services .service-capabilities-title { font-size: .72rem; }
+    #tab-services .service-capabilities li { font-size: .8rem; }
+    #tab-services .industry-card h3 { font-size: 1.06rem; }
+    #tab-services .industry-card p { font-size: .83rem; }
+    #tab-about .about-page-description { font-size: 1.06rem; }
+    #tab-about .about-copy .badge-sub,
+    #tab-about .about-policy-eyebrow,
+    #tab-about .about-philosophy-eyebrow { font-size: .76rem; }
+    #tab-about .about-copy p { font-size: .94rem; }
+    #tab-about .about-policy-intro { font-size: .94rem; }
+    #tab-about .about-policy-card h3 { font-size: .9rem; }
+    #tab-about .about-policy-card p,
+    #tab-about .about-philosophy-section .check-item p { font-size: .84rem; }
+    #tab-about .about-partner-cta p { font-size: .9rem; }
+
+    @media (max-width: 520px) {
+      body { font-size: 1rem; }
+      .brand-subtitle { font-size: .58rem; }
+      .nav-actions .btn { font-size: .64rem; }
+      .home-hero-description { font-size: 1rem; }
+      .home-industry { font-size: .8rem; }
+      #tab-services .services-page-description { font-size: 1.08rem; }
+      #tab-about .about-page-description { font-size: 1rem; }
+    }
   </style>
 </head>
 <body data-theme="light">
@@ -1111,7 +1173,7 @@
               <a href="tel:+919537533569"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>+91-9537533569</span></a>
             </div>
           </div>
-          <button class="home-action home-action-primary home-contact-cta" onclick="openModal()">GET IN TOUCH <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+          <button class="home-action home-action-primary home-contact-cta" onclick="switchTab('contact')">GET IN TOUCH <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
         </div>
       </div>
     </section>
@@ -1145,7 +1207,7 @@
           <p>As an organization, we provide customization as required, offer guidelines for the latest economical processes and technologies for process improvement. Our approach toward construction management — streamlined, cost-effective, and state-of-the-art — has helped us deliver projects on time and within budget, while adhering to strict quality control and safety measures.</p>
         </div>
         <figure class="about-image">
-          <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Industrial process piping and equipment at a refinery" loading="lazy">
+          <img src="2281962437.webp" alt="Industrial process piping and equipment at a refinery" loading="lazy">
         </figure>
       </section>
 
@@ -1275,44 +1337,130 @@
           <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Inventory &amp; warehouse management</span></li>
         </ul>
       </article>
+
+      <article class="service-detail-card">
+        <div class="service-detail-heading">
+          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <div>
+            <span class="service-detail-number">03</span>
+            <h2 class="service-detail-title">Construction</h2>
+          </div>
+        </div>
+        <p class="service-detail-description">Our construction teams execute civil, structural, mechanical, piping, electrical, and instrumentation works with a strong emphasis on safety and quality. We deploy experienced site supervisors, skilled tradespeople, and modern construction equipment to deliver complex installations on time and within budget.</p>
+        <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
+        <ul class="service-capabilities">
+          <!-- <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Process design &amp; simulation</span></li> -->
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Civil & structural construction</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Mechanical equipment installation</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Piping fabrication &amp; erection</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Electrical installation &amp; cabling</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Instrumentation &amp; control systems</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>HSE management &amp; compliance</span></li>
+        </ul>
+      </article>
+
+      <article class="service-detail-card">
+        <div class="service-detail-heading">
+          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <div>
+            <span class="service-detail-number">04</span>
+            <h2 class="service-detail-title">Commissioning</h2>
+          </div>
+        </div>
+        <p class="service-detail-description">We provide structured commissioning services that transition your plant from mechanical completion to full operational readiness. Our commissioning engineers develop detailed procedures, conduct loop checks, functional testing, and performance verification — ensuring your facility operates safely and at design capacity from day one.</p>
+        <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
+        <ul class="service-capabilities">
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Pre-commissioning planning</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Loop checks &amp; functional testing</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Performance testing &amp; verification</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Punch list management</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Operator training support</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>As-built documentation</span></li>
+        </ul>
+      </article>
+
+      <article class="service-detail-card">
+        <div class="service-detail-heading">
+          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <div>
+            <span class="service-detail-number">05</span>
+            <h2 class="service-detail-title">Piping Fabrication &amp; Erection</h2>
+          </div>
+        </div>
+        <p class="service-detail-description">We specialise in the fabrication and erection of process piping, utility lines, and high-pressure systems. Our certified welders and piping engineers work to ASME, IBR, and client-specific standards, delivering leak-free, code-compliant piping systems for the most demanding process environments.</p>
+        <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
+        <ul class="service-capabilities">
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Carbon steel &amp; alloy piping</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Stainless steel &amp; exotic alloys</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>High-pressure &amp; high-temperature systems</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>IBR-compliant steam lines</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Pipe stress analysis</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>NDT &amp; hydro-testing</span></li>
+        </ul>
+      </article>
+
+      <article class="service-detail-card">
+        <div class="service-detail-heading">
+          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <div>
+            <span class="service-detail-number">06</span>
+            <h2 class="service-detail-title">Structural Fabrication &amp; Erection</h2>
+          </div>
+        </div>
+        <p class="service-detail-description">From pipe racks and equipment platforms to large-span industrial buildings and storage structures, our structural team handles the full scope — design, fabrication, surface treatment, and erection. We work to IS, AISC, and client standards with full traceability of materials and welds.</p>
+        <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
+        <ul class="service-capabilities">
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Pipe racks &amp; cable trays</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Equipment support structures</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Industrial buildings &amp; sheds</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Mezzanine floors &amp; platforms</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Storage tanks &amp; vessels</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Surface preparation &amp; painting</span></li>
+        </ul>
+      </article>
+
+      <article class="service-detail-card">
+        <div class="service-detail-heading">
+          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <div>
+            <span class="service-detail-number">07</span>
+            <h2 class="service-detail-title">Electrical &amp; Instrumentation</h2>
+          </div>
+        </div>
+        <p class="service-detail-description">Our E&I division delivers end-to-end electrical and instrumentation systems — from HT/LT switchgear, transformers, and power distribution to field instrumentation, control panels, DCS/PLC integration, and SCADA systems. We ensure safe, reliable, and code-compliant installations across all plant areas.</p>
+        <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
+        <ul class="service-capabilities">
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>HT/LT power distribution</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Transformer &amp; switchgear installation</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>MCC &amp; control panel erection</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Field instrumentation installation</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>DCS/PLC/SCADA integration</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Hazardous area (ATEX/IECEx) installations</span></li>
+        </ul>
+      </article>
+
+      <article class="service-detail-card">
+        <div class="service-detail-heading">
+          <span class="service-detail-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+          <div>
+            <span class="service-detail-number">08</span>
+            <h2 class="service-detail-title">Project Management</h2>
+          </div>
+        </div>
+        <p class="service-detail-description">Our project management professionals apply proven methodologies — planning, scheduling, cost control, risk management, and stakeholder coordination — to keep your project on track. We use modern project management tools to provide real-time visibility into progress, resource utilisation, and risk status throughout the project lifecycle.</p>
+        <h3 class="service-capabilities-title">KEY CAPABILITIES</h3>
+        <ul class="service-capabilities">
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Project planning &amp; scheduling (Primavera/MS Project)</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Cost estimation &amp; control</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Risk identification &amp; mitigation</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Subcontractor management</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Progress reporting &amp; dashboards</span></li>
+          <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Document control &amp; management</span></li>
+        </ul>
+      </article>
     </section>
 
-    <div class="container services-cards">
-      <div class="grid-4">
-        <div class="card">
-          <h3>CIVIL WORK</h3>
-          <p>Industrial buildings, clean rooms, R&D labs, equipment foundations, warehouses & workshops.</p>
-        </div>
-        <div class="card">
-          <h3>INFRASTRUCTURE</h3>
-          <p>Pre-fab structures, pipe racks, platforms, ladders, and structural steel systems.</p>
-        </div>
-        <div class="card">
-          <h3>PIPING WORKS</h3>
-          <p>IBR & NIBR piping spools, jacketed piping, fire lines, and lined piping systems.</p>
-        </div>
-        <div class="card">
-          <h3>CHEMICAL PROCESS EQUIPMENT</h3>
-          <p>Agitator reactors, distillation columns, scrubbers, pressure vessels, heat exchangers, and piping skids.</p>
-        </div>
-        <div class="card">
-          <h3>ELECTRICAL WORK</h3>
-          <p>Substation design, HV/LV systems, 11KV-66KV transmission & distribution, SLD, cable schedules.</p>
-        </div>
-        <div class="card">
-          <h3>INDUSTRIAL WASTE WATER</h3>
-          <p>Multiple Effect Evaporators (MEE), Effluent Treatment Plants (ETP), and water management systems.</p>
-        </div>
-        <div class="card">
-          <h3>REFRIGERATION & COOLING</h3>
-          <p>Chilling plants, HVAC systems, and Air Handling Units (AHU) for industrial applications.</p>
-        </div>
-        <div class="card">
-          <h3>INSTRUMENTATION</h3>
-          <p>Instrumentation control, system architecture, PLC & SCADA programming, fire alarm systems.</p>
-        </div>
-      </div>
-    </div>
+    <br />
 
     <section class="industries-section">
       <div class="container">
@@ -1345,7 +1493,7 @@
     <section class="services-cta">
       <div class="container">
         <h2>Ready to Start Your Project?</h2>
-        <p>Discuss your engineering requirements with our EPCC specialists. We deliver precision-engineered solutions on time and within budget.</p>
+        <p>Tell us about your engineering challenge. Our team will respond with a tailored approach and preliminary scope assessment.</p>
         <button class="btn btn-primary" onclick="openModal()">GET IN TOUCH</button>
       </div>
     </section>
