@@ -1350,6 +1350,45 @@
       font-size: .76rem;
     }
 
+    .home-contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      justify-self: end;
+      min-width: 175px;
+    }
+
+    .home-contact-actions .home-contact-cta {
+      width: 100%;
+    }
+
+    .home-contact-catalog {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .45rem;
+      padding: .46rem .8rem;
+      border: 1px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      font-family: 'Oswald', sans-serif;
+      font-size: .63rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color .2s, color .2s, border-color .2s;
+      width: 100%;
+    }
+
+    .home-contact-catalog:hover {
+      background: var(--primary-hover);
+      color: #ffffff;
+      border-color: var(--primary-hover);
+    }
+
     #tab-home .home-hero-background img {
       filter: brightness(.72);
     }
@@ -1558,6 +1597,12 @@
 
       .home-contact-cta {
         justify-self: start;
+      }
+
+      .home-contact-actions {
+        justify-self: start;
+        width: 100%;
+        max-width: 260px;
       }
     }
 
@@ -2072,10 +2117,12 @@
     }
 
     .site-footer .footer-brand-mark {
-      width: 30px;
-      height: 34px;
+      height: 40px;
+      width: auto;
+      max-width: 48px;
+      object-fit: contain;
       margin-bottom: 1.1rem;
-      color: #c59b3f;
+      display: block;
     }
 
     .site-footer .footer-brand-copy {
@@ -2092,15 +2139,23 @@
       gap: .5rem;
       padding: .4rem .65rem;
       border: 1px solid #414141;
-      color: #d1d5db;
+      color: #ffffff;
       font-size: .62rem;
       font-weight: 600;
       letter-spacing: .04em;
     }
 
     .site-footer .footer-certification i,
+    .site-footer .footer-cert-icon,
     .site-footer .footer-contact-icon {
       color: #f36b0a;
+    }
+
+    .site-footer .footer-cert-icon {
+      width: 13px;
+      height: 14px;
+      flex-shrink: 0;
+      stroke: #f36b0a;
     }
 
     .site-footer .footer-column-title {
@@ -2404,11 +2459,22 @@
     }
 
     #tab-about .about-partner-cta {
-      margin: 4rem -24px 0;
+      margin: 4rem 0 0;
+      margin-bottom: 0;
       padding: 4rem max(24px, calc((100vw - 1280px) / 2));
       border: 0;
       background: #090909;
       color: #fff;
+    }
+
+    #tab-about {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    #tab-about .about-story-content {
+      padding-bottom: 0;
+      margin-bottom: 0;
     }
 
     #tab-about .about-partner-copy {
@@ -2955,6 +3021,54 @@
         font-size: 1rem;
       }
     }
+
+    .cta-btn-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn-group-center {
+      justify-content: center;
+    }
+
+    .btn-outline-light {
+      border: 1px solid rgba(255, 255, 255, .6);
+      color: #ffffff;
+      background: transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: .44rem .9rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-family: 'Oswald', sans-serif;
+      font-size: .65rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color .2s, border-color .2s, color .2s;
+    }
+
+    .btn-outline-light:hover {
+      border-color: var(--primary-hover);
+      background: var(--primary-hover);
+      color: #ffffff;
+    }
+
+    #tab-about .about-partner-cta .btn-outline-light {
+      padding: .46rem .85rem;
+      font-size: .65rem;
+      min-width: 110px;
+      justify-content: center;
+    }
+
+    #tab-services .services-cta .btn-outline-light {
+      padding: .44rem .9rem;
+      font-size: .65rem;
+    }
   </style>
 </head>
 
@@ -2975,7 +3089,8 @@
 
     <div class="nav-actions">
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-        <span id="theme-icon"><i class="fa-solid fa-moon" aria-hidden="true"></i></span> <span id="theme-text">Dark</span>
+        <span id="theme-icon"><i class="fa-solid fa-moon" aria-hidden="true"></i></span> <span
+          id="theme-text">Dark</span>
       </button>
       <button class="btn btn-primary" onclick="openModal()">GET A QUOTE</button>
     </div>
@@ -3114,8 +3229,13 @@
                   aria-hidden="true"></i><span>+91-9537533569</span></a>
             </div>
           </div>
-          <button class="home-action home-action-primary home-contact-cta" onclick="switchTab('contact')">GET IN TOUCH
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+          <div class="home-contact-actions">
+            <button class="home-action home-action-primary home-contact-cta" onclick="switchTab('contact')">GET IN TOUCH
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            <a href="saptam-infrastructure-catalog.pdf" class="home-contact-catalog" target="_blank" download>
+              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> DOWNLOAD CATALOG
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -3235,15 +3355,21 @@
           </div>
         </div>
       </section>
+    </div>
 
-      <div class="cta-banner about-partner-cta">
-        <div class="about-partner-copy">
-          <div class="about-partner-rule"></div>
-          <h2>PARTNER WITH US</h2>
-          <p>Bring your next engineering project to a team that delivers precision, quality, and accountability at every
-            stage.</p>
-        </div>
-        <button class="btn btn-primary" onclick="switchTab('contact', 'contact-form-section')">GET IN TOUCH &rarr;</button>
+    <div class="cta-banner about-partner-cta">
+      <div class="about-partner-copy">
+        <div class="about-partner-rule"></div>
+        <h2>PARTNER WITH US</h2>
+        <p>Bring your next engineering project to a team that delivers precision, quality, and accountability at every
+          stage.</p>
+      </div>
+      <div class="cta-btn-group">
+        <button class="btn btn-primary" onclick="switchTab('contact', 'contact-form-section')">GET IN TOUCH
+          &rarr;</button>
+        <a href="saptam-infrastructure-catalog.pdf" class="btn btn-outline-light" target="_blank" download>
+          <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> DOWNLOAD CATALOG
+        </a>
       </div>
     </div>
   </div>
@@ -3525,7 +3651,12 @@
         <h2>Ready to Start Your Project?</h2>
         <p>Tell us about your engineering challenge. Our team will respond with a tailored approach and preliminary
           scope assessment.</p>
-        <button class="btn btn-primary" onclick="switchTab('contact', 'contact-form-section')">GET IN TOUCH</button>
+        <div class="cta-btn-group cta-btn-group-center">
+          <button class="btn btn-primary" onclick="switchTab('contact', 'contact-form-section')">GET IN TOUCH</button>
+          <a href="saptam-infrastructure-catalog.pdf" class="btn btn-outline-light" target="_blank" download>
+            <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> DOWNLOAD CATALOG
+          </a>
+        </div>
       </div>
     </section>
   </div>
@@ -3640,19 +3771,14 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand-column">
-          <svg class="footer-brand-mark" viewBox="0 0 100 100" aria-label="Saptam Infrastructure logo" role="img">
-            <path
-              d="M50,5 C25,5 5,25 5,50 C5,75 25,95 50,95 C75,95 95,75 95,50 C95,25 75,5 50,5 Z M50,12 C71,12 88,29 88,50 C88,71 71,88 50,88 C29,88 12,71 12,50 C12,29 29,12 50,12 Z"
-              fill="currentColor" opacity=".35" />
-            <path d="M50,15 C35,25 25,40 25,60 C35,50 45,45 55,45 C65,45 75,50 85,60 C75,35 65,20 50,15 Z"
-              fill="currentColor" />
-            <circle cx="50" cy="32" r="6" fill="#D96B27" />
-            <path d="M30,65 L70,65 L50,85 Z" fill="currentColor" />
-          </svg>
+          <img src="saptam-infrastructure_mini.png" alt="Saptam Infrastructure" class="footer-brand-mark">
           <p class="footer-brand-copy">ISO 9001:2015 certified EPCC company delivering turnkey engineering solutions for
             Chemical, Pharmaceutical, Power, and Infrastructure industries.</p>
-          <span class="footer-certification"><i class="fa-regular fa-shield-halved" aria-hidden="true"></i> ISO
-            9001:2015 CERTIFIED</span>
+          <span class="footer-certification"><svg class="footer-cert-icon" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg> ISO 9001:2015 CERTIFIED</span>
         </div>
         <div>
           <h4 class="footer-column-title">QUICK LINKS</h4>
