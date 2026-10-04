@@ -3167,7 +3167,7 @@
         <span id="theme-icon"><i class="fa-solid fa-moon" aria-hidden="true"></i></span> <span
           id="theme-text">Dark</span>
       </button>
-      <button class="btn btn-primary" onclick="openModal()">GET A QUOTE</button>
+      <button id="header-quote-btn" class="btn btn-primary" onclick="switchTab('contact', 'contact-form-section')">GET A QUOTE</button>
     </div>
   </nav>
 
@@ -3925,6 +3925,12 @@
       document.getElementById('tab-' + tabId).classList.add('active');
       const activeNav = document.getElementById('nav-' + tabId);
       if (activeNav) activeNav.classList.add('active');
+
+      // Hide "GET A QUOTE" button when on Contact page, show on other pages
+      const headerQuoteBtn = document.getElementById('header-quote-btn');
+      if (headerQuoteBtn) {
+        headerQuoteBtn.style.display = (tabId === 'contact') ? 'none' : 'inline-flex';
+      }
 
       if (targetElementId) {
         setTimeout(() => {
