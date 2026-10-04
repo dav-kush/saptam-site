@@ -2132,9 +2132,10 @@
 
     .site-footer .footer-grid {
       display: grid;
-      grid-template-columns: 1.35fr 1.2fr 1.3fr;
-      gap: 3rem;
+      grid-template-columns: 1.35fr 0.8fr 1.45fr;
+      gap: 2.25rem;
       margin-bottom: 2.75rem;
+      align-items: start;
     }
 
     .site-footer .footer-brand-mark {
@@ -2200,6 +2201,48 @@
     .site-footer .footer-link-list a:hover,
     .site-footer .footer-contact-list a:hover {
       color: #f36b0a;
+    }
+
+    .site-footer .footer-contact-title-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.25rem;
+      margin: .1rem 0 1rem;
+    }
+
+    .site-footer .footer-contact-title-row .footer-column-title {
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .site-footer .footer-social-links {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      margin: 0;
+    }
+
+    .site-footer .footer-social-links a {
+      color: #ffffff;
+      font-size: 1.15rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .site-footer .footer-social-links a:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .site-footer .footer-x-icon {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      display: block;
     }
 
     .site-footer .footer-contact-list {
@@ -3238,6 +3281,317 @@
       color: var(--text-muted);
       margin: 0;
     }
+
+    /* =========================================================================
+       COMPREHENSIVE DARK THEME STYLING
+       Charcoal cards (#161b22), deep dark backgrounds (#0d0e11),
+       crisp light text (#f0f6fc), and clean borders (#30363d).
+       ========================================================================= */
+
+    [data-theme="dark"] body {
+      background-color: #0d0e11;
+      color: #f0f6fc;
+    }
+
+    /* Navbar in Dark Mode */
+    [data-theme="dark"] .navbar {
+      background: rgba(13, 14, 17, 0.95);
+      border-bottom: 1px solid #27272a;
+    }
+
+    [data-theme="dark"] .nav-link {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] .nav-link:hover,
+    [data-theme="dark"] .nav-link.active {
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] .theme-toggle {
+      background: #161b22;
+      border-color: #30363d;
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] .theme-toggle:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* --- HOME TAB IN DARK MODE --- */
+    [data-theme="dark"] .home-services {
+      background: #0d0e11;
+    }
+
+    [data-theme="dark"] .home-services-title {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] .home-services-intro {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] .home-service h3 {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] .home-service p {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] .home-service:nth-child(n+5),
+    [data-theme="dark"] .home-service:nth-child(n+3),
+    [data-theme="dark"] .home-service:nth-child(n+2) {
+      border-top-color: #21262d;
+    }
+
+    [data-theme="dark"] .home-industries {
+      background: #111418;
+      border-top-color: #21262d;
+      border-bottom-color: #21262d;
+    }
+
+    [data-theme="dark"] .home-industries-title {
+      color: #8b949e;
+      border-right-color: #21262d;
+      border-bottom-color: #21262d;
+    }
+
+    [data-theme="dark"] .home-industry {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] .home-industry-divider {
+      background: #21262d;
+    }
+
+    [data-theme="dark"] .home-contact-prompt {
+      background: #0d0e11;
+    }
+
+    [data-theme="dark"] .home-contact-panel {
+      background: #161b22;
+      border: 1px solid #30363d;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="dark"] .home-contact-title {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] .home-contact-description {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] .home-contact-details a {
+      color: #f0f6fc;
+    }
+
+    /* --- ABOUT US TAB IN DARK MODE --- */
+    [data-theme="dark"] #tab-about .about-story-title {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-about .about-copy p,
+    [data-theme="dark"] #tab-about .about-story-copy p {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] #tab-about .about-stats {
+      border-color: #21262d;
+    }
+
+    [data-theme="dark"] #tab-about .about-stat {
+      border-color: #21262d;
+    }
+
+    [data-theme="dark"] #tab-about .about-stat-number {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-about .about-stat-label {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] #tab-about .about-policy {
+      background: #111418;
+      border-top: 1px solid #21262d;
+      border-bottom: 1px solid #21262d;
+    }
+
+    [data-theme="dark"] #tab-about .about-policy-title {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-about .about-policy-intro {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] #tab-about .about-policy-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-left: 3px solid var(--primary);
+    }
+
+    [data-theme="dark"] #tab-about .about-policy-card h3 {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-about .about-policy-card p {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] #tab-about .about-philosophy-title {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-about .about-philosophy-section .quote-box {
+      color: #f0f6fc;
+      border-left-color: var(--primary);
+    }
+
+    [data-theme="dark"] #tab-about .about-philosophy-section .check-item p {
+      color: #8b949e;
+    }
+
+    /* --- SERVICES TAB IN DARK MODE --- */
+    [data-theme="dark"] #tab-services .service-detail-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      color: #f0f6fc;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    [data-theme="dark"] #tab-services .service-detail-title {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-services .service-detail-description {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] #tab-services .service-detail-number {
+      color: #6e7681;
+    }
+
+    [data-theme="dark"] #tab-services .service-detail-icon {
+      background: rgba(217, 107, 39, 0.18);
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] #tab-services .service-capabilities-title {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-services .service-capabilities li {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] #tab-services .industries-section {
+      background: #111418;
+      border-top: 1px solid #21262d;
+      border-bottom: 1px solid #21262d;
+    }
+
+    [data-theme="dark"] #tab-services .industries-title {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-services .industry-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+    }
+
+    [data-theme="dark"] #tab-services .industry-card h3 {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-services .industry-card p {
+      color: #8b949e;
+    }
+
+    /* --- CONTACT TAB IN DARK MODE --- */
+    [data-theme="dark"] #tab-contact .office-title {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-contact .office-label {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] #tab-contact .office-value {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-contact .office-icon {
+      background: rgba(217, 107, 39, 0.18);
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] #tab-contact .contact-form-title {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-contact .contact-form-intro {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] #tab-contact .contact-form-field label {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-contact .contact-form-field .form-control {
+      background: #161b22;
+      border: 1px solid #30363d;
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-contact .contact-form-field .form-control:focus {
+      border-color: var(--primary);
+    }
+
+    [data-theme="dark"] #tab-contact .contact-form-field select.form-control option {
+      background: #161b22;
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] #tab-contact .office-map-link {
+      background: #161b22;
+      border-color: #30363d;
+      color: #58a6ff;
+    }
+
+    /* --- MODALS IN DARK MODE --- */
+    [data-theme="dark"] .modal-card,
+    [data-theme="dark"] .feedback-modal-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] .modal-card .form-control {
+      background: #0d0e11;
+      border: 1px solid #30363d;
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] .modal-card label {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] .modal-card h2,
+    [data-theme="dark"] .feedback-modal-title {
+      color: #f0f6fc;
+    }
+
+    [data-theme="dark"] .modal-close {
+      color: #8b949e;
+    }
+
+    [data-theme="dark"] .modal-close:hover {
+      color: #f0f6fc;
+    }
   </style>
 </head>
 
@@ -3402,7 +3756,8 @@
           <div class="home-contact-actions">
             <button class="home-action home-action-primary home-contact-cta" onclick="switchTab('contact')">GET IN TOUCH
               <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
-            <a href="saptam-infrastructure-catalog.pdf" class="home-contact-catalog" target="_blank" download>
+            <a href="SI COMPANY PROFILE EPCC.pdf" class="home-contact-catalog download-catalog-btn"
+              onclick="downloadCatalog(event)" target="_blank" rel="noopener noreferrer">
               <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> DOWNLOAD CATALOG
             </a>
           </div>
@@ -3537,7 +3892,8 @@
       <div class="cta-btn-group">
         <button class="btn btn-primary" onclick="switchTab('contact', 'contact-form-section')">GET IN TOUCH
           &rarr;</button>
-        <a href="saptam-infrastructure-catalog.pdf" class="btn btn-outline-light" target="_blank" download>
+        <a href="SI COMPANY PROFILE EPCC.pdf" class="btn btn-outline-light download-catalog-btn"
+          onclick="downloadCatalog(event)" target="_blank" rel="noopener noreferrer">
           <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> DOWNLOAD CATALOG
         </a>
       </div>
@@ -3823,7 +4179,8 @@
           scope assessment.</p>
         <div class="cta-btn-group cta-btn-group-center">
           <button class="btn btn-primary" onclick="switchTab('contact', 'contact-form-section')">GET IN TOUCH</button>
-          <a href="saptam-infrastructure-catalog.pdf" class="btn btn-outline-light" target="_blank" download>
+          <a href="saptam-infrastructure-catalog.pdf" class="btn btn-outline-light download-catalog-btn"
+            onclick="downloadCatalog(event)" target="_blank" rel="noopener noreferrer">
             <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> DOWNLOAD CATALOG
           </a>
         </div>
@@ -3963,7 +4320,24 @@
           </ul>
         </div>
         <div>
-          <h4 class="footer-column-title">CONTACT US</h4>
+          <div class="footer-contact-title-row">
+            <h4 class="footer-column-title">CONTACT US</h4>
+            <div class="footer-social-links">
+              <a href="https://wa.me/919537533569" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
+                  class="fa-brands fa-whatsapp"></i></a>
+              <a href="https://facebook.com/krunalkathiyabadi" target="_blank" rel="noopener noreferrer"
+                aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://x.com/Ka190922" target="_blank" rel="noopener noreferrer" aria-label="Twitter X"><svg
+                  class="footer-x-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
+                  class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
+                  class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
           <ul class="footer-contact-list">
             <li><i class="fa-solid fa-location-dot footer-contact-icon" aria-hidden="true"></i><span>Block no 723/P,
                 Behind Gurukrupa Farm,<br>Savli Manjusar Road, Manjusar,<br>Vadodara, Gujarat 391775</span></li>
@@ -4021,6 +4395,43 @@
   </div>
 
   <script>
+    // =========================================================================
+    // GLOBAL CATALOG CONFIGURATION
+    // Paste your Google Drive PDF share link below.
+    // Changing this ONE link automatically updates all "DOWNLOAD CATALOG"
+    // buttons across Home, About Us, and Services!
+    // =========================================================================
+    const GLOBAL_CATALOG_URL = "https://drive.google.com/file/d/YOUR_GOOGLE_DRIVE_FILE_ID/view?usp=sharing";
+
+    function downloadCatalog(event) {
+      if (event) event.preventDefault();
+      // If a real Google Drive link is configured, open it in a new tab
+      if (GLOBAL_CATALOG_URL && GLOBAL_CATALOG_URL !== '#' && !GLOBAL_CATALOG_URL.includes('YOUR_GOOGLE_DRIVE_FILE_ID')) {
+        window.open(GLOBAL_CATALOG_URL, '_blank', 'noopener,noreferrer');
+      } else {
+        // Fallback: Opens the local catalog PDF until the Google Drive link is pasted
+        window.open('saptam-infrastructure-catalog.pdf', '_blank', 'noopener,noreferrer');
+      }
+    }
+
+    function initGlobalCatalogLinks() {
+      const catalogBtns = document.querySelectorAll('.download-catalog-btn');
+      catalogBtns.forEach(btn => {
+        btn.href = (GLOBAL_CATALOG_URL && !GLOBAL_CATALOG_URL.includes('YOUR_GOOGLE_DRIVE_FILE_ID'))
+          ? GLOBAL_CATALOG_URL
+          : 'saptam-infrastructure-catalog.pdf';
+        btn.setAttribute('target', '_blank');
+        btn.setAttribute('rel', 'noopener noreferrer');
+        btn.removeAttribute('download');
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initGlobalCatalogLinks);
+    } else {
+      initGlobalCatalogLinks();
+    }
+
     // Tab Switching
     function switchTab(tabId, targetElementId) {
       document.querySelectorAll('.page-tab').forEach(tab => tab.classList.remove('active'));
