@@ -3090,6 +3090,60 @@
       padding: .44rem .9rem;
       font-size: .65rem;
     }
+
+    /* Form Status Alerts */
+    .form-status-alert {
+      padding: .85rem 1.15rem;
+      border-radius: 4px;
+      font-size: .85rem;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      transition: all .25s ease-in-out;
+    }
+
+    .form-status-alert i {
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .form-status-alert.success {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid #10b981;
+      color: #065f46;
+    }
+
+    [data-theme="dark"] .form-status-alert.success {
+      background: rgba(16, 185, 129, 0.18);
+      border-color: #059669;
+      color: #6ee7b7;
+    }
+
+    .form-status-alert.error {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid #ef4444;
+      color: #991b1b;
+    }
+
+    [data-theme="dark"] .form-status-alert.error {
+      background: rgba(239, 68, 68, 0.18);
+      border-color: #dc2626;
+      color: #fca5a5;
+    }
+
+    .form-status-alert.warning {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid #f59e0b;
+      color: #92400e;
+    }
+
+    [data-theme="dark"] .form-status-alert.warning {
+      background: rgba(245, 158, 11, 0.18);
+      border-color: #d97706;
+      color: #fcd34d;
+    }
   </style>
 </head>
 
@@ -3740,6 +3794,7 @@
       <p class="contact-form-intro">Fill in the form below and our team will get back to you within one business day.
       </p>
       <form onsubmit="handleFormSubmit(event)">
+        <div id="contact-form-status" class="form-status-alert" style="display: none;" role="alert"></div>
         <div class="contact-form-grid">
           <div class="contact-form-field">
             <label for="contact-name">Full Name <span>*</span></label>
@@ -3842,17 +3897,19 @@
         technical engineering team will get back to you within 24 hours.</p>
 
       <form onsubmit="handleFormSubmit(event)">
+        <div id="quote-form-status" class="form-status-alert" style="display: none;" role="alert"></div>
         <div class="form-group">
           <label>Name</label>
-          <input type="text" class="form-control" required placeholder="Your Name">
+          <input type="text" name="name" class="form-control" required placeholder="Your Name">
         </div>
         <div class="form-group">
           <label>Email</label>
-          <input type="email" class="form-control" required placeholder="your@email.com">
+          <input type="email" name="email" class="form-control" required placeholder="your@email.com">
         </div>
         <div class="form-group">
           <label>Message</label>
-          <textarea class="form-control" rows="3" required placeholder="Tell us about your project..."></textarea>
+          <textarea name="message" class="form-control" rows="3" required
+            placeholder="Tell us about your project..."></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="width: 100%;">SEND REQUEST</button>
       </form>
@@ -3929,10 +3986,127 @@
       document.getElementById('quoteModal').classList.remove('active');
     }
 
-    function handleFormSubmit(e) {
+    async function handleFormSubmit(e) {
       e.preventDefault();
-      alert('Thank you for reaching out! Your inquiry has been submitted successfully.');
-      closeModal();
+      const form = e.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : 'SEND';
+
+      let statusEl = form.querySelector('.form-status-alert');
+      if (!statusEl) {
+        statusEl = document.createElement('div');
+        statusEl.className = 'form-status-alert';
+        form.insertBefore(statusEl, form.firstChild);
+      }
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      const isModal = form.closest('#quoteModal') !== null;
+      const inquiryType = isModal ? 'Quote Request' : 'Contact Message';
+
+      // Check if browsing directly as a local file (file:///)
+      const isFileProtocol = window.location.protocol === 'file:';
+
+      data['_subject'] = `New ${inquiryType} from ${data.name || 'Website Visitor'} — Saptam Infrastructure`;
+      data['_template'] = 'table';
+      data['_captcha'] = 'false';
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> SENDING...';
+      }
+      statusEl.style.display = 'none';
+
+      // FormSubmit requires an HTTP/HTTPS web origin (file:/// has no origin and is blocked by FormSubmit)
+      if (isFileProtocol) {
+        statusEl.className = 'form-status-alert warning';
+        const mailSubject = encodeURIComponent(data['_subject']);
+        const mailBody = encodeURIComponent(
+          `Name: ${data.name || ''}\nCompany: ${data.company || ''}\nEmail: ${data.email || ''}\nPhone: ${data.phone || ''}\nService: ${data.service || ''}\nMessage:\n${data.message || ''}`
+        );
+        statusEl.innerHTML = `
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <div>
+            <strong>Local File (file:///) Detected:</strong> Email endpoints require the website to run on a web server (e.g., <code>http://localhost:8000</code> or your live website). Browsers do not send origin headers for local <code>file:///</code> paths.
+            <div style="margin-top: 0.6rem;">
+              <a href="mailto:info@saptamindia.com?subject=${mailSubject}&body=${mailBody}" class="btn btn-primary" style="display: inline-flex; padding: 0.4rem 0.85rem; font-size: 0.72rem; text-decoration: none;">Click Here to Send via Email App</a>
+            </div>
+          </div>
+        `;
+        statusEl.style.display = 'flex';
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+        return;
+      }
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/info@saptamindia.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        // Check if FormSubmit requires initial inbox activation
+        if (result.message && (result.message.toLowerCase().includes('activation') || result.message.toLowerCase().includes('activate'))) {
+          statusEl.className = 'form-status-alert warning';
+          statusEl.innerHTML = '<i class="fa-solid fa-envelope-open-text"></i> <span><strong>One-Time Activation Required:</strong> FormSubmit sent an activation email to <strong>info@saptamindia.com</strong>. Please open that email (check Spam / Junk folder if needed) and click <strong>"Activate Form"</strong> to start receiving inquiries.</span>';
+          statusEl.style.display = 'flex';
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+          }
+          return;
+        }
+
+        if (response.ok && (result.success === 'true' || result.success === true)) {
+          statusEl.className = 'form-status-alert success';
+          statusEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>Thank you! Your message has been sent to our team at <strong>info@saptamindia.com</strong>. We will get back to you within one business day.</span>';
+          statusEl.style.display = 'flex';
+          form.reset();
+
+          if (submitBtn) {
+            submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> SENT SUCCESSFULLY';
+          }
+
+          if (isModal) {
+            setTimeout(() => {
+              closeModal();
+              statusEl.style.display = 'none';
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHtml;
+              }
+            }, 2500);
+          } else {
+            setTimeout(() => {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHtml;
+              }
+            }, 5000);
+          }
+        } else {
+          throw new Error(result.message || 'Failed to submit form');
+        }
+      } catch (err) {
+        console.error('Form submission error:', err);
+        statusEl.className = 'form-status-alert error';
+        statusEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> <span>${err.message || 'Could not send message automatically.'} Please try again or email us directly at <a href="mailto:info@saptamindia.com" style="color: inherit; text-decoration: underline; font-weight: 600;">info@saptamindia.com</a>.</span>`;
+        statusEl.style.display = 'flex';
+
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+      }
     }
   </script>
 </body>
