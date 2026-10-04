@@ -1060,24 +1060,31 @@
       font-weight: 600;
       text-decoration: none;
       transition: background-color .2s, border-color .2s;
+      cursor: pointer;
     }
 
     .home-action-primary {
       background: var(--primary);
+      border: 1px solid var(--primary);
       box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
     }
 
     .home-action-primary:hover {
       background: var(--primary-hover);
+      border-color: var(--primary-hover);
     }
 
     .home-action-outline {
       border: 1px solid rgba(255, 255, 255, .6);
+      background: transparent;
+      color: #ffffff;
+      cursor: pointer;
     }
 
     .home-action-outline:hover {
       border-color: #fff;
       background: rgba(255, 255, 255, .1);
+      color: #ffffff;
     }
 
     .home-hero-badges {
@@ -1425,6 +1432,20 @@
       justify-content: center;
       padding: .65rem 1.35rem;
       font-size: .75rem;
+    }
+
+    #tab-home .home-hero-actions .home-action-outline {
+      background: transparent;
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, .6);
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    #tab-home .home-hero-actions .home-action-outline:hover {
+      border-color: #ffffff;
+      background: rgba(255, 255, 255, .1);
+      color: #ffffff;
     }
 
     #tab-home .home-hero-badges {
